@@ -5,6 +5,18 @@ experiences:
   subtitle: ""
   category: "school"
 
+- place: "GreenDynamics Pty Ltd."
+  time: "2023.8 - now"
+  title: "Data Science Intern"
+  subtitle: ""
+  category: "work"
+
+- place: "UCSD Extended Studies"
+  time: "2023.7 - 2023.12"
+  title: ""
+  subtitle: "Foundational Math and Programming Modules"
+  category: "school"
+
 - place: "University of Ljubljana"
   time: "Summer 2023"
   title: "The 1st European Summer School on Artiﬁcial Intelligence"
@@ -16,18 +28,6 @@ experiences:
   title: "The 7th Corpus Linguistics Summer School"
   subtitle: ""
   category: "school"
-
-- place: "UCSD Extended Studies"
-  time: "Winter 2023"
-  title: ""
-  subtitle: "Foundational Math and Programming Modules"
-  category: "school"
-  
-- place: "GreenDynamics Pty Ltd."
-  time: "2023.8 - now"
-  title: "Data Science Intern"
-  subtitle: ""
-  category: "work"
 
 - place: "Beijing Institute of Technology"
   time: "2020 - 2024"
