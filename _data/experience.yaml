@@ -1,5 +1,5 @@
 experiences:
-- place: "Eberhard Karls Universität Tübingen"
+- place: "University of Tübingen"
   time: "2024 - 2027"
   title: "International Studies in Computational Linguistics (ISCL) Program"
   subtitle: ""
@@ -17,9 +17,9 @@ experiences:
   subtitle: ""
   category: "school"
 
-- place: "University of California, San Diego"
+- place: "UCSD Extended Studies"
   time: "Winter 2023"
-  title: "Extended Studies"
+  title: ""
   subtitle: "Foundational Math and Programming Modules"
   category: "school"
   

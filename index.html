@@ -24,12 +24,12 @@ I am interested in Large Language Models and linguistic diversity across modalit
 <div class="docs-section" id="publications">
   <h4>Publications</h4>
 
-  <p>Most recent publications on <a href="https://scholar.google.com/citations?user=AvhNwScAAAAJ&hl=en" target="_blank">Google Scholar</a>.</p>
+
 
   <ul class="tab-nav">
     <!--li><div class="button" data-ref="#papers-sel">Selected and Recent Papers</div></li-->
     <li><div class="button active" data-ref="#papers-all">All</div></li>
-    <li><div class="button" data-ref="#papers-NLP">NLP</div></li>
+    <li><div class="button" data-ref="#papers-AL">al</div></li>
     <li><div class="button" data-ref="#papers-SLA">SLA</div></li>
   </ul>
 
@@ -109,18 +109,18 @@ I am interested in Large Language Models and linguistic diversity across modalit
     </div>
 
 
-    <!-- NLP PAPERS -->
-    <div class="tab-pane" id="papers-NLP">
-      {% assign nlp_papers = site.data.publications.papers | where: "nlp", "y" %}
+    <!-- Applied Linguistics PAPERS -->
+    <div class="tab-pane" id="papers-AL">
+      {% assign al_papers = site.data.publications.papers | where: "al", "y" %}
 	  {% assign years = "2020" %}
-      {% for paper in nlp_papers %}
+      {% for paper in al_papers %}
 	  {% assign year = paper.year | prepend: "," %}
 	  {% assign years = years | append: year %}
       {% endfor %}
       {% assign  year_list = years | split: "," | uniq | sort | reverse %}
 	  {% for year in year_list %}
 		<h5>{{ year }}</h5>
-		  {% for paper in nlp_papers %}
+		  {% for paper in al_papers %}
 			{% if paper.year == year %}
 				<div class="paper">
 				  <p class="title"><b>{{ paper.title }}</b>
