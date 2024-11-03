@@ -9,6 +9,7 @@ title: Home
   <p>
     My name reads [jɪŋ t͡ɕjɛ ɕjaʊ]
 
+    <br>
 Hi, this is Yingjie Xiao (肖赢捷). I am now an undergraduate in Computational Linguistics (Computerlinguistik) at the Eberhard Karls Universität Tübingen in Germany. Before that, I obtained a Bachelor of Arts degree in English Language and Literature from Beijing Institute of Technology (BIT).
 
 I am interested in Large Language Models and linguistic diversity across modalities. Here you can find my completed research: research.
@@ -23,9 +24,6 @@ I am interested in Large Language Models and linguistic diversity across modalit
 
 <div class="docs-section" id="publications">
   <h4>Publications</h4>
-
-
-
   <ul class="tab-nav">
     <!--li><div class="button" data-ref="#papers-sel">Selected and Recent Papers</div></li-->
     <li><div class="button active" data-ref="#papers-all">All</div></li>
@@ -223,15 +221,7 @@ I am interested in Large Language Models and linguistic diversity across modalit
 </div>
 
 
-<div class="docs-section" id="talks">
-  <h4>Talks</h4>
-  {% assign current_talks = site.data.talks.talks | where: "category", "current" %}
-  {% for talk in current_talks %}
-  <div class="talk">
-    <p class="title"><b>{{ talk.name }}</b> ({{ talk.time }}): <!--a href={{talk.link}} target="_blank"-->{{ talk.title }}<!--/a--></p>
-  </div>
-  {% endfor %}
-</div>
+
 
 
 <div class="docs-section" id="teaching">
