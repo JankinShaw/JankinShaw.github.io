@@ -5,5 +5,3 @@ includes:    ./_includes
 collections:
   projects:
     output: false
-  posts:
-    output: true
