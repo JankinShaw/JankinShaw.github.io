@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gedanken zum Deutschlernen"
+title: "Die Bedeutung des Präfixes bei der Wortbildung im Deutschen"
 date: 2025-02-24
 categories: blog
 tags: [German]
