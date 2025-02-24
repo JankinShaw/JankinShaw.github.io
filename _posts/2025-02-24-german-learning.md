@@ -9,12 +9,15 @@ Last Update: February 24, 2025
 
 ## Die Bedeutung der Wortbildung im Deutschen
 
-Heute habe ich eine wichtige Erkenntnis über die deutsche Sprache gewonnen: Die Wortbildung spielt eine entscheidende Rolle beim Erlernen und Verstehen des Deutschen. Besonders die Präfixe wie ver-, ein-, aus-, auf- in Kombination mit Verben wie reiben, gehen, leihen usw. verändern die Bedeutung eines Wortes erheblich.
+Die Leute, die wie ich mit einer nicht-englischen Sprache gelernt haben und eine andere Sprache als Muttersprache haben, können das finden, dass Deutsch schwer zu lernen ist, nicht nur mit der komplexen Grammatikstruktur, sondern auch mit dem "ganz bizarren neuen" Vokabular.
 
-Zum Beispiel bedeutet „gehen“ einfach „to go“, aber mit verschiedenen Präfixen entstehen neue Bedeutungen:
+Und ich habe vor kurzem B2 Vokabeln gelernt (A1-C2 ist ein Stockwerk im CEFR 'The Common European Framework of Reference for Languages' Fachwerk), und ich habe viele Wörter intensiv gelernt, wie 'ablösen', 'auslösen', 'absagen', 'vorkommen', 'abkommen'. Man kann einfach feststellen, dass es mit so vielen 'winzigen' aber semantisch wichtigen Präfixen gibt. Erst vor kurzem habe ich die Idee bekommen, dass vielleicht viele Wortgründe (wie 'schreiben' in 'ausschreiben') mit diesen Suffixen ein unterschiedliches Wort schaffen können.
 
-- „vergehen“ → „vergehen“ (vergehen die Zeit = die Zeit vergeht, sie geht vorbei)
-- „aufgehen“ → „aufgehen“ (Die Sonne geht auf = die Sonne beginnt zu scheinen)
-- „eingehen“ → „eingehen“ (auf ein Thema eingehen = sich intensiv damit beschäftigen)
+Ein einfaches Beispiel ist unten dargestellt.
 
-Das gleiche Prinzip gilt für viele andere Verben. Wenn man die Funktion dieser Präfixe versteht, kann man viel mehr Wörter intuitiv erfassen und deren Bedeutung leichter ableiten. Das ist eine faszinierende Eigenschaft der deutschen Sprache, die ich heute wirklich zu schätzen gelernt habe!
+| content | ver    | aus    | auf            | an     | ab           | ein       | vor     |
+| :------ | :----- | :----- | :------------- | :----- | :----------- | :-------- | :------ |
+| kommen  | go bad | manage | spring up/bear | arrive | deviate      | apply for | happen  |
+| halten  | behave | endure | hold           | stop   | stop…from… | obey      | hold up |
+
+Sprache ist produktiv, weil sie rekursiv ist. Ich habe aus dem Logikkurs 'Ways of describing or deﬁning sets' gelernt, daraus kann man 'recursive deﬁnition' machen. Mit dem Deutschen ist seine *rekursive* Definition der Präfixe. Das ist vielleicht die Art, wie das Deutsche neue Vokabeln entwickelt.
