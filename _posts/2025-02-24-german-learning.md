@@ -5,7 +5,9 @@ date: 2025-02-24
 categories: blog
 tags: [German]
 ---
-# Die Bedeutung der Wortbildung im Deutschen
+Last Update: February 24, 2025
+
+## Die Bedeutung der Wortbildung im Deutschen
 
 Heute habe ich eine wichtige Erkenntnis über die deutsche Sprache gewonnen: Die Wortbildung spielt eine entscheidende Rolle beim Erlernen und Verstehen des Deutschen. Besonders die Präfixe wie ver-, ein-, aus-, auf- in Kombination mit Verben wie reiben, gehen, leihen usw. verändern die Bedeutung eines Wortes erheblich.
 
