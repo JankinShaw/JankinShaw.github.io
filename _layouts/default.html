@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- Basic Page Needs
@@ -15,7 +16,22 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Source+Sans+Pro:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'EB Garamond', serif;
+      /* 正文部分 */
+    }
+
+    h1,
+    h2,
+    h3,
+    .navbar {
+      font-family: 'Source Sans Pro', sans-serif;
+      /* 标题和导航栏 */
+    }
+  </style>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,7 +45,8 @@
 
   <!-- Font-Awesome
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href={{ "/libs/external/font-awesome-4.7.0/css/font-awesome.min.css" | prepend: site.baseurl }}>
+  <link rel="stylesheet" href={{ "/libs/external/font-awesome-4.7.0/css/font-awesome.min.css" | prepend: site.baseurl
+    }}>
 
   <!-- Skeleton tabs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -55,9 +72,9 @@
 </head>
 
 <style>
-img {
-  border-radius: 0%;
-}
+  img {
+    border-radius: 0%;
+  }
 </style>
 
 <body>
@@ -69,22 +86,23 @@ img {
     <section class="header">
       <div class="row">
         <div class="three columns">
-          <a href="{{ site.baseurl }}/"><img class="u-max-full-width" src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}'></a>
+          <a href="{{ site.baseurl }}/"><img class="u-max-full-width"
+              src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}'></a>
         </div>
         <div class="nine columns main-description">
-            <h1>{{ site.data.main_info.name }}</h1>
-            <p>{{ site.data.main_info.title }}</p>
-            <p>{{ site.data.main_info.title2 }}</p>
-            <p>{{ site.data.main_info.email }}</p>
-            <p>
-              <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-              </span>
+          <h1>{{ site.data.main_info.name }}</h1>
+          <p>{{ site.data.main_info.title }}</p>
+          <p>{{ site.data.main_info.title2 }}</p>
+          <p>{{ site.data.main_info.email }}</p>
+          <p>
+            <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </span>
 
-              <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
-                <i class="fa fa-github" aria-hidden="true"></i>
-              </span>
-            </p>
+            <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span>
+          </p>
         </div>
       </div>
     </section>
@@ -93,11 +111,16 @@ img {
     <nav class="navbar">
       <div class="container">
         <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>Bio</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl }}>Research</a></li> 
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl }}>Experience</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#teaching" | prepend: site.baseurl }}>Teaching</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{{ "/blog.html" | prepend: site.baseurl }}">Blog</a></li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>Bio</a>
+          </li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl
+              }}>Research</a></li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl
+              }}>Experience</a></li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#teaching" | prepend: site.baseurl
+              }}>Teaching</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ " /blog.html" | prepend: site.baseurl }}">Blog</a>
+          </li>
         </ul>
         </ul>
       </div>
@@ -129,7 +152,8 @@ img {
   <!-- Google Analytics -->
   {% include google_analytics.html %}
 
-<!-- End Document
+  <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+
 </html>
