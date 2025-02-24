@@ -11,7 +11,9 @@ layout: none
         <item>
             <title>{{ post.title }}</title>
             <link>{{ site.url }}{{ post.url }}</link>
-            <description>{{ post.excerpt }}</description>
+            <description>
+                <![CDATA[ {{ post.content }} ]]>
+            </description>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         </item>
         {% endfor %}
