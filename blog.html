@@ -82,6 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
     margin-bottom: 20px;
 }
 .tag-button {
+    display: inline-flex; /* ✅ 让按钮里的文本可以上下居中 */
+    align-items: center;  /* ✅ 上下居中 */
+    justify-content: center; /* ✅ 水平居中 */
+    height: 40px; /* ✅ 让按钮统一高度 */
+    min-width: 80px; /* ✅ 让按钮宽度更一致 */
     margin: 5px;
     padding: 8px 15px;
     border: none;
