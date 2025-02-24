@@ -4,23 +4,17 @@ title: Blog
 ---
 
 <div class="rss-subscribe">
-    <a href="{{ site.baseurl }}/feed.xml" target="_blank" class="rss-button">
-        📡 Subscribe via RSS
+    <a href="{{ site.baseurl }}/feed.xml" target="_blank" class="rss-icon-button">
+        <i class="fa fa-rss"></i> Subscribe
     </a>
 </div>
 
 <!-- 样式优化 -->
 <style>
-    .rss-subscribe {
-        text-align: center;
-        /* 让按钮居中 */
-        margin-bottom: 15px;
-    }
-
-    .rss-button {
+    .rss-icon-button {
         display: inline-block;
-        background-color: #0073e6;
-        /* 按钮背景色 */
+        background-color: #ff6600;
+        /* RSS 橙色 */
         color: white;
         padding: 10px 20px;
         font-size: 16px;
@@ -30,9 +24,12 @@ title: Blog
         transition: background-color 0.3s;
     }
 
-    .rss-button:hover {
-        background-color: #005bb5;
-        /* 鼠标悬停时的颜色 */
+    .rss-icon-button:hover {
+        background-color: #cc5200;
+    }
+
+    .rss-icon-button i {
+        margin-right: 8px;
     }
 </style>
 
