@@ -6,7 +6,6 @@ title: Blog
 <div class="docs-section" id="blog">
     <h2>Blog</h2>
 
-    <!-- 生成所有标签的筛选按钮 -->
     <div id="tag-buttons">
         <button class="tag-button active" data-tag="all">All</button>
         {% assign all_tags = "" %}
@@ -25,7 +24,6 @@ title: Blog
         {% endfor %}
     </div>
 
-    <!-- 博客文章列表 -->
     <ul id="blog-list">
         {% for post in site.posts reversed %}
             <li class="blog-post" data-tags="{{ post.tags | join: ' ' }}">
@@ -42,57 +40,3 @@ title: Blog
         {% endfor %}
     </ul>
 </div>
-
-<!-- JavaScript 实现筛选功能 -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".tag-button");
-    const posts = document.querySelectorAll(".blog-post");
-
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const selectedTag = this.getAttribute("data-tag");
-
-            // 移除所有按钮的 active 状态
-            buttons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-
-            // 过滤博客文章
-            posts.forEach(post => {
-                const postTags = post.getAttribute("data-tags").split(" ");
-                if (selectedTag === "all" || postTags.includes(selectedTag)) {
-                    post.style.display = "block";
-                } else {
-                    post.style.display = "none";
-                }
-            });
-        });
-    });
-});
-</script>
-
-<!-- 简单的 CSS 样式 -->
-<style>
-#tag-buttons {
-    margin-bottom: 20px;
-}
-.tag-button {
-    margin: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
-.tag-button.active {
-    background-color: #0073e6;
-    color: white;
-}
-.post-tag {
-    display: inline-block;
-    background-color: #eee;
-    padding: 3px 8px;
-    margin: 2px;
-    border-radius: 4px;
-    font-size: 0.9em;
-}
-</style>
