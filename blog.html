@@ -6,35 +6,116 @@ title: Blog
 <div class="docs-section" id="blog">
     <h2>Blog</h2>
 
+    <!-- Tag 筛选器 -->
+    <div id="tag-buttons">
+        <button class="tag-button active" data-tag="all">All</button>
+        {% assign all_tags = "" %}
+        {% for post in site.posts %}
+            {% for tag in post.tags %}
+                {% unless all_tags contains tag %}
+                    {% assign all_tags = all_tags | append: "," | append: tag %}
+                {% endunless %}
+            {% endfor %}
+        {% endfor %}
+        {% assign tag_list = all_tags | split: "," | uniq | sort %}
+        {% for tag in tag_list %}
+            {% if tag != "" %}
+                <button class="tag-button" data-tag="{{ tag }}">{{ tag }}</button>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- 博客文章列表 -->
     <ul id="blog-list">
         {% for post in site.posts reversed %}
-            <li class="blog-post">
+            <li class="blog-post" data-tags="{{ post.tags | join: ' ' }}">
                 <h3 class="blog-title">
                     <a href="{{ post.url }}">{{ post.title }}</a>
                 </h3>
+                <p class="post-excerpt">{{ post.excerpt }}</p>
             </li>
         {% endfor %}
     </ul>
 </div>
 
-<!-- CSS: 让字体变小 -->
+<!-- JavaScript 实现 Tag 筛选功能 -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".tag-button");
+    const posts = document.querySelectorAll(".blog-post");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const selectedTag = this.getAttribute("data-tag");
+
+            // 移除所有按钮的 active 状态
+            buttons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // 过滤博客文章
+            posts.forEach(post => {
+                const postTags = post.getAttribute("data-tags").split(" ");
+                if (selectedTag === "all" || postTags.includes(selectedTag)) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
+
+<!-- 样式优化 -->
 <style>
+#blog {
+    max-width: 800px;
+    margin: 0 auto;
+}
 #blog h2 {
-    font-size: 24px; /* 标题稍微小一点 */
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#tag-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tag-button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.tag-button.active {
+    background-color: #0073e6;
+    color: white;
 }
 .blog-title a {
-    font-size: 16px; /* 文章标题变小 */
-    text-decoration: none; /* 去掉下划线 */
-    color: #333; /* 调整颜色 */
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 .blog-title a:hover {
-    color: #0073e6; /* 鼠标悬停颜色 */
+    color: #0073e6;
 }
 #blog-list {
-    list-style-type: none; /* 去掉列表前的小点 */
+    list-style-type: none;
     padding: 0;
 }
 .blog-post {
-    margin-bottom: 10px; /* 文章之间的间距 */
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.post-excerpt {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
 }
 </style>
