@@ -7,7 +7,7 @@ tags: [German]
 ---
 Last Update: February 24, 2025
 
-## Die Bedeutung der Wortbildung im Deutschen
+## Die Bedeutung des Präfixes bei der Wortbildung im Deutschen
 
 Die Leute, die wie ich mit einer nicht-englischen Sprache gelernt haben und eine andere Sprache als Muttersprache haben, können das finden, dass Deutsch schwer zu lernen ist, nicht nur mit der komplexen Grammatikstruktur, sondern auch mit dem "ganz bizarren neuen" Vokabular.
 
