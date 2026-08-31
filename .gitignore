@@ -134,3 +134,8 @@ temp/
 # --- Cache folders ---
 .cache/
 pip-wheel-metadata/
+
+# More
+.Rhistory
+.RData
+.Ruserdata
