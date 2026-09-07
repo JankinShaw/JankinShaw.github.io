@@ -1,0 +1,10 @@
+TW-Kai web subset
+
+Copyright (c) 2026 Ministry of Digital Affairs, Taiwan.
+Source: CNS11643 Chinese Standard Interchange Code full character set
+https://www.cns11643.gov.tw/
+
+This website uses a WOFF2 subset of TW-Kai-98_1.ttf containing only the
+Traditional Chinese characters displayed in its small bilingual labels.
+The subset is distributed under the SIL Open Font License, Version 1.1.
+The complete license text is included in OFL.txt in this directory.

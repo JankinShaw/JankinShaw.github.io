@@ -66,7 +66,7 @@ function initializeScrollEffects(reducedMotion) {
 
 }
 
-/* One filter implementation serves both the research and writing pages. */
+/* Filter research entries without requiring a page reload. */
 function initializeFilters() {
   document.querySelectorAll("[data-filter-group]").forEach((group) => {
     const buttons = group.querySelectorAll("[data-filter]");

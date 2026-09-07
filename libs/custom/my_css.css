@@ -1,3 +1,12 @@
+/* The tiny subset contains only the Traditional Chinese characters used in labels. */
+@font-face {
+  font-family: "TW Kai Labels";
+  src: url("/assets/fonts/tw-kai-labels.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 /* ------------------------------------------------------------
    Base system
    ------------------------------------------------------------ */
@@ -252,6 +261,13 @@ h2 em {
   font-weight: 400;
   letter-spacing: 0.01em;
   text-transform: uppercase;
+}
+
+.zh-kai {
+  font-family: "TW Kai Labels", "BiauKaiTC", "DFKai-SB", serif;
+  font-size: 1.18em;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .section-title {
@@ -657,49 +673,8 @@ h2 em {
 }
 
 /* ------------------------------------------------------------
-   Writing and articles
+   Long-form project pages
    ------------------------------------------------------------ */
-.writing-list {
-  border-top: 1px solid var(--line);
-}
-
-.writing-card {
-  display: grid;
-  grid-template-columns: 135px 1fr auto;
-  gap: 25px;
-  padding: 35px 0 40px;
-  border-bottom: 1px solid var(--line);
-}
-
-.writing-date,
-.writing-card .card-meta {
-  color: var(--secondary);
-  font-size: 11px;
-}
-
-.writing-card h2 {
-  margin-bottom: 12px;
-  font-size: 29px;
-}
-
-.writing-card h2 a,
-.writing-arrow {
-  text-decoration: none;
-}
-
-.writing-card > div > p:last-child {
-  max-width: 620px;
-  color: var(--secondary);
-}
-
-.rss-note {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 38px;
-  color: var(--secondary);
-  font-size: 12px;
-}
-
 .article-layout {
   max-width: 780px;
   padding-block: 120px;
@@ -803,6 +778,10 @@ h2 em {
 
 .footer-inner a {
   text-decoration: none;
+}
+
+.font-credit {
+  text-align: right;
 }
 
 .js .reveal {
@@ -946,7 +925,6 @@ h2 em {
   .home-experience-row,
   .publication,
   .timeline-item,
-  .writing-card,
   .talk-row {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -970,7 +948,6 @@ h2 em {
   }
 
   .section-heading,
-  .rss-note,
   .article-license {
     align-items: flex-start;
     flex-direction: column;
@@ -988,6 +965,10 @@ h2 em {
   .footer-inner {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+
+  .font-credit {
+    text-align: left;
   }
 }
 

@@ -10,17 +10,15 @@ A quiet, editorial portfolio for computational linguistics research. The site is
 | `about.html` | Biography, research interests, and contact block |
 | `research.html` | Publications and presentations |
 | `experience.html` | Education, work, and teaching timeline |
-| `blog.html` | Writing index and tag filters |
-| `_posts/` | Individual blog posts |
 | `_data/main_info.yaml` | Identity, biography, links, and research interests |
 | `_data/publications.yaml` | Publications and research outputs |
 | `_data/talks.yaml` | Conference talks and presentations |
 | `_data/experience.yaml` | Education and employment history |
 | `_data/classes.yaml` | Teaching experience |
-| `_layouts/` | Shared page shells for pages, posts, and projects |
+| `_layouts/` | Shared page shells for pages and projects |
 | `libs/custom/my_css.css` | Complete visual design system and responsive layout |
 | `libs/custom/my_js.js` | Mobile navigation, filters, and restrained reveal effects |
-| `assets/` | Profile image, PDFs, and other static files |
+| `assets/` | Profile image, PDFs, the TW-Kai subset, and other static files |
 
 ## Preview locally
 
@@ -33,7 +31,7 @@ bundle exec jekyll serve
 
 Open `http://127.0.0.1:4000`. The production site is published by GitHub Pages after changes are pushed to the configured publishing branch.
 
-If Jekyll is already installed globally, `jekyll serve` also works. The custom RSS feed does not require `jekyll-feed` or any other plugin.
+If Jekyll is already installed globally, `jekyll serve` also works.
 
 ## Add or edit personal information
 
@@ -114,24 +112,6 @@ Add an item below `classes:` in `_data/classes.yaml`.
     link: "https://example.edu/course"
 ```
 
-## Add a blog post
-
-Create a Markdown file in `_posts/` using the required `YYYY-MM-DD-short-title.md` naming format.
-
-```markdown
----
-layout: post
-title: "The visible title"
-date: 2026-09-07
-categories: blog
-tags: [Linguistics, NLP]
----
-
-Write the article here. The page layout already displays the title and date, so do not repeat the title as an H1 in the article body.
-```
-
-Tags automatically become filter buttons on the Writing page. Existing tags with identical spelling and capitalization are grouped together.
-
 ## Change colors or spacing
 
 The main visual settings are CSS custom properties at the top of `libs/custom/my_css.css`.
@@ -148,6 +128,12 @@ The main visual settings are CSS custom properties at the top of `libs/custom/my
 ```
 
 Changing these variables updates the whole site consistently. `--white` controls the page background, `--ink` controls primary text, `--secondary` controls supporting text, `--faint` controls the quiet card background, and `--sidebar` controls the desktop navigation width.
+
+## Chinese display labels
+
+The small Traditional Chinese labels use a 5.6 KB web subset of Taiwan's official TW-Kai typeface. English remains in Helvetica. The subset contains only the six characters currently used in the About, Research, and Experience page labels.
+
+The font is distributed under the SIL Open Font License 1.1. Its attribution notice and complete license are stored in `assets/fonts/FONT-NOTICE.txt` and `assets/fonts/OFL.txt`. If a future page label introduces a new Traditional Chinese character, regenerate the subset or ask a developer to extend it.
 
 ## JavaScript and accessibility
 

@@ -27,7 +27,6 @@
       <a{% if page.nav == 'about' %} class="is-active"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
       <a{% if page.nav == 'research' %} class="is-active"{% endif %} href="{{ '/research/' | relative_url }}">Research</a>
       <a{% if page.nav == 'experience' %} class="is-active"{% endif %} href="{{ '/experience/' | relative_url }}">Experience</a>
-      <a{% if page.nav == 'writing' %} class="is-active"{% endif %} href="{{ '/blog/' | relative_url }}">Writing</a>
     </nav>
     <div class="sidebar-links">
       <a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub</a>
@@ -43,7 +42,7 @@
     <div class="shell footer-inner">
       <p>© <span data-current-year>2026</span> {{ site.data.main_info.name }}</p>
       <p>Built with Jekyll · Hosted on GitHub Pages</p>
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <p class="font-credit">Chinese labels: TW-Kai · OFL 1.1</p>
     </div>
   </footer>
 

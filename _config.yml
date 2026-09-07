@@ -12,7 +12,6 @@ includes_dir: _includes
 layouts_dir: _layouts
 
 markdown: kramdown
-permalink: /writing/:title/
 
 collections:
   projects:
