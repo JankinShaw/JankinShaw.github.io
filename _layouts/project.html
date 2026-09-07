@@ -1,17 +1,14 @@
 ---
 layout: default
+nav: research
 ---
-<div class="docs-section">
-
-  {% if page.subtitle == "" or page.subtitle == nil %}
-  	<h3>{{ page.title }}</h3>
-  {% else %}
-    <div class="title-subtitle">
-      <h3>{{ page.title }}</h3>
-      <h5>{{ page.subtitle }}</h5>
-    </div>
-  {% endif %}
-
-  {{ content }}
-
-</div>
+<article class="shell article-layout">
+  <header class="article-header reveal">
+    <a class="eyebrow back-link" href="{{ '/research/' | relative_url }}">← Research</a>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="article-deck">{{ page.subtitle }}</p>{% endif %}
+  </header>
+  <div class="prose reveal">
+    {{ content }}
+  </div>
+</article>

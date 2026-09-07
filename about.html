@@ -1,0 +1,51 @@
+---
+layout: default
+title: About
+nav: about
+description: "About Yingjie Xiao, a computational linguistics student in Tübingen."
+---
+
+<header class="page-hero shell reveal">
+  <p class="eyebrow">About / 关于</p>
+  <h1>Language is never<br>just <em>data.</em></h1>
+  <p class="page-deck">I am interested in the human variation, social context, and hidden structure behind every linguistic signal.</p>
+</header>
+
+<section class="section shell about-grid">
+  <div class="about-portrait reveal">
+    <img src="{{ site.data.main_info.profile_pic | relative_url }}" alt="{{ site.data.main_info.name }} in Konstanz, Germany">
+    <p>{{ site.data.main_info.location }} · <span class="phonetic">[{{ site.data.main_info.pronunciation }}]</span></p>
+  </div>
+  <div class="about-copy reveal">
+    <p class="section-index">01 / Biography</p>
+    {% for paragraph in site.data.main_info.bio %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+    <div class="inline-links">
+      <a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="shell interest-layout">
+    <div class="reveal">
+      <p class="section-index">02 / Interests</p>
+      <h2>What I keep<br>coming back to.</h2>
+    </div>
+    <ol class="interest-list">
+      {% for interest in site.data.main_info.interests %}
+      <li class="reveal"><span>0{{ forloop.index }}</span>{{ interest }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section shell contact-panel reveal">
+  <p class="eyebrow">Contact</p>
+  <h2>Questions, ideas,<br>or shared interests?</h2>
+  <p>{{ site.data.main_info.email }}</p>
+  <a class="button button-primary" href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+</section>
+

@@ -1,94 +1,97 @@
-$(document).ready(function() {
+/* The JavaScript layer is progressive enhancement; all content remains usable without it. */
+document.documentElement.classList.add("js");
 
-  // Variables
-  var $codeSnippets = $('.code-example-body'),
-      $nav = $('.navbar'),
-      $body = $('body'),
-      $window = $(window),
-      $popoverLink = $('[data-popover]'),
-      navOffsetTop = $nav.offset().top,
-      $document = $(document),
-      entityMap = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': '&quot;',
-        "'": '&#39;',
-        "/": '&#x2F;'
-      }
+document.addEventListener("DOMContentLoaded", () => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function init() {
-    $window.on('scroll', onScroll)
-    $window.on('resize', resize)
-    $popoverLink.on('click', openPopover)
-    $document.on('click', closePopover)
-    $('a[href^="#"]').on('click', smoothScroll)
-    buildSnippets();
-  }
-
-  function smoothScroll(e) {
-    e.preventDefault();
-    $(document).off("scroll");
-    var target = this.hash,
-        menu = target;
-    $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top-40
-    }, 0, 'swing', function () {
-        window.location.hash = target;
-        $(document).on("scroll", onScroll);
-    });
-  }
-
-  function openPopover(e) {
-    e.preventDefault()
-    closePopover();
-    var popover = $($(this).data('popover'));
-    popover.toggleClass('open')
-    e.stopImmediatePropagation();
-  }
-
-  function closePopover(e) {
-    if($('.popover.open').length > 0) {
-      $('.popover').removeClass('open')
-    }
-  }
-
-  $("#button").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#elementtoScrollToID").offset().top
-    }, 2000);
+  initializeNavigation();
+  initializeScrollEffects(reducedMotion);
+  initializeFilters();
+  initializeFooterYear();
 });
 
-  function resize() {
-    $body.removeClass('has-docked-nav')
-    navOffsetTop = $nav.offset().top
-    onScroll()
+/* Keep the compact navigation accessible on small screens. */
+function initializeNavigation() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const navigation = document.querySelector("[data-site-nav]");
+
+  if (!toggle || !navigation) return;
+
+  const closeNavigation = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("is-open");
+  };
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("is-open", !isOpen);
+  });
+
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeNavigation);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNavigation();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navigation.contains(event.target) && !toggle.contains(event.target)) {
+      closeNavigation();
+    }
+  });
+}
+
+/* Reveal sections once as the reader moves through the page. */
+function initializeScrollEffects(reducedMotion) {
+  const reveals = document.querySelectorAll(".reveal");
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    reveals.forEach((element) => element.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8%", threshold: 0.08 }
+    );
+
+    reveals.forEach((element) => observer.observe(element));
   }
 
-  function onScroll() {
-    if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
-      $body.addClass('has-docked-nav')
-    }
-    if(navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
-      $body.removeClass('has-docked-nav')
-    }
-  }
+}
 
-  function escapeHtml(string) {
-    return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
+/* One filter implementation serves both the research and writing pages. */
+function initializeFilters() {
+  document.querySelectorAll("[data-filter-group]").forEach((group) => {
+    const buttons = group.querySelectorAll("[data-filter]");
+    const items = group.querySelectorAll("[data-filter-item]");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.dataset.filter;
+
+        buttons.forEach((candidate) => {
+          candidate.classList.toggle("is-active", candidate === button);
+        });
+
+        items.forEach((item) => {
+          const categories = (item.dataset.categories || "").split(/\s+/);
+          const shouldShow = selected === "all" || categories.includes(selected);
+          item.hidden = !shouldShow;
+        });
+      });
     });
-  }
+  });
+}
 
-  function buildSnippets() {
-    $codeSnippets.each(function() {
-      var newContent = escapeHtml($(this).html())
-      $(this).html(newContent)
-    })
-  }
-
-
-  init();
-
-});
+/* Keep the footer date accurate without requiring a content edit each year. */
+function initializeFooterYear() {
+  const year = document.querySelector("[data-current-year]");
+  if (year) year.textContent = String(new Date().getFullYear());
+}

@@ -1,26 +1,158 @@
-# My website (based on Tatsunori Hashimoto's websited based on martin saveski's template)
+# Yingjie Xiao — Personal Academic Site
 
-## Things to change
-baseurl in _config.yml
-files in _data
-index.hml (bio, google scholar link)
-categories (selected --> ML / NLP / Bio)
-layouts (default.html)
+A quiet, editorial portfolio for computational linguistics research. The site is built with Jekyll and deployed as a fully static GitHub Pages site. It has no database, paid CMS, JavaScript framework, or runtime service.
 
-## Updates guide
-Change one of the files in `_data`, unless you are changing the look of the website.
+## Site structure
 
-Test changes with:
+| File or folder | What it controls |
+| --- | --- |
+| `index.html` | Home page and selected-content previews |
+| `about.html` | Biography, research interests, and contact block |
+| `research.html` | Publications and presentations |
+| `experience.html` | Education, work, and teaching timeline |
+| `blog.html` | Writing index and tag filters |
+| `_posts/` | Individual blog posts |
+| `_data/main_info.yaml` | Identity, biography, links, and research interests |
+| `_data/publications.yaml` | Publications and research outputs |
+| `_data/talks.yaml` | Conference talks and presentations |
+| `_data/experience.yaml` | Education and employment history |
+| `_data/classes.yaml` | Teaching experience |
+| `_layouts/` | Shared page shells for pages, posts, and projects |
+| `libs/custom/my_css.css` | Complete visual design system and responsive layout |
+| `libs/custom/my_js.js` | Mobile navigation, filters, and restrained reveal effects |
+| `assets/` | Profile image, PDFs, and other static files |
+
+## Preview locally
+
+Ruby and Bundler are required only for local previews. They are not needed by visitors.
+
+```bash
+bundle install
+bundle exec jekyll serve
 ```
-jekyll serve
+
+Open `http://127.0.0.1:4000`. The production site is published by GitHub Pages after changes are pushed to the configured publishing branch.
+
+If Jekyll is already installed globally, `jekyll serve` also works. The custom RSS feed does not require `jekyll-feed` or any other plugin.
+
+## Add or edit personal information
+
+Edit `_data/main_info.yaml`. Keep the indentation exactly as shown because YAML uses spaces to represent structure.
+
+```yaml
+name: "Your name"
+role: "Your current role"
+institution: "Your institution"
+bio:
+  - "First biography paragraph."
+  - "Second biography paragraph."
+interests:
+  - "First research interest"
+  - "Second research interest"
 ```
 
-## External Libraries
-- Framework: [Jekyll](http://jekyllrb.com/)
-- CSS
-  - [Skeleton](getskeleton.com)
-  - Tabs: [Skeleton Tabs](https://github.com/nathancahill/skeleton-tabs)
-  - Experience: [Timeline](https://codepen.io/NilsWe/pen/FemfK)
-  - Icons: [Font Awesome](http://fontawesome.io/)
-- JS
-  - [Jquery (3.1.1)](https://jquery.com/)
+The profile image path is stored in `profile_pic`. Put a replacement image in `assets/profile-pics/`, then update that path.
+
+## Add a publication
+
+Add a new item below `papers:` in `_data/publications.yaml`. The newest entries may be placed first for easier maintenance; the Research page sorts them by year.
+
+```yaml
+  - title: "Title of the publication"
+    year: "2026"
+    authors: "Yingjie Xiao and Collaborator Name"
+    venue: "Conference or journal name"
+    paper_pdf: "/assets/publications/example.pdf"
+    slides: "/assets/publications/example-slides.pdf"
+    poster:
+    video:
+    code: "https://github.com/example/project"
+    al: y
+    sla: n
+    selected: y
+```
+
+All optional link fields can be left blank. Use `al: y` for Applied Linguistics and `sla: y` for Second Language Acquisition. These values power the filters on the Research page.
+
+For a local PDF, copy the file into `assets/publications/` and use a path beginning with `/assets/`. An external HTTPS URL also works.
+
+## Add a talk or presentation
+
+Add an item below `talks:` in `_data/talks.yaml`.
+
+```yaml
+  - name: "Conference or event name"
+    time: "September 2026"
+    title: "Title of the presentation"
+    category: "current"
+    link: "https://example.com/presentation"
+```
+
+## Add education or work experience
+
+Add an item below `experiences:` in `_data/experience.yaml`. Entries appear in file order, so keep the newest item first.
+
+```yaml
+  - place: "Institution or company"
+    time: "2026 - Present"
+    title: "Degree, programme, or job title"
+    subtitle: "Optional details"
+    category: "school"
+```
+
+Use `category: "school"` for education and `category: "work"` for employment.
+
+## Add teaching experience
+
+Add an item below `classes:` in `_data/classes.yaml`.
+
+```yaml
+  - name: "Course name"
+    time: "Winter 2026"
+    title: "Teaching Assistant"
+    category: "current"
+    link: "https://example.edu/course"
+```
+
+## Add a blog post
+
+Create a Markdown file in `_posts/` using the required `YYYY-MM-DD-short-title.md` naming format.
+
+```markdown
+---
+layout: post
+title: "The visible title"
+date: 2026-09-07
+categories: blog
+tags: [Linguistics, NLP]
+---
+
+Write the article here. The page layout already displays the title and date, so do not repeat the title as an H1 in the article body.
+```
+
+Tags automatically become filter buttons on the Writing page. Existing tags with identical spelling and capitalization are grouped together.
+
+## Change colors or spacing
+
+The main visual settings are CSS custom properties at the top of `libs/custom/my_css.css`.
+
+```css
+:root {
+  --white: #ffffff;
+  --ink: #111111;
+  --secondary: #656565;
+  --faint: #f4f4f2;
+  --accent: #74817c;
+  --sidebar: 190px;
+}
+```
+
+Changing these variables updates the whole site consistently. `--white` controls the page background, `--ink` controls primary text, `--secondary` controls supporting text, `--faint` controls the quiet card background, and `--sidebar` controls the desktop navigation width.
+
+## JavaScript and accessibility
+
+All effects are progressive enhancements: content remains available when JavaScript is disabled. Motion is automatically minimized when a visitor enables the operating system's “Reduce Motion” preference. The site deliberately avoids animation libraries and decorative visual effects.
+
+## Deployment and cost
+
+The repository is designed for GitHub Pages. Hosting, the `github.io` address, and HTTPS are free for a public repository. No Cargo, Webflow, server, database, or paid deployment service is required. A separately purchased custom domain is optional.

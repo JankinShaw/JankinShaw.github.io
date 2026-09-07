@@ -1,0 +1,55 @@
+---
+layout: default
+title: Experience
+nav: experience
+description: "Education, work, and teaching experience of Yingjie Xiao."
+---
+
+<header class="page-hero shell reveal">
+  <p class="eyebrow">Experience / 经历</p>
+  <h1>A path through<br>language &amp; <em>data.</em></h1>
+  <p class="page-deck">Education across linguistics, computation, and artificial intelligence, alongside applied data-science work.</p>
+</header>
+
+<section class="section shell experience-layout">
+  <div class="experience-aside reveal">
+    <p class="section-index">01 / Timeline</p>
+    <p>Education and work,<br>in reverse chronology.</p>
+  </div>
+  <div class="timeline-list">
+    {% for exp in site.data.experience.experiences %}
+    <article class="timeline-item reveal">
+      <div class="timeline-marker" aria-hidden="true"></div>
+      <div class="timeline-meta">
+        <time>{{ exp.time }}</time>
+        <span>{{ exp.category }}</span>
+      </div>
+      <div class="timeline-content">
+        <h2>{{ exp.place }}</h2>
+        <p>{{ exp.title }}</p>
+        {% if exp.subtitle and exp.subtitle != '' %}<p class="muted">{{ exp.subtitle }}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="shell teaching-layout">
+    <div class="reveal">
+      <p class="section-index">02 / Teaching</p>
+      <h2>Supporting<br>academic learning.</h2>
+    </div>
+    <div>
+      {% for class in site.data.classes.classes %}
+      <article class="teaching-card reveal">
+        <p class="card-meta">{{ class.time }}</p>
+        <h3>{{ class.name }}</h3>
+        <p>{{ class.title }}</p>
+        {% if class.link %}<a class="text-link" href="{{ class.link }}" target="_blank" rel="noopener">Course context <span aria-hidden="true">↗</span></a>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

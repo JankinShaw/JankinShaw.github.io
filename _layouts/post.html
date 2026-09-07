@@ -1,0 +1,18 @@
+---
+layout: default
+nav: writing
+---
+<article class="shell article-layout">
+  <header class="article-header reveal">
+    <a class="eyebrow back-link" href="{{ '/blog/' | relative_url }}">← Writing</a>
+    <p class="article-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% if page.tags.size > 0 %} · {{ page.tags | join: ' / ' }}{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <div class="prose reveal">
+    {{ content }}
+  </div>
+  <footer class="article-license reveal">
+    <p>Unless otherwise noted, this writing is licensed under CC BY-NC-SA 4.0.</p>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">View license <span aria-hidden="true">↗</span></a>
+  </footer>
+</article>

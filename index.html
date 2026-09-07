@@ -1,243 +1,73 @@
 ---
 layout: default
 title: Home
+nav: home
 ---
-<!-- ========== BIO ========== -->
 
-<div class="docs-section" id="bio">
-  <h4>Bio</h4>
-  <p>
-
-    Hi, this is Yingjie Xiao. I am now an undergraduate in <a href="https://uni-tuebingen.de/en/faculties/faculty-of-humanities/departments/modern-languages/department-of-linguistics/courses-of-study/courses-of-study-at-the-sfs/international-studies-in-computational-linguistics/ba-programme-iscl/" target="_blank">Computational Linguistics (Computerlinguistik)</a> at the <a href="https://uni-tuebingen.de/en/" target="_blank">Eberhard Karls Universität Tübingen</a> in Germany. Before that, I obtained a B.A. degree in English Language and Literature from <a href="https://english.bit.edu.cn/" target="_blank">Beijing Institute of Technology</a>.
-
-	<br>
-	<br>
-	
-	I am particularly interested in linguistic diversity across modalities. My current research focuses on linguistic diversity in SCI papers.
-</p>
-  
-
-
-<!--/div>
-
-
-<!-- ========== PUBLICATIONS ========== -->
-
-<div class="docs-section" id="publications">
-  <h4>Research</h4>
-  <ul class="tab-nav">
-    <!--li><div class="button" data-ref="#papers-sel">Selected and Recent Papers</div></li-->
-    <li><div class="button active" data-ref="#papers-all">All</div></li>
-    <li><div class="button" data-ref="#papers-AL">al</div></li>
-    <li><div class="button" data-ref="#papers-SLA">SLA</div></li>
-  </ul>
-
-  <div class="tab-content">
-<!--
-    <div class="tab-pane active" id="papers-sel">
-      {% assign papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b>
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-            {% endif %}
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-          </p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-           <div class="paper-buttons">
-
-          </div>
-        </div>
-      {% endfor %}
-    </div>
--->
-    <!-- All PAPERS -->
-
-    <div class="tab-pane active" id="papers-all">
-	  {% assign papers = site.data.publications.papers %}
-	  {% assign years = "2024" %}
-      {% for paper in papers %}
-	  {% assign year = paper.year | prepend: "," %}
-	  {% assign years = years | append: year %}
-      {% endfor %}
-      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
-	  {% for year in year_list %}
-		<h5>{{ year }}</h5>
-		  {% for paper in papers %}
-			{% if paper.year == year %}
-				<div class="paper">
-				  <p class="title"><b>{{ paper.title }}</b>
-					{% if paper.paper_pdf %}
-					  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-					{% endif %}
-					{% if paper.slides %}
-					  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-					{% endif %}
-					{% if paper.poster %}
-					  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-					{% endif %}
-					{% if paper.video %}
-					  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-					{% endif %}
-					{% if paper.code %}
-					  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-					{% endif %}
-				  </p>
-				  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
-				  <p><i>{{ paper.venue }}</i></p>
-				   <div class="paper-buttons">
-
-				  </div>
-				</div>
-			{% endif %}
-		  {% endfor %}
-	{% endfor %}
-    </div>
-
-
-    <!-- Applied Linguistics PAPERS -->
-    <div class="tab-pane" id="papers-AL">
-      {% assign al_papers = site.data.publications.papers | where: "al", "y" %}
-	  {% assign years = "2024" %}
-      {% for paper in al_papers %}
-	  {% assign year = paper.year | prepend: "," %}
-	  {% assign years = years | append: year %}
-      {% endfor %}
-      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
-	  {% for year in year_list %}
-		<h5>{{ year }}</h5>
-		  {% for paper in al_papers %}
-			{% if paper.year == year %}
-				<div class="paper">
-				  <p class="title"><b>{{ paper.title }}</b>
-					{% if paper.paper_pdf %}
-					  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-					{% endif %}
-					{% if paper.slides %}
-					  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-					{% endif %}
-					{% if paper.poster %}
-					  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-					{% endif %}
-					{% if paper.video %}
-					  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-					{% endif %}
-					{% if paper.code %}
-					  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-					{% endif %}
-				  </p>
-				  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
-				  <p><i>{{ paper.venue }}</i></p>
-				   <div class="paper-buttons">
-
-				  </div>
-				</div>
-			{% endif %}
-		  {% endfor %}
-	{% endfor %}
-    </div>
-
-    <!-- SLA PAPERS -->
-    <div class="tab-pane" id="papers-SLA">
-      {% assign sla_papers = site.data.publications.papers | where: "sla", "y" %}
-	  {% assign years = "2024" %}
-      {% for paper in sla_papers %}
-	  {% assign year = paper.year | prepend: "," %}
-	  {% assign years = years | append: year %}
-      {% endfor %}
-      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
-	  {% for year in year_list %}
-		<h5>{{ year }}</h5>
-		  {% for paper in sla_papers %}
-			{% if paper.year == year %}
-				<div class="paper">
-				  <p class="title"><b>{{ paper.title }}</b>
-					{% if paper.paper_pdf %}
-					  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-					{% endif %}
-					{% if paper.slides %}
-					  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-					{% endif %}
-					{% if paper.poster %}
-					  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-					{% endif %}
-					{% if paper.video %}
-					  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-					{% endif %}
-					{% if paper.code %}
-					  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-					{% endif %}
-				  </p>
-				  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
-				  <p><i>{{ paper.venue }}</i></p>
-				   <div class="paper-buttons">
-
-				  </div>
-				</div>
-			{% endif %}
-		  {% endfor %}
-	{% endfor %}
-    </div>
- 
+<section class="home-hero shell">
+  <div class="home-intro reveal">
+    <p class="pronunciation">[{{ site.data.main_info.pronunciation }}]</p>
+    <h1>{{ site.data.main_info.name }}</h1>
+    <p>{{ site.data.main_info.role }}<br>{{ site.data.main_info.institution }}</p>
+    <p class="home-topics">Linguistic Diversity&nbsp; | &nbsp;Academic Discourse&nbsp; | &nbsp;Language &amp; AI</p>
   </div>
-</div>
+  <figure class="home-portrait reveal">
+    <img src="{{ site.data.main_info.profile_pic | relative_url }}" alt="Portrait of {{ site.data.main_info.name }}">
+  </figure>
+</section>
 
-
-<!-- ========== RESUME ========== -->
-<div class="docs-section" id="experience">
-  <h4>Experience</h4>
-  <!--p><a href="{{ site.data.main_info.github }}/t-aoyam.github.io{{ site.data.main_info.cv }}">Download Full CV</a></p-->
-  <!-- The Timeline -->
-  <ul class="timeline">
-    {% for exp in site.data.experience.experiences %}
-    <li>
-      {% if exp.category == "work" %}
-      <div class="direction-l">
-      {% else %}
-      <div class="direction-r">
-      {% endif %}
-        <div class="flag-wrapper">
-          <span class="flag">{{ exp.place }}</span>
-          <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
-        </div>
-        <div class="desc"><b>{{ exp.title }}</b> <br/> {{ exp.subtitle }}</div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-</div>
-
-
-<div class="docs-section" id="teaching">
-  <h4>Teaching</h4>
-  {% assign current_classes = site.data.classes.classes | where: "category", "current" %}
-  {% for class in current_classes %}
-  <div class="class">
-    <p class="title"><b>{{ class.name }}</b> ({{ class.time }}): <a href={{class.link}} target="_blank">{{ class.title }}</a></p>
-  </div>
+<section class="home-biography shell reveal">
+  {% for paragraph in site.data.main_info.bio %}
+  <p>{{ paragraph }}</p>
   {% endfor %}
-</div>
+</section>
 
+<section class="content-section shell">
+  <p class="section-label reveal">Research</p>
+  <h2 class="section-title reveal">Themes</h2>
+  <div class="theme-grid">
+    <a class="theme-card reveal" href="{{ '/research/' | relative_url }}">
+      <span class="theme-number">01</span>
+      <h3>Linguistic diversity across modalities</h3>
+      <p>Variation across people, contexts, genres, and modes of expression.</p>
+      <span class="theme-link">View research →</span>
+    </a>
+    <a class="theme-card reveal" href="{{ '/research/' | relative_url }}">
+      <span class="theme-number">02</span>
+      <h3>Academic writing and discourse</h3>
+      <p>How feedback, reasoning, and disciplinary conventions shape scholarly communication.</p>
+      <span class="theme-link">View research →</span>
+    </a>
+  </div>
+</section>
 
-<!-- ========= ACKNOWLEDGEMENT ========== -->
-<div class="docs-section" id="ack">
-  <h4>Acknowledgement</h4>
-  <p>
-    This website uses the website design and template by <a href="https://github.com/msaveski/www_personal">Martin Saveski</a>.
-  </p>
+<section class="content-section shell">
+  <p class="section-label reveal">Selected publication</p>
+  {% assign paper = site.data.publications.papers.first %}
+  <article class="home-publication reveal">
+    <p>{{ paper.year }}</p>
+    <div>
+      <h2>{{ paper.title }}</h2>
+      <p>{{ paper.authors }}</p>
+      <p>{{ paper.venue }}</p>
+    </div>
+    {% if paper.paper_pdf %}<a href="{{ paper.paper_pdf }}" target="_blank" rel="noopener">PDF ↗</a>{% endif %}
+  </article>
+  <a class="plain-link reveal" href="{{ '/research/' | relative_url }}">All research →</a>
+</section>
 
-</div>
+<section class="content-section shell">
+  <p class="section-label reveal">Recent experience</p>
+  <div class="home-experience">
+    {% for exp in site.data.experience.experiences limit: 3 %}
+    <article class="home-experience-row reveal">
+      <p>{{ exp.time }}</p>
+      <div>
+        <h3>{{ exp.place }}</h3>
+        <p>{{ exp.title }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <a class="plain-link reveal" href="{{ '/experience/' | relative_url }}">Full experience →</a>
+</section>

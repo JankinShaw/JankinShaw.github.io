@@ -1,4 +1,5 @@
+<!-- Reusable figure markup for legacy and future long-form project pages. -->
 <figure class="image">
-  <img src="{{ include.url | prepend: site.baseurl }}" alt="{{ include.description }}" style="width: {{ include.width }}"/>
-  <figcaption><b>{{ include.description }}</b></figcaption>
+  <img src="{{ include.url | relative_url }}" alt="{{ include.description | escape }}" style="width: {{ include.width | default: '100%' }}">
+  {% if include.description %}<figcaption>{{ include.description }}</figcaption>{% endif %}
 </figure>

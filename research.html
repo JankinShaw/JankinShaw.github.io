@@ -1,0 +1,65 @@
+---
+layout: default
+title: Research
+nav: research
+description: "Research and presentations by Yingjie Xiao."
+---
+
+<header class="page-hero shell reveal">
+  <p class="eyebrow">Research / 研究</p>
+  <h1>Studying variation<br>in <em>expression.</em></h1>
+  <p class="page-deck">Work spanning applied linguistics, second-language acquisition, academic discourse, and computational approaches to language.</p>
+</header>
+
+<section class="section shell" data-filter-group>
+  <div class="filter-bar reveal" aria-label="Filter publications">
+    <button class="filter-button is-active" type="button" data-filter="all">All</button>
+    <button class="filter-button" type="button" data-filter="al">Applied linguistics</button>
+    <button class="filter-button" type="button" data-filter="sla">SLA</button>
+  </div>
+
+  <div class="publication-list">
+    {% assign papers = site.data.publications.papers | sort: 'year' | reverse %}
+    {% for paper in papers %}
+    <article class="publication reveal" data-filter-item data-categories="{% if paper.al == 'y' %}al {% endif %}{% if paper.sla == 'y' %}sla{% endif %}">
+      <div class="publication-year">{{ paper.year }}</div>
+      <div class="publication-content">
+        <p class="card-meta">{% if paper.al == 'y' %}Applied Linguistics{% endif %}{% if paper.al == 'y' and paper.sla == 'y' %} · {% endif %}{% if paper.sla == 'y' %}Second-language acquisition{% endif %}</p>
+        <h2>{{ paper.title }}</h2>
+        <p class="publication-authors">{{ paper.authors | replace: 'Yingjie Xiao', '<strong>Yingjie Xiao</strong>' }}</p>
+        <p class="muted">{{ paper.venue }}</p>
+        <div class="publication-links">
+          {% if paper.paper_pdf %}<a href="{{ paper.paper_pdf }}" target="_blank" rel="noopener">PDF <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if paper.slides %}<a href="{{ paper.slides }}" target="_blank" rel="noopener">Slides <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if paper.poster %}<a href="{{ paper.poster }}" target="_blank" rel="noopener">Poster <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if paper.video %}<a href="{{ paper.video }}" target="_blank" rel="noopener">Video <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if paper.code %}<a href="{{ paper.code }}" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>{% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if site.data.talks.talks.size > 0 %}
+<section class="section section-tint">
+  <div class="shell">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Presentations</p>
+        <h2>Selected talks</h2>
+      </div>
+    </div>
+    <div class="talk-list">
+      {% for talk in site.data.talks.talks %}
+      <a class="talk-row reveal" href="{{ talk.link }}" target="_blank" rel="noopener">
+        <span class="talk-time">{{ talk.time }}</span>
+        <span><strong>{{ talk.title }}</strong><small>{{ talk.name }}</small></span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+

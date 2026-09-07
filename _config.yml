@@ -1,10 +1,25 @@
-source:      .
+title: "Yingjie Xiao"
+description: "Computational linguistics, linguistic diversity, and academic writing research."
+url: "https://jankinshaw.github.io"
+baseurl: ""
+lang: "en"
+timezone: "Europe/Berlin"
+google_analytics_id: "G-J2MD5NTZFB"
+
+source: .
 destination: ./_site
-includes:    ./_includes
+includes_dir: _includes
+layouts_dir: _layouts
+
+markdown: kramdown
+permalink: /writing/:title/
 
 collections:
   projects:
     output: false
 
-plugins:
-  - jekyll-feed
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - __deploy.sh
