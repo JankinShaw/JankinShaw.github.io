@@ -7,6 +7,24 @@
   font-weight: 400;
 }
 
+/* This LaTeX-native serif subset contains only the IPA pronunciation glyphs. */
+@font-face {
+  font-family: "Libertinus Pronunciation";
+  src: url("/assets/fonts/libertinus-pronunciation.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* This OFL subset contains only the letters used in the homepage name. */
+@font-face {
+  font-family: "Cormorant Name";
+  src: url("/assets/fonts/cormorant-garamond-name.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
 /* ------------------------------------------------------------
    Base system
    ------------------------------------------------------------ */
@@ -199,14 +217,18 @@ h2 em {
 .pronunciation {
   margin-bottom: 22px;
   color: var(--secondary);
-  font-size: 12px;
+  font-family: "Libertinus Pronunciation", "Times New Roman", serif;
+  font-size: 13px;
+  letter-spacing: 0.015em;
 }
 
 .home-intro h1 {
   margin-bottom: 8px;
-  font-size: clamp(29px, 3.1vw, 42px);
+  font-family: "Cormorant Name", Garamond, serif;
+  font-size: clamp(38px, 4vw, 50px);
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
+  line-height: 1;
 }
 
 .home-intro > p:not(.pronunciation):not(.home-topics) {
@@ -304,13 +326,6 @@ h2 em {
   mix-blend-mode: soft-light;
   pointer-events: none;
   transition: background 260ms ease;
-}
-
-.depth-portrait figcaption {
-  margin-top: 9px;
-  color: var(--secondary);
-  font-size: 10px;
-  letter-spacing: 0.02em;
 }
 
 .portrait-turntable {
@@ -1048,7 +1063,7 @@ h2 em {
 
 @media (max-width: 560px) {
   .home-intro h1 {
-    font-size: 31px;
+    font-size: 40px;
   }
 
   .home-biography {

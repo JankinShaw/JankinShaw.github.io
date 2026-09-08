@@ -133,7 +133,7 @@ Changing these variables updates the whole site consistently. `--white` controls
 
 ## Chinese display labels
 
-The small Traditional Chinese labels use a 5.6 KB web subset of Taiwan's official TW-Kai typeface. English remains in Helvetica. The subset contains only the six characters currently used in the About, Research, and Experience page labels.
+The small Traditional Chinese labels use a web subset of Taiwan's official TW-Kai typeface. English remains in Helvetica, except for the homepage name in an OFL Cormorant Garamond subset and the pronunciation in an OFL Libertinus Serif subset. Each subset contains only the glyphs required by the page.
 
 The font is distributed under the SIL Open Font License 1.1. Its attribution notice and complete license are stored in `assets/fonts/FONT-NOTICE.txt` and `assets/fonts/OFL.txt`. If a future page label introduces a new Traditional Chinese character, regenerate the subset or ask a developer to extend it.
 
