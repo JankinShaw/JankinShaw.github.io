@@ -49,7 +49,9 @@ interests:
   - "Second research interest"
 ```
 
-The profile image path is stored in `profile_pic`. Put a replacement image in `assets/profile-pics/`, then update that path.
+The homepage portrait uses two aligned images. `profile_depth_photo` is the person-free background plate, and `profile_depth_foreground` is a full-size PNG with a transparent background containing only the person. Keep both files at the same aspect ratio and pixel dimensions so the layers stay aligned. Put replacements in `assets/profile-pics/`, then update both paths in `_data/main_info.yaml`.
+
+`profile_pic` and `profile_turntable` keep the earlier static portrait and eight-view sprite available. They are not shown on the homepage while the depth portrait is active, so you can switch back later without restoring deleted assets.
 
 ## Add a publication
 

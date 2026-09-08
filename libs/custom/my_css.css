@@ -223,10 +223,155 @@ h2 em {
 }
 
 .home-portrait {
+  width: 100%;
   margin: 0;
 }
 
-.home-portrait img {
+.depth-portrait {
+  perspective: 1000px;
+}
+
+.depth-stage {
+  --depth-x: 0px;
+  --depth-y: 0px;
+  --depth-bg-x: 0px;
+  --depth-bg-y: 0px;
+  --depth-rotate-x: 0deg;
+  --depth-rotate-y: 0deg;
+  --depth-light-x: 50%;
+  --depth-light-y: 42%;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #e8ebeb;
+  transform: rotateX(var(--depth-rotate-x)) rotateY(var(--depth-rotate-y));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Fine grain keeps the digital composite close to the texture of a photograph. */
+.depth-stage::before {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+  content: "";
+  mix-blend-mode: soft-light;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.depth-stage::after {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 66%, rgba(20, 25, 24, 0.08));
+  content: "";
+  pointer-events: none;
+}
+
+.depth-layer,
+.depth-light {
+  position: absolute;
+  inset: -2%;
+  width: 104%;
+  height: 104%;
+}
+
+.depth-layer {
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.depth-background {
+  filter: saturate(0.76) contrast(0.98);
+  transform: translate3d(var(--depth-bg-x), var(--depth-bg-y), 0);
+  will-change: transform;
+}
+
+.depth-foreground {
+  filter: saturate(0.82) contrast(1.015);
+  transform: translate3d(var(--depth-x), var(--depth-y), 0);
+  will-change: transform;
+}
+
+.depth-light {
+  z-index: 2;
+  background: radial-gradient(circle at var(--depth-light-x) var(--depth-light-y), rgba(255, 255, 255, 0.12), transparent 42%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  transition: background 260ms ease;
+}
+
+.depth-portrait figcaption {
+  margin-top: 9px;
+  color: var(--secondary);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.portrait-turntable {
+  cursor: grab;
+  outline: none;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.portrait-turntable.is-dragging {
+  cursor: grabbing;
+}
+
+.portrait-turntable:focus-visible .portrait-stage {
+  outline: 1px solid var(--ink);
+  outline-offset: 5px;
+}
+
+.portrait-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f5f5f3;
+}
+
+.portrait-fallback,
+.portrait-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portrait-fallback {
+  object-fit: cover;
+  filter: saturate(0.78);
+}
+
+.portrait-layer {
+  display: block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 400% 200%;
+  filter: saturate(0.78);
+  opacity: 0;
+  will-change: opacity;
+}
+
+.portrait-stage.is-ready .portrait-fallback {
+  opacity: 0;
+}
+
+.portrait-turntable figcaption {
+  margin-top: 9px;
+  color: var(--secondary);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.home-portrait > img {
   width: 100%;
   max-height: 500px;
   object-fit: cover;
@@ -879,7 +1024,7 @@ h2 em {
   }
 
   .home-portrait {
-    max-width: 440px;
+    max-width: 360px;
     margin-inline: auto;
   }
 

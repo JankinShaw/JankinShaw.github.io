@@ -11,8 +11,13 @@ nav: home
     <p>{{ site.data.main_info.role }}<br>{{ site.data.main_info.institution }}</p>
     <p class="home-topics">Linguistic Diversity&nbsp; | &nbsp;Academic Discourse&nbsp; | &nbsp;Language &amp; AI</p>
   </div>
-  <figure class="home-portrait reveal">
-    <img src="{{ site.data.main_info.profile_pic | relative_url }}" alt="Portrait of {{ site.data.main_info.name }}">
+  <figure class="home-portrait depth-portrait reveal" data-depth-portrait>
+    <div class="depth-stage">
+      <img class="depth-layer depth-background" src="{{ site.data.main_info.profile_depth_photo | relative_url }}" alt="Portrait of {{ site.data.main_info.name }} in the mountains">
+      <img class="depth-layer depth-foreground" src="{{ site.data.main_info.profile_depth_foreground | relative_url }}" alt="" aria-hidden="true">
+      <span class="depth-light" aria-hidden="true"></span>
+    </div>
+    <figcaption>Move to explore depth</figcaption>
   </figure>
 </section>
 
@@ -24,18 +29,18 @@ nav: home
 
 <section class="content-section shell">
   <p class="section-label reveal">Research</p>
-  <h2 class="section-title reveal">Themes</h2>
+  <h2 class="section-title reveal">Two directions</h2>
   <div class="theme-grid">
     <a class="theme-card reveal" href="{{ '/research/' | relative_url }}">
       <span class="theme-number">01</span>
-      <h3>Linguistic diversity across modalities</h3>
-      <p>Variation across people, contexts, genres, and modes of expression.</p>
+      <h3>Human language understanding</h3>
+      <p>How people understand and interpret language across contexts, modalities, and communities.</p>
       <span class="theme-link">View research →</span>
     </a>
     <a class="theme-card reveal" href="{{ '/research/' | relative_url }}">
       <span class="theme-number">02</span>
-      <h3>Academic writing and discourse</h3>
-      <p>How feedback, reasoning, and disciplinary conventions shape scholarly communication.</p>
+      <h3>Safer language models</h3>
+      <p>How insights into human language can help us build safer, more reliable language models.</p>
       <span class="theme-link">View research →</span>
     </a>
   </div>
