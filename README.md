@@ -72,7 +72,7 @@ Add a new item below `papers:` in `_data/publications.yaml`. The newest entries 
     selected: y
 ```
 
-All optional link fields can be left blank. Use `al: y` for Applied Linguistics and `sla: y` for Second Language Acquisition. These values power the filters on the Research page.
+All optional link fields can be left blank. Use `al: y` for Applied Linguistics, `sla: y` for Second Language Acquisition, and `cognition: y` for Cognition. These values power the filters on the Research page.
 
 For a local PDF, copy the file into `assets/publications/` and use a path beginning with `/assets/`. An external HTTPS URL also works.
 

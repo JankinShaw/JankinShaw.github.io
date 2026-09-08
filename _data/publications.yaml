@@ -13,9 +13,9 @@ papers:
     authors: "Achimova, A., Dietrich, S., Altshuler, D., Xiao, Y., Rolke, B., & M.V. Butz."
     venue: "Poster presented at AMLaP 2026. September 2, 2026."
     contribution: "Contributions: research design, experimental implementation, data collection, and analysis."
-    label: "Collaborative project"
     paper_pdf:
     code:
     al: n
     sla: n
+    cognition: y
     selected: n

@@ -2,6 +2,7 @@
 layout: default
 title: Research
 nav: research
+permalink: /research/
 description: "Research and presentations by Yingjie Xiao."
 ---
 
@@ -16,15 +17,16 @@ description: "Research and presentations by Yingjie Xiao."
     <button class="filter-button is-active" type="button" data-filter="all">All</button>
     <button class="filter-button" type="button" data-filter="al">Applied linguistics</button>
     <button class="filter-button" type="button" data-filter="sla">SLA</button>
+    <button class="filter-button" type="button" data-filter="cognition">Cognition</button>
   </div>
 
   <div class="publication-list">
     {% assign papers = site.data.publications.papers | sort: 'year' | reverse %}
     {% for paper in papers %}
-    <article class="publication reveal" data-filter-item data-categories="{% if paper.al == 'y' %}al {% endif %}{% if paper.sla == 'y' %}sla{% endif %}">
+    <article class="publication reveal" data-filter-item data-categories="{% if paper.al == 'y' %}al {% endif %}{% if paper.sla == 'y' %}sla {% endif %}{% if paper.cognition == 'y' %}cognition{% endif %}">
       <div class="publication-year">{{ paper.year }}</div>
       <div class="publication-content">
-        <p class="card-meta">{% if paper.label %}{{ paper.label }}{% else %}{% if paper.al == 'y' %}Applied Linguistics{% endif %}{% if paper.al == 'y' and paper.sla == 'y' %} · {% endif %}{% if paper.sla == 'y' %}Second-language acquisition{% endif %}{% endif %}</p>
+        <p class="card-meta">{% if paper.al == 'y' %}Applied Linguistics{% endif %}{% if paper.al == 'y' and paper.sla == 'y' %} · {% endif %}{% if paper.sla == 'y' %}Second-language acquisition{% endif %}{% if paper.cognition == 'y' %}{% if paper.al == 'y' or paper.sla == 'y' %} · {% endif %}Cognition{% endif %}</p>
         <h2>{{ paper.title }}</h2>
         <p class="publication-authors">{{ paper.authors | replace: 'Yingjie Xiao', '<strong>Yingjie Xiao</strong>' | replace: 'Xiao, Y.', '<strong>Xiao, Y.</strong>' }}</p>
         <p class="muted">{{ paper.venue }}</p>
