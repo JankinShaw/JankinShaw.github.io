@@ -12,11 +12,7 @@ description: "About Yingjie Xiao, a computational linguistics student in Tübing
   <p class="page-deck">I am interested in the human variation, social context, and hidden structure behind every linguistic signal.</p>
 </header>
 
-<section class="section shell about-grid">
-  <div class="about-portrait reveal">
-    <img src="{{ site.data.main_info.profile_pic | relative_url }}" alt="{{ site.data.main_info.name }} in Konstanz, Germany">
-    <p>{{ site.data.main_info.location }} · <span class="phonetic">[{{ site.data.main_info.pronunciation }}]</span></p>
-  </div>
+<section class="section shell about-grid about-grid-single">
   <div class="about-copy reveal">
     <p class="section-index">01 / Biography</p>
     {% for paragraph in site.data.main_info.bio %}

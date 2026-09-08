@@ -599,21 +599,16 @@ h2 em {
   gap: 75px;
 }
 
-.about-portrait img {
-  width: 100%;
-  aspect-ratio: 0.85;
-  object-fit: cover;
-  filter: saturate(0.72);
-}
-
-.about-portrait > p {
-  margin-top: 10px;
-  color: var(--secondary);
-  font-size: 11px;
+.about-grid-single {
+  grid-template-columns: minmax(0, 760px);
 }
 
 .about-copy {
   padding-top: 34px;
+}
+
+.about-grid-single .about-copy {
+  padding-top: 0;
 }
 
 .about-copy > p:not(.section-index) {
