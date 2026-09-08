@@ -426,6 +426,10 @@ h2 em {
   gap: 18px;
 }
 
+.theme-grid-spaced {
+  margin-top: 34px;
+}
+
 .theme-card {
   display: flex;
   min-height: 320px;
@@ -723,6 +727,12 @@ h2 em {
 
 .publication-authors {
   margin-bottom: 9px;
+}
+
+.publication-contribution {
+  margin-top: 12px;
+  color: var(--secondary);
+  font-size: 13px;
 }
 
 .publication-links {

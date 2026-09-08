@@ -8,3 +8,14 @@ papers:
     al: y
     sla: y
     selected: y
+  - title: "Implicit causality revision is costly but delayed: Evidence from self-paced reading"
+    year: "2026"
+    authors: "Achimova, A., Dietrich, S., Altshuler, D., Xiao, Y., Rolke, B., & M.V. Butz."
+    venue: "Poster presented at AMLaP 2026. September 2, 2026."
+    contribution: "Contributions: research design, experimental implementation, data collection, and analysis."
+    label: "Collaborative project"
+    paper_pdf:
+    code:
+    al: n
+    sla: n
+    selected: n

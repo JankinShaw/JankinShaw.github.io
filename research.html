@@ -24,10 +24,11 @@ description: "Research and presentations by Yingjie Xiao."
     <article class="publication reveal" data-filter-item data-categories="{% if paper.al == 'y' %}al {% endif %}{% if paper.sla == 'y' %}sla{% endif %}">
       <div class="publication-year">{{ paper.year }}</div>
       <div class="publication-content">
-        <p class="card-meta">{% if paper.al == 'y' %}Applied Linguistics{% endif %}{% if paper.al == 'y' and paper.sla == 'y' %} · {% endif %}{% if paper.sla == 'y' %}Second-language acquisition{% endif %}</p>
+        <p class="card-meta">{% if paper.label %}{{ paper.label }}{% else %}{% if paper.al == 'y' %}Applied Linguistics{% endif %}{% if paper.al == 'y' and paper.sla == 'y' %} · {% endif %}{% if paper.sla == 'y' %}Second-language acquisition{% endif %}{% endif %}</p>
         <h2>{{ paper.title }}</h2>
-        <p class="publication-authors">{{ paper.authors | replace: 'Yingjie Xiao', '<strong>Yingjie Xiao</strong>' }}</p>
+        <p class="publication-authors">{{ paper.authors | replace: 'Yingjie Xiao', '<strong>Yingjie Xiao</strong>' | replace: 'Xiao, Y.', '<strong>Xiao, Y.</strong>' }}</p>
         <p class="muted">{{ paper.venue }}</p>
+        {% if paper.contribution %}<p class="publication-contribution">{{ paper.contribution }}</p>{% endif %}
         <div class="publication-links">
           {% if paper.paper_pdf %}<a href="{{ paper.paper_pdf }}" target="_blank" rel="noopener">PDF <span aria-hidden="true">↗</span></a>{% endif %}
           {% if paper.slides %}<a href="{{ paper.slides }}" target="_blank" rel="noopener">Slides <span aria-hidden="true">↗</span></a>{% endif %}
