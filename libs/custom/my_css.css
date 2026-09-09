@@ -16,15 +16,6 @@
   font-weight: 400;
 }
 
-/* This OFL subset contains only the letters used in the homepage name. */
-@font-face {
-  font-family: "Cormorant Name";
-  src: url("/assets/fonts/cormorant-garamond-name.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 600;
-}
-
 /* ------------------------------------------------------------
    Base system
    ------------------------------------------------------------ */
@@ -224,11 +215,9 @@ h2 em {
 
 .home-intro h1 {
   margin-bottom: 8px;
-  font-family: "Cormorant Name", Garamond, serif;
-  font-size: clamp(38px, 4vw, 50px);
+  font-size: clamp(29px, 3.1vw, 42px);
   font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .home-intro > p:not(.pronunciation):not(.home-topics) {
@@ -1063,7 +1052,7 @@ h2 em {
 
 @media (max-width: 560px) {
   .home-intro h1 {
-    font-size: 40px;
+    font-size: 31px;
   }
 
   .home-biography {
