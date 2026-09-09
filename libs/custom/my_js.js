@@ -11,7 +11,103 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeFilters();
   initializeFooterYear();
   initializeRainbowText();
+  initializeRainbowBloom();
 });
+
+/* A one-second dwell releases a soft, uneven ink wash across the viewport. */
+function initializeRainbowBloom() {
+  const allowed = window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
+  const canvas = document.createElement("canvas");
+  canvas.className = "rainbow-bloom";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.appendChild(canvas);
+  const context = canvas.getContext("2d");
+  if (!context) return;
+
+  let word = null;
+  let delay = null;
+  let frame = null;
+  const stop = () => {
+    clearTimeout(delay);
+    if (frame !== null) cancelAnimationFrame(frame);
+    delay = null;
+    frame = null;
+    word = null;
+    canvas.classList.remove("is-blooming");
+  };
+
+  const bloom = () => {
+    delay = null;
+    if (!word || !allowed.matches) return;
+    const rect = word.getBoundingClientRect();
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    const reach = Math.hypot(Math.max(x, width - x), Math.max(y, height - y)) * 1.42;
+    const colors = ["#d4bcfa", "#a8d9fc", "#a9ecdf", "#c9edb2", "#ffe498", "#ffc0a7", "#f3bcdc"];
+    const paint = context.createLinearGradient(0, height * 0.15, width, height * 0.85);
+    colors.forEach((color, index) => paint.addColorStop(index / (colors.length - 1), color));
+    const started = performance.now();
+    canvas.classList.add("is-blooming");
+
+    const render = (now) => {
+      const progress = Math.min((now - started) / 6500, 1);
+      const radius = 8 + reach * (progress * progress * (3 - 2 * progress));
+      context.clearRect(0, 0, width, height);
+      context.save();
+      context.beginPath();
+      for (let i = 0; i <= 144; i++) {
+        const angle = i / 144 * Math.PI * 2;
+        const ripple = 1 + 0.12 * Math.sin(angle * 3 + progress * 2)
+          + 0.075 * Math.cos(angle * 5 - progress * 3)
+          + 0.035 * Math.sin(angle * 9 + progress);
+        const px = x + Math.cos(angle) * radius * ripple;
+        const py = y + Math.sin(angle) * radius * ripple;
+        if (i === 0) context.moveTo(px, py);
+        else context.lineTo(px, py);
+      }
+      context.closePath();
+      context.clip();
+      context.fillStyle = paint;
+      context.fillRect(0, 0, width, height);
+      // Translucent pools soften the bands into a watercolor-like spectrum.
+      [[0.2, 0.75, "#cbb7fa"], [0.55, 0.2, "#fff0b9"], [0.85, 0.65, "#f6b8d8"]].forEach(([cx, cy, color]) => {
+        const pool = context.createRadialGradient(width * cx, height * cy, 0, width * cx, height * cy, Math.max(width, height) * 0.55);
+        pool.addColorStop(0, color);
+        pool.addColorStop(1, "transparent");
+        context.fillStyle = pool;
+        context.fillRect(0, 0, width, height);
+      });
+      context.restore();
+      frame = progress < 1 ? requestAnimationFrame(render) : null;
+    };
+    frame = requestAnimationFrame(render);
+  };
+
+  document.addEventListener("pointerover", (event) => {
+    if (!allowed.matches || event.pointerType === "touch") return;
+    const next = event.target.closest(".rainbow-word");
+    if (next === word) return;
+    stop();
+    if (!next) return;
+    word = next;
+    delay = setTimeout(bloom, 1000);
+  });
+  document.addEventListener("pointerout", (event) => {
+    if (word && !word.contains(event.relatedTarget)) stop();
+  });
+  window.addEventListener("scroll", stop, { passive: true });
+  window.addEventListener("resize", stop);
+  window.addEventListener("blur", stop);
+  document.addEventListener("pointercancel", stop);
+  document.addEventListener("visibilitychange", stop);
+  allowed.addEventListener("change", stop);
+}
 
 /* Wrap words without changing text, links, whitespace, or line-breaking behavior. */
 function initializeRainbowText() {
