@@ -658,7 +658,7 @@ h2 em {
   font-size: 20px;
 }
 
-.interest-list span {
+.interest-list .interest-number {
   color: var(--secondary);
   font-size: 10px;
 }
@@ -947,6 +947,50 @@ h2 em {
 .js .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* A soft spectrum washes behind the word under the pointer. */
+.rainbow-word {
+  position: relative;
+  z-index: 0;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.rainbow-word::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -0.06em -0.07em;
+  border-radius: 0.16em;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(ellipse at 15% 90%, #93d9fa 0%, transparent 48%),
+    radial-gradient(ellipse at 45% 5%, #a4edb5 0%, transparent 46%),
+    radial-gradient(ellipse at 70% 95%, #ffe28b 0%, transparent 48%),
+    linear-gradient(110deg, #d4bcfa, #ace6f8 24%, #c8efb0 45%, #ffe08c 62%, #ffb49c 80%, #f4b8da);
+  background-size: 160% 160%;
+  background-position: 100% 50%;
+  transition: opacity 650ms ease, background-position 650ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rainbow-word:hover::before {
+    opacity: 0.9;
+    background-position: 0% 50%;
+    transition: opacity 100ms ease, background-position 550ms ease;
+  }
+}
+
+/* Keyboard users get the same highlight on links, with their native focus ring. */
+a:focus-visible .rainbow-word::before {
+  opacity: 0.9;
+  background-position: 0% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-word::before { transition: none; }
 }
 
 /* ------------------------------------------------------------

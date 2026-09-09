@@ -33,7 +33,10 @@ description: "About Yingjie Xiao, a computational linguistics student in Tübing
     </div>
     <ol class="interest-list">
       {% for interest in site.data.main_info.interests %}
-      <li class="reveal"><span>0{{ forloop.index }}</span>{{ interest }}</li>
+      <li class="reveal">
+        <span class="interest-number">0{{ forloop.index }}</span>
+        <div class="interest-label">{{ interest }}</div>
+      </li>
       {% endfor %}
     </ol>
   </div>

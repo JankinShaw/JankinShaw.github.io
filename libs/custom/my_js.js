@@ -10,7 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePortraitTurntable(reducedMotion);
   initializeFilters();
   initializeFooterYear();
+  initializeRainbowText();
 });
+
+/* Wrap words without changing text, links, whitespace, or line-breaking behavior. */
+function initializeRainbowText() {
+  document.querySelectorAll("main, .site-header").forEach((root) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.textContent.trim() || node.parentElement.closest(
+          "script, style, pre, code, textarea, button, .sr-only, .pronunciation, .rainbow-word, [aria-hidden='true']"
+        )) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      const fragment = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach((part) => {
+        if (!part) return;
+        if (!part.trim()) {
+          fragment.appendChild(document.createTextNode(part));
+          return;
+        }
+        const word = document.createElement("span");
+        word.className = "rainbow-word";
+        word.textContent = part;
+        fragment.appendChild(word);
+      });
+      node.replaceWith(fragment);
+    });
+  });
+}
 
 /* Keep the compact navigation accessible on small screens. */
 function initializeNavigation() {
