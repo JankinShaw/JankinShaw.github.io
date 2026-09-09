@@ -10,12 +10,178 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePortraitTurntable(reducedMotion);
   initializeFilters();
   initializeFooterYear();
+  const language = initializeLanguage();
   initializeRainbowText();
-  initializeRainbowBloom();
+  initializeRainbowBloom(language);
 });
 
-/* A one-second dwell releases a soft, uneven ink wash across the viewport. */
-function initializeRainbowBloom() {
+function sparkleWord(element) {
+  if (!element.animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  element.animate([
+    { opacity: 0.15, filter: "blur(3px)", textShadow: "0 0 12px #fff, 0 0 20px #b5a1ff" },
+    { opacity: 1, filter: "blur(0px)", textShadow: "0 0 6px #fff, 0 0 10px #77dbe9", offset: 0.45 },
+    { opacity: 1, filter: "blur(0px)", textShadow: "0 0 0 transparent" }
+  ], { duration: 600, easing: "ease-out" });
+}
+
+/* Clipped copies of the old word fly apart while its real replacement stays selectable. */
+function initializeWordShatter() {
+  const layer = document.createElement("div");
+  layer.className = "word-shards";
+  layer.setAttribute("aria-hidden", "true");
+  document.body.appendChild(layer);
+  const clips = ["polygon(0 0, 58% 0, 42% 55%, 0 80%)", "polygon(58% 0, 100% 0, 100% 55%, 42% 55%)", "polygon(0 80%, 42% 55%, 65% 100%, 0 100%)", "polygon(42% 55%, 100% 55%, 100% 100%, 65% 100%)"];
+  return (element) => {
+    if (!element.animate || layer.childElementCount > 160) return;
+    const rect = element.getBoundingClientRect();
+    const style = getComputedStyle(element);
+    clips.forEach((clip, index) => {
+      const shard = document.createElement("span");
+      shard.className = "word-shard";
+      shard.textContent = element.textContent;
+      Object.assign(shard.style, {
+        left: `${rect.left}px`, top: `${rect.top}px`, width: `${rect.width}px`, height: `${rect.height}px`,
+        font: style.font, lineHeight: `${rect.height}px`, letterSpacing: style.letterSpacing,
+        color: style.color, clipPath: clip, textShadow: "0 0 3px white, 0 0 8px #b4a0ff"
+      });
+      layer.appendChild(shard);
+      const signX = index % 2 ? 1 : -1;
+      const signY = index < 2 ? -1 : 1;
+      const animation = shard.animate([
+        { transform: "translate(0, 0) rotate(0deg)", opacity: 1, filter: "brightness(1)" },
+        { opacity: 1, filter: "brightness(2)", offset: 0.18 },
+        { transform: `translate(${signX * (18 + index * 7)}px, ${signY * (15 + index * 5)}px) rotate(${signX * 18}deg) scale(0.4)`, opacity: 0, filter: "brightness(2) blur(2px)" }
+      ], { duration: 620, easing: "cubic-bezier(.16,1,.3,1)" });
+      animation.finished.then(() => shard.remove(), () => shard.remove());
+    });
+  };
+}
+
+/* Keep both copies in stable inline containers, including after word wrapping. */
+function initializeLanguage() {
+  const normalize = (text) => text.trim().replace(/\s+/g, " ");
+  const translations = typeof germanTranslations === "undefined" ? {} : germanTranslations;
+  const records = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      return node.parentElement.closest("script, style, [data-no-translate]") || !translations[normalize(node.textContent)]
+        ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => {
+    const original = node.textContent;
+    const translated = original.match(/^\s*/)[0] + translations[normalize(original)] + original.match(/\s*$/)[0];
+    const element = document.createElement("span");
+    element.textContent = original;
+    node.replaceWith(element);
+    records.push({ element, original, translated });
+  });
+  const attributes = [];
+  document.querySelectorAll("[aria-label], [alt], meta[name='description']").forEach((element) => {
+    if (element.closest("[data-no-translate]")) return;
+    ["aria-label", "alt", "content"].forEach((name) => {
+      const original = element.getAttribute(name);
+      if (original && translations[normalize(original)]) {
+        attributes.push({element, name, original, translated: translations[normalize(original)]});
+      }
+    });
+  });
+  const title = document.title;
+  const pageName = title.split(" — ")[0];
+  const shatter = initializeWordShatter();
+  let selected = "en";
+  let target = "de";
+  let waveRecords = [];
+  try {
+    const saved = sessionStorage.getItem("site-language");
+    if (saved === "en" || saved === "de") { selected = saved; }
+  } catch (_) { /* The switch also works when browser storage is unavailable. */ }
+
+  const apply = (locale, persist = true) => {
+    waveRecords = [];
+    selected = locale;
+    if (persist) {
+      try { sessionStorage.setItem("site-language", locale); } catch (_) { /* Optional persistence. */ }
+    }
+    records.forEach(({element, original, translated}) => {
+      element.textContent = locale === "de" ? translated : original;
+      element.removeAttribute("lang");
+    });
+    attributes.forEach(({element, name, original, translated}) => element.setAttribute(name, locale === "de" ? translated : original));
+    document.documentElement.lang = locale;
+    document.title = locale === "de" ? title.replace(pageName, translations[pageName] || pageName) : title;
+    initializeRainbowText();
+    document.dispatchEvent(new Event("language-selected"));
+  };
+  if (selected === "de") apply("de", false);
+  return {
+    apply,
+    canAuto: () => waveRecords.length === 0,
+    finish: () => apply(target),
+    begin: (origin) => {
+      if (origin) { shatter(origin); sparkleWord(origin); }
+      target = selected === "en" ? "de" : "en";
+      waveRecords = records.map((record) => {
+        const words = Array.from(record.element.querySelectorAll(".rainbow-word"));
+        const destination = target === "de" ? record.translated : record.original;
+        const targets = destination.trim().split(/\s+/);
+        // Preserve the authored German sentence order, even when word counts differ.
+        const slots = words.length ? words.map((element, index) => ({
+          element,
+          text: targets.slice(
+            Math.round(index * targets.length / words.length),
+            Math.round((index + 1) * targets.length / words.length)
+          ).join(" "),
+          done: false
+        })) : [{element: record.element, text: destination, done: false}];
+        return {record, slots, destination, done: false};
+      });
+    },
+    advance: (contains) => {
+      // Read all positions before writing text; German reflow is measured next frame.
+      const reached = [];
+      waveRecords.forEach((entry) => {
+        if (entry.done) return;
+        entry.slots.forEach((slot) => {
+          if (slot.done) return;
+          const rect = slot.element.getBoundingClientRect();
+          if (rect.width && rect.height && rect.bottom > 0 && rect.top < window.innerHeight &&
+              rect.right > 0 && rect.left < window.innerWidth &&
+              contains(rect.left + rect.width / 2, rect.top + rect.height / 2)) reached.push(slot);
+        });
+      });
+      reached.forEach((slot) => {
+        shatter(slot.element);
+        slot.element.textContent = slot.text;
+        slot.element.lang = target;
+        sparkleWord(slot.element);
+        slot.done = true;
+      });
+      waveRecords.forEach((entry) => {
+        if (entry.done || !entry.slots.every((slot) => slot.done)) return;
+        entry.done = true;
+        entry.record.element.textContent = entry.destination;
+        entry.record.element.lang = target;
+        initializeRainbowText([entry.record.element]);
+        sparkleWord(entry.record.element);
+      });
+    },
+    cancel: () => {
+      if (!waveRecords.length) return;
+      waveRecords.forEach(({record}) => {
+        record.element.textContent = selected === "de" ? record.translated : record.original;
+        record.element.removeAttribute("lang");
+      });
+      waveRecords = [];
+      initializeRainbowText();
+    }
+  };
+}
+
+/* Each fresh dwell toggles the current language in either direction. */
+function initializeRainbowBloom(language) {
   const allowed = window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
   const canvas = document.createElement("canvas");
   canvas.className = "rainbow-bloom";
@@ -27,19 +193,24 @@ function initializeRainbowBloom() {
   let word = null;
   let delay = null;
   let frame = null;
+  let running = false;
   const stop = () => {
     clearTimeout(delay);
     if (frame !== null) cancelAnimationFrame(frame);
     delay = null;
     frame = null;
     word = null;
+    running = false;
+    language.cancel();
     canvas.classList.remove("is-blooming");
   };
 
   const bloom = () => {
     delay = null;
-    if (!word || !allowed.matches) return;
+    if (!word || !allowed.matches || !language.canAuto()) return;
     const rect = word.getBoundingClientRect();
+    running = true;
+    language.begin(word);
     const width = window.innerWidth;
     const height = window.innerHeight;
     const x = rect.left + rect.width / 2;
@@ -58,16 +229,16 @@ function initializeRainbowBloom() {
     const render = (now) => {
       const progress = Math.min((now - started) / 6500, 1);
       const radius = 8 + reach * (progress * progress * (3 - 2 * progress));
+      const edgeAt = (angle) => radius * (1 + 0.12 * Math.sin(angle * 3 + progress * 2)
+        + 0.075 * Math.cos(angle * 5 - progress * 3)
+        + 0.035 * Math.sin(angle * 9 + progress));
       context.clearRect(0, 0, width, height);
       context.save();
       context.beginPath();
       for (let i = 0; i <= 144; i++) {
         const angle = i / 144 * Math.PI * 2;
-        const ripple = 1 + 0.12 * Math.sin(angle * 3 + progress * 2)
-          + 0.075 * Math.cos(angle * 5 - progress * 3)
-          + 0.035 * Math.sin(angle * 9 + progress);
-        const px = x + Math.cos(angle) * radius * ripple;
-        const py = y + Math.sin(angle) * radius * ripple;
+        const px = x + Math.cos(angle) * edgeAt(angle);
+        const py = y + Math.sin(angle) * edgeAt(angle);
         if (i === 0) context.moveTo(px, py);
         else context.lineTo(px, py);
       }
@@ -84,34 +255,43 @@ function initializeRainbowBloom() {
         context.fillRect(0, 0, width, height);
       });
       context.restore();
+      // The visible flood edge and the translation boundary share the same geometry.
+      language.advance((px, py) => Math.hypot(px - x, py - y) <= edgeAt(Math.atan2(py - y, px - x)));
       frame = progress < 1 ? requestAnimationFrame(render) : null;
+      if (progress === 1) {
+        language.finish();
+        stop();
+      }
     };
     frame = requestAnimationFrame(render);
   };
 
-  document.addEventListener("pointerover", (event) => {
-    if (!allowed.matches || event.pointerType === "touch") return;
+  const trackWord = (event) => {
+    if (running || !language.canAuto() || !allowed.matches || event.pointerType === "touch") return;
     const next = event.target.closest(".rainbow-word");
     if (next === word) return;
     stop();
     if (!next) return;
     word = next;
     delay = setTimeout(bloom, 1000);
-  });
+  };
+  document.addEventListener("pointerover", trackWord);
+  document.addEventListener("pointermove", trackWord);
   document.addEventListener("pointerout", (event) => {
-    if (word && !word.contains(event.relatedTarget)) stop();
+    if (!running && word && !word.contains(event.relatedTarget)) stop();
   });
-  window.addEventListener("scroll", stop, { passive: true });
+  window.addEventListener("scroll", () => { if (!running) stop(); }, { passive: true });
   window.addEventListener("resize", stop);
   window.addEventListener("blur", stop);
   document.addEventListener("pointercancel", stop);
   document.addEventListener("visibilitychange", stop);
   allowed.addEventListener("change", stop);
+  document.addEventListener("language-selected", stop);
 }
 
 /* Wrap words without changing text, links, whitespace, or line-breaking behavior. */
-function initializeRainbowText() {
-  document.querySelectorAll("main, .site-header").forEach((root) => {
+function initializeRainbowText(roots = document.querySelectorAll("main, .site-header, .site-footer")) {
+  roots.forEach((root) => {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         if (!node.textContent.trim() || node.parentElement.closest(

@@ -949,6 +949,24 @@ h2 em {
   transform: none;
 }
 
+/* Temporary text shards are decorative and never intercept the pointer. */
+.word-shards {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  pointer-events: none;
+  overflow: hidden;
+}
+.word-shard {
+  position: absolute;
+  white-space: pre;
+  margin: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+html[lang="de"] .page-hero h1 { overflow-wrap: anywhere; }
+html[lang="de"] .home-topics { line-height: 1.7; }
+
 /* Multiply tints the paper while keeping dark text legible and links clickable. */
 .rainbow-bloom {
   position: fixed;
