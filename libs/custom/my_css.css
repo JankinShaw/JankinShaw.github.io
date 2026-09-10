@@ -987,48 +987,52 @@ html[lang="de"] .home-topics { line-height: 1.7; }
   .rainbow-bloom { display: none; }
 }
 
-/* A soft spectrum washes behind the word under the pointer. */
+/* The pointer acts like a tiny lens: the glyphs enlarge and carry the spectrum. */
 .rainbow-word {
   position: relative;
+  display: inline-block;
   z-index: 0;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-.rainbow-word::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: -0.06em -0.07em;
-  border-radius: 0.16em;
-  pointer-events: none;
-  opacity: 0;
+  color: inherit;
   background:
-    radial-gradient(ellipse at 15% 90%, #93d9fa 0%, transparent 48%),
-    radial-gradient(ellipse at 45% 5%, #a4edb5 0%, transparent 46%),
-    radial-gradient(ellipse at 70% 95%, #ffe28b 0%, transparent 48%),
-    linear-gradient(110deg, #d4bcfa, #ace6f8 24%, #c8efb0 45%, #ffe08c 62%, #ffb49c 80%, #f4b8da);
-  background-size: 160% 160%;
+    linear-gradient(110deg, #8b5cf6 0%, #168bd2 20%, #13a892 39%, #d7a600 57%, #f0643b 77%, #cf4d98 100%);
+  background-size: 190% 100%;
   background-position: 100% 50%;
-  transition: opacity 650ms ease, background-position 650ms ease;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transform: scale(1);
+  transform-origin: var(--lens-x, 50%) var(--lens-y, 50%);
+  transition:
+    color 160ms ease,
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-position 520ms ease,
+    filter 220ms ease;
+  will-change: transform;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .rainbow-word:hover::before {
-    opacity: 0.9;
+  .rainbow-word:hover {
+    z-index: 2;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     background-position: 0% 50%;
-    transition: opacity 100ms ease, background-position 550ms ease;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0.04em 0.08em rgba(69, 41, 111, 0.16));
   }
 }
 
-/* Keyboard users get the same highlight on links, with their native focus ring. */
-a:focus-visible .rainbow-word::before {
-  opacity: 0.9;
+/* Keyboard users get the same glyph treatment, with the link's native focus ring. */
+a:focus-visible .rainbow-word {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   background-position: 0% 50%;
+  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rainbow-word::before { transition: none; }
+  .rainbow-word { transition: none; }
+  .rainbow-word:hover,
+  a:focus-visible .rainbow-word { transform: none; }
 }
 
 /* ------------------------------------------------------------
