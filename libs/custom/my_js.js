@@ -269,11 +269,6 @@ function initializeRainbowBloom(language) {
   const trackWord = (event) => {
     if (running || !language.canAuto() || !allowed.matches || event.pointerType === "touch") return;
     const next = event.target.closest(".rainbow-word");
-    if (next) {
-      const rect = next.getBoundingClientRect();
-      next.style.setProperty("--lens-x", `${event.clientX - rect.left}px`);
-      next.style.setProperty("--lens-y", `${event.clientY - rect.top}px`);
-    }
     if (next === word) return;
     stop();
     if (!next) return;

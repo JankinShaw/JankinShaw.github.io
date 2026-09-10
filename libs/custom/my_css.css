@@ -987,7 +987,7 @@ html[lang="de"] .home-topics { line-height: 1.7; }
   .rainbow-bloom { display: none; }
 }
 
-/* The pointer acts like a tiny lens: the glyphs enlarge and carry the spectrum. */
+/* On hover, the spectrum is clipped to the glyphs while the text stays still. */
 .rainbow-word {
   position: relative;
   display: inline-block;
@@ -1000,14 +1000,10 @@ html[lang="de"] .home-topics { line-height: 1.7; }
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
-  transform: scale(1);
-  transform-origin: var(--lens-x, 50%) var(--lens-y, 50%);
   transition:
     color 160ms ease,
-    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
     background-position 520ms ease,
     filter 220ms ease;
-  will-change: transform;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1016,7 +1012,6 @@ html[lang="de"] .home-topics { line-height: 1.7; }
     color: transparent;
     -webkit-text-fill-color: transparent;
     background-position: 0% 50%;
-    transform: scale(1.08);
     filter: drop-shadow(0 0.04em 0.08em rgba(69, 41, 111, 0.16));
   }
 }
@@ -1026,13 +1021,10 @@ a:focus-visible .rainbow-word {
   color: transparent;
   -webkit-text-fill-color: transparent;
   background-position: 0% 50%;
-  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .rainbow-word { transition: none; }
-  .rainbow-word:hover,
-  a:focus-visible .rainbow-word { transform: none; }
 }
 
 /* ------------------------------------------------------------
