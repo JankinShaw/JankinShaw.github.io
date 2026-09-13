@@ -9,20 +9,15 @@ const languages = [
     "Ich untersuche, wie Menschen und Sprachmodelle Kausalität wahrnehmen, schlussfolgern und über Bekanntes hinaus generalisieren.",
     "Ich möchte unser Verständnis von Intelligenz in nützliche Systeme für Forschung, Medizin und bessere Entscheidungen übersetzen."
   ]},
+  { id: "gsw", name: "Swiss German", native: "Schwiizerdütsch", dir: "ltr", lines: [
+    "Ich bi Yingjie Xiao, studiere Computerlinguistik und bi fasziniert vo de verborgene Strukture vo de Sprach.",
+    "Ich untersueche, wie Mänsche und Sprachmodell Kausalität wahrnähmed, Schlussfolgerige ziehnd und über s Bekannti use generalisiered.",
+    "Ich möcht üses Verständnis vo Intelligenz in nützlechi System für d Forschig, d Medizin und besseri Entscheidige umsetze."
+  ]},
   { id: "zh", name: "Mandarin Chinese", native: "普通话", dir: "ltr", lines: [
     "我是 Yingjie Xiao，一名计算语言学学生，着迷于语言背后的隐藏结构。",
     "我研究人类和语言模型如何感知因果关系、进行推理，并将所学推广到未见过的情境。",
     "我希望把我们对智能的理解转化为服务科研、医疗和更好决策的实用系统。"
-  ]},
-  { id: "ja", name: "Japanese", native: "日本語", dir: "ltr", lines: [
-    "私は Yingjie Xiao です。言語の隠れた構造に魅了されている計算言語学の学生です。",
-    "人間と言語モデルが因果関係をどう捉え、推論し、未知の状況へ一般化するのかを研究しています。",
-    "知能への理解を、研究・医療・より良い意思決定に役立つシステムへつなげたいと考えています。"
-  ]},
-  { id: "ko", name: "Korean", native: "한국어", dir: "ltr", lines: [
-    "저는 언어의 숨은 구조에 매료된 전산언어학도 Yingjie Xiao입니다.",
-    "인간과 언어 모델이 인과관계를 어떻게 인식하고 추론하며, 경험하지 않은 상황으로 일반화하는지 연구합니다.",
-    "지능에 대한 이해를 연구와 의료, 더 나은 의사결정에 유용한 시스템으로 발전시키고 싶습니다."
   ]},
   { id: "es", name: "Spanish", native: "Español", dir: "ltr", lines: [
     "Soy Yingjie Xiao, estudiante de lingüística computacional, fascinado por las estructuras ocultas del lenguaje.",
@@ -34,30 +29,40 @@ const languages = [
     "J’étudie comment les humains et les modèles de langage perçoivent la causalité, raisonnent et généralisent au-delà de ce qu’ils ont observé.",
     "Je souhaite transformer notre compréhension de l’intelligence en systèmes utiles à la recherche, à la médecine et à de meilleures décisions."
   ]},
-  { id: "ar", name: "Arabic", native: "العربية", dir: "rtl", lines: [
-    "أنا Yingjie Xiao، طالب في اللسانيات الحاسوبية، ومفتون بالبُنى الخفية للغة.",
-    "أدرس كيف يدرك البشر ونماذج اللغة السببية، وكيف يستدلون ويعمّمون إلى ما وراء ما شاهدوه.",
-    "أريد أن أحوّل فهمنا للذكاء إلى أنظمة مفيدة للبحث والطب واتخاذ قرارات أفضل."
+  { id: "pt", name: "Portuguese", native: "Português", dir: "ltr", lines: [
+    "Sou Yingjie Xiao, estudante de linguística computacional, fascinado pelas estruturas ocultas da linguagem.",
+    "Estudo como os seres humanos e os modelos de linguagem percebem a causalidade, raciocinam e generalizam para além do que já viram.",
+    "Quero transformar nossa compreensão da inteligência em sistemas úteis para a pesquisa, a medicina e uma melhor tomada de decisões."
   ]},
-  { id: "hi", name: "Hindi", native: "हिन्दी", dir: "ltr", lines: [
-    "मैं Yingjie Xiao हूँ, संगणकीय भाषाविज्ञान का विद्यार्थी, और भाषा की छिपी संरचनाओं से आकर्षित हूँ।",
-    "मैं अध्ययन करता हूँ कि मनुष्य और भाषा मॉडल कारणता को कैसे समझते हैं, तर्क करते हैं और देखी हुई चीज़ों से आगे सामान्यीकरण करते हैं।",
-    "मैं बुद्धिमत्ता की हमारी समझ को शोध, चिकित्सा और बेहतर निर्णय लेने के लिए उपयोगी प्रणालियों में बदलना चाहता हूँ।"
+  { id: "nb", name: "Norwegian Bokmål", native: "Norsk", dir: "ltr", lines: [
+    "Jeg er Yingjie Xiao, student i datalingvistikk, fascinert av språkets skjulte strukturer.",
+    "Jeg studerer hvordan mennesker og språkmodeller oppfatter årsakssammenhenger, resonnerer og generaliserer utover det de har sett.",
+    "Jeg ønsker å omsette vår forståelse av intelligens til nyttige systemer for forskning, medisin og bedre beslutninger."
   ]},
-  { id: "sw", name: "Swahili", native: "Kiswahili", dir: "ltr", lines: [
-    "Mimi ni Yingjie Xiao, mwanafunzi wa isimu kompyuta ninayevutiwa na miundo iliyofichika ya lugha.",
-    "Ninachunguza jinsi binadamu na modeli za lugha zinavyotambua usababisho, kufikiri na kujumlisha zaidi ya yale walivyoona.",
-    "Ninataka kugeuza uelewa wetu wa akili kuwa mifumo yenye manufaa kwa utafiti, tiba na maamuzi bora."
+  { id: "sv", name: "Swedish", native: "Svenska", dir: "ltr", lines: [
+    "Jag är Yingjie Xiao, student i datorlingvistik, fascinerad av språkets dolda strukturer.",
+    "Jag studerar hur människor och språkmodeller uppfattar orsakssamband, resonerar och generaliserar bortom det de har sett.",
+    "Jag vill omvandla vår förståelse av intelligens till användbara system för forskning, medicin och bättre beslutsfattande."
   ]},
-  { id: "tr", name: "Turkish", native: "Türkçe", dir: "ltr", lines: [
-    "Ben Yingjie Xiao; dilin gizli yapılarına ilgi duyan bir hesaplamalı dilbilim öğrencisiyim.",
-    "İnsanların ve dil modellerinin nedenselliği nasıl algıladığını, akıl yürüttüğünü ve gördüklerinin ötesine nasıl genellediğini araştırıyorum.",
-    "Zekâ anlayışımızı araştırma, tıp ve daha iyi karar verme için yararlı sistemlere dönüştürmek istiyorum."
+  { id: "ru", name: "Russian", native: "Русский", dir: "ltr", lines: [
+    "Я Yingjie Xiao, студент компьютерной лингвистики, увлечённый скрытыми структурами языка.",
+    "Я изучаю, как люди и языковые модели воспринимают причинность, рассуждают и обобщают за пределами увиденного.",
+    "Я хочу превращать наше понимание интеллекта в полезные системы для науки, медицины и принятия более обоснованных решений."
   ]},
-  { id: "fi", name: "Finnish", native: "Suomi", dir: "ltr", lines: [
-    "Olen Yingjie Xiao, laskennallisen kielitieteen opiskelija, jota kielet ja niiden piilevät rakenteet kiehtovat.",
-    "Tutkin, miten ihmiset ja kielimallit havaitsevat syy-yhteyksiä, päättelevät ja yleistävät näkemänsä ulkopuolelle.",
-    "Haluan muuttaa ymmärryksemme älykkyydestä hyödyllisiksi järjestelmiksi tutkimukseen, lääketieteeseen ja parempaan päätöksentekoon."
+  { id: "nl", name: "Dutch", native: "Nederlands", dir: "ltr", lines: [
+    "Ik ben Yingjie Xiao, student computationele taalkunde, gefascineerd door de verborgen structuren van taal.",
+    "Ik onderzoek hoe mensen en taalmodellen causaliteit waarnemen, redeneren en generaliseren voorbij wat ze hebben gezien.",
+    "Ik wil ons begrip van intelligentie omzetten in bruikbare systemen voor onderzoek, geneeskunde en betere besluitvorming."
+  ]},
+  { id: "it", name: "Italian", native: "Italiano", dir: "ltr", lines: [
+    "Sono Yingjie Xiao, studente di linguistica computazionale, affascinato dalle strutture nascoste del linguaggio.",
+    "Studio come le persone e i modelli linguistici percepiscono la causalità, ragionano e generalizzano oltre ciò che hanno osservato.",
+    "Voglio trasformare la nostra comprensione dell’intelligenza in sistemi utili per la ricerca, la medicina e decisioni migliori."
+  ]},
+  { id: "yue", name: "Cantonese", native: "粵語", dir: "ltr", lines: [
+    "我係 Yingjie Xiao，一個讀計算語言學、對語言背後隱藏結構好着迷嘅學生。",
+    "我研究人類同語言模型點樣理解因果關係、推理，同埋將學到嘅嘢應用喺未見過嘅情境。",
+    "我希望將我哋對智能嘅理解，轉化成幫助科研、醫療同作出更好決策嘅實用系統。"
   ]}
 ];
 
