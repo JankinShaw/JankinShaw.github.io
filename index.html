@@ -46,7 +46,8 @@ nav: home
 
 <section class="content-section shell">
   <p class="section-label reveal">Selected research</p>
-  {% assign paper = site.data.publications.papers.first %}
+  {% assign selected_papers = site.data.publications.papers | where: 'selected', 'y' %}
+  {% assign paper = selected_papers.first %}
   <article class="home-publication reveal">
     <p>{{ paper.year }}</p>
     <div>

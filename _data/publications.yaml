@@ -7,7 +7,7 @@ papers:
     code:
     al: y
     sla: y
-    selected: y
+    selected: n
   - title: "Implicit causality revision is costly but delayed: Evidence from self-paced reading"
     year: "2026"
     authors: "Achimova, A., Dietrich, S., Altshuler, D., Xiao, Y., Rolke, B., & M.V. Butz."
@@ -18,4 +18,4 @@ papers:
     al: n
     sla: n
     cognition: y
-    selected: n
+    selected: y
