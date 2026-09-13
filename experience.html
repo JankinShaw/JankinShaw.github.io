@@ -26,7 +26,7 @@ description: "Education, work, and teaching experience of Yingjie Xiao."
         <span>{{ exp.category }}</span>
       </div>
       <div class="timeline-content">
-        <h2>{{ exp.place }}</h2>
+        <h2>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }} <span class="external-arrow" aria-hidden="true">↗</span></a>{% else %}{{ exp.place }}{% endif %}</h2>
         <p>{{ exp.title }}</p>
         {% if exp.subtitle and exp.subtitle != '' %}<p class="muted">{{ exp.subtitle }}</p>{% endif %}
       </div>

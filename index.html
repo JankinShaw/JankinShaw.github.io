@@ -66,7 +66,7 @@ nav: home
     <article class="home-experience-row reveal">
       <p>{{ exp.time }}</p>
       <div>
-        <h3>{{ exp.place }}</h3>
+        <h3>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }} <span class="external-arrow" aria-hidden="true">↗</span></a>{% else %}{{ exp.place }}{% endif %}</h3>
         <p>{{ exp.title }}</p>
       </div>
     </article>

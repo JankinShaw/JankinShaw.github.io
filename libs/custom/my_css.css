@@ -522,6 +522,23 @@ h2 em {
   font-size: 19px;
 }
 
+.home-experience-row h3 a,
+.timeline-content h2 a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.home-experience-row h3 a:hover,
+.timeline-content h2 a:hover {
+  color: var(--accent);
+}
+
+.home-experience-row h3 a .external-arrow,
+.timeline-content h2 a .external-arrow {
+  font-size: 0.65em;
+}
+
 .home-experience-row div p {
   margin-bottom: 0;
   color: var(--secondary);
