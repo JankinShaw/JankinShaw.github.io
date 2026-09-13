@@ -6,7 +6,7 @@ nav: home
 
 <section class="home-hero shell">
   <div class="home-intro reveal">
-    <p class="pronunciation">[{{ site.data.main_info.pronunciation }}]</p>
+    <button class="pronunciation pronunciation-secret" type="button" data-tldr-door data-tldr-href="{{ '/tldr/' | relative_url }}" aria-label="Pronunciation. A hidden door may be nearby.">[{{ site.data.main_info.pronunciation }}]</button>
     <h1>{{ site.data.main_info.name }}</h1>
     <p>{{ site.data.main_info.role }}<br>{{ site.data.main_info.institution }}</p>
     <p class="home-topics">Human Language Understanding&nbsp; | &nbsp;Safer Language Models</p>

@@ -1,0 +1,124 @@
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { color: inherit; font: inherit; }
+
+main {
+  width: min(680px, calc(100vw - 44px));
+  margin: 0 auto;
+}
+
+.language-picker {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 55px 0;
+}
+
+.language-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  width: min(360px, 100%);
+}
+
+.language-option {
+  display: block;
+  width: auto;
+  padding: 7px 12px;
+  background: none;
+  border: 0;
+  color: #444;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.015em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.language-option:hover,
+.language-option:focus-visible {
+  color: #000;
+  letter-spacing: 0.07em;
+  outline: 0;
+}
+
+.sentence-view {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 70px 0;
+}
+
+.sentence-frame {
+  width: 100%;
+  text-align: center;
+}
+
+.language-name {
+  margin: 0 0 48px;
+  color: #888;
+  font-size: 11px;
+}
+
+.sentence {
+  width: 100%;
+  min-height: 150px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 3.2vw, 34px);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 1.35;
+}
+
+.sentence[dir="rtl"] { text-align: right; }
+
+.sentence-count {
+  margin: 34px 0 18px;
+  color: #999;
+  font-size: 10px;
+}
+
+.continue {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.continue:hover,
+.continue:focus-visible {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+  outline: 0;
+}
+
+[hidden] { display: none !important; }
+
+@media (max-width: 560px) {
+  .sentence { min-height: 190px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .language-option { transition: color 160ms ease, letter-spacing 160ms ease; }
+  .sentence-frame { animation: appear 320ms ease; }
+  @keyframes appear { from { opacity: 0; transform: translateY(7px); } }
+}

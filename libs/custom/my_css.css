@@ -206,11 +206,29 @@ h2 em {
 }
 
 .pronunciation {
+  display: inline-block;
   margin-bottom: 22px;
+  padding: 0;
+  background: none;
+  border: 0;
   color: var(--secondary);
+  cursor: default;
   font-family: "Libertinus Pronunciation", "Times New Roman", serif;
   font-size: 13px;
   letter-spacing: 0.015em;
+}
+
+.pronunciation-secret.is-listening {
+  animation: secret-pulse 420ms ease;
+}
+
+.pronunciation-secret.is-opening {
+  color: #7664a8;
+  text-shadow: 0 0 14px rgba(118, 100, 168, 0.5);
+}
+
+@keyframes secret-pulse {
+  50% { letter-spacing: 0.08em; }
 }
 
 .home-intro h1 {

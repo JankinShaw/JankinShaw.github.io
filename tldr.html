@@ -1,0 +1,34 @@
+---
+layout: null
+title: "TL;DR"
+permalink: /tldr/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Three sentences about Yingjie Xiao, in many languages.">
+  <title>TL;DR — Yingjie Xiao</title>
+  <link rel="icon" href="{{ '/libs/icon.png' | relative_url }}" type="image/png">
+  <link rel="stylesheet" href="{{ '/libs/custom/tldr.css' | relative_url }}?v={{ site.asset_version }}">
+  <script src="{{ '/libs/custom/tldr.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
+</head>
+<body>
+  <main>
+    <section class="language-picker" data-language-picker>
+      <div class="language-list" data-language-list></div>
+    </section>
+
+    <section class="sentence-view" data-sentence-view hidden>
+      <div class="sentence-frame">
+        <p class="language-name" data-language-name></p>
+        <p class="sentence" data-sentence aria-live="polite"></p>
+        <p class="sentence-count" data-sentence-count>1 / 3</p>
+        <button class="continue" type="button" data-continue aria-label="Continue">→</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

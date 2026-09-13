@@ -10,10 +10,32 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePortraitTurntable(reducedMotion);
   initializeFilters();
   initializeFooterYear();
+  initializeTLDRSecret();
   const language = initializeLanguage();
   initializeRainbowText();
   initializeRainbowBloom(language);
 });
+
+/* Three quick taps on the pronunciation open the hidden language museum. */
+function initializeTLDRSecret() {
+  const door = document.querySelector("[data-tldr-door]");
+  if (!door) return;
+  let taps = 0;
+  let resetTimer = null;
+  door.addEventListener("click", () => {
+    taps += 1;
+    clearTimeout(resetTimer);
+    door.classList.remove("is-listening");
+    void door.offsetWidth;
+    door.classList.add("is-listening");
+    if (taps >= 3) {
+      door.classList.add("is-opening");
+      window.setTimeout(() => { window.location.href = door.dataset.tldrHref; }, 420);
+      return;
+    }
+    resetTimer = window.setTimeout(() => { taps = 0; }, 1800);
+  });
+}
 
 function sparkleWord(element) {
   if (!element.animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;

@@ -15,6 +15,7 @@ A quiet, editorial portfolio for computational linguistics research. The site is
 | `_data/talks.yaml` | Conference talks and presentations |
 | `_data/experience.yaml` | Education and employment history |
 | `_data/classes.yaml` | Teaching experience |
+| `tldr.html` | Hidden interactive language museum at `/tldr/` |
 | `_layouts/` | Shared page shells for pages and projects |
 | `libs/custom/my_css.css` | Complete visual design system and responsive layout |
 | `libs/custom/my_js.js` | Mobile navigation, filters, and restrained reveal effects |
