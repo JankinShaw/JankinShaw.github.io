@@ -14,6 +14,11 @@ const languages = [
     "Ich untersueche, wie Mänsche und Sprachmodell Kausalität wahrnähmed, Schlussfolgerige ziehnd und über s Bekannti use generalisiered.",
     "Ich möcht üses Verständnis vo Intelligenz in nützlechi System für d Forschig, d Medizin und besseri Entscheidige umsetze."
   ]},
+  { id: "swg", name: "Swabian", native: "Schwäbisch", dir: "ltr", lines: [
+    "I ben Yingjie Xiao, studier Computerlinguistik, ond mi faszinieret dia versteckte Struktura von dr Sproch.",
+    "I untersuch, wie Leit ond Sprachmodelle Kausalität wahrnemmet, Schlussfolgerunge ziehet ond über des naus generalisieret, was se scho gseha hend.",
+    "I will aus onsrem Verständnis von Intelligenz nützliche System für d Forschig, d Medizin ond bessere Entscheidunge macha."
+  ]},
   { id: "zh", name: "Mandarin Chinese", native: "普通话", dir: "ltr", lines: [
     "我是 Yingjie Xiao，一名计算语言学学生，着迷于语言背后的隐藏结构。",
     "我研究人类和语言模型如何感知因果关系、进行推理，并将所学推广到未见过的情境。",
