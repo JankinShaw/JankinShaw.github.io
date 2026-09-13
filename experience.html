@@ -47,6 +47,7 @@ description: "Education, work, and teaching experience of Yingjie Xiao."
         <p class="card-meta">{{ class.time }}</p>
         <h3>{{ class.name }}</h3>
         <p>{{ class.title }}</p>
+        {% if class.institution %}<p class="muted">{{ class.institution }}</p>{% endif %}
         {% if class.link %}<a class="text-link" href="{{ class.link }}" target="_blank" rel="noopener">Course context <span aria-hidden="true">↗</span></a>{% endif %}
       </article>
       {% endfor %}
