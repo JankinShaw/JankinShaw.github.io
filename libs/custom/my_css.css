@@ -172,6 +172,10 @@ h2 em {
 .sidebar-links {
   display: grid;
   gap: 3px;
+}
+
+.sidebar-utility {
+  position: relative;
   margin-top: auto;
 }
 
@@ -184,6 +188,169 @@ h2 em {
 .sidebar-links a:hover {
   color: var(--ink);
 }
+
+.accessibility-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 15px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--secondary);
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.accessibility-toggle:hover,
+.accessibility-toggle:focus-visible { color: var(--ink); }
+
+.accessibility-panel {
+  position: absolute;
+  z-index: 300;
+  bottom: 30px;
+  left: 0;
+  width: 260px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+}
+
+.accessibility-panel[hidden] { display: none; }
+
+.accessibility-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.accessibility-close {
+  padding: 0 3px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.accessibility-size-control {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+}
+
+.accessibility-language-control {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+}
+
+.accessibility-language-control legend {
+  margin-bottom: 7px;
+  color: var(--secondary);
+  font-size: 11px;
+}
+
+.accessibility-language-control button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.accessibility-language-control button[aria-pressed="true"] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.accessibility-size-control legend {
+  margin-bottom: 7px;
+  color: var(--secondary);
+  font-size: 11px;
+}
+
+.accessibility-size-control button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.accessibility-size-control button[aria-pressed="true"] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.accessibility-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  cursor: pointer;
+}
+
+.accessibility-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--ink);
+}
+
+.accessibility-pages {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.accessibility-pages a { width: fit-content; }
+
+html[data-text-size="small"] body { zoom: 0.9; }
+html[data-text-size="large"] body { zoom: 1.15; }
+
+html.user-high-contrast {
+  --ink: #000000;
+  --secondary: #292929;
+  --line: #595959;
+  --accent: #174f40;
+  --faint: #eeeeee;
+}
+
+html.user-high-contrast a:not(.button) { text-decoration: underline; }
+html.user-reduced-motion { scroll-behavior: auto; }
+
+html.user-reduced-motion *,
+html.user-reduced-motion *::before,
+html.user-reduced-motion *::after {
+  animation: none !important;
+  scroll-behavior: auto !important;
+  transition: none !important;
+}
+
+html.user-reduced-motion .rainbow-bloom { display: none; }
+html.user-reduced-motion .js .reveal { opacity: 1; transform: none; }
+html.user-reduced-motion .depth-stage,
+html.user-reduced-motion .depth-layer,
+html.user-reduced-motion .depth-light { transform: none !important; }
+html.user-reduced-motion .rainbow-word {
+  background: none;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  filter: none !important;
+}
+html.user-reduced-motion .word-shards { display: none; }
 
 .nav-toggle {
   display: none;
@@ -946,6 +1113,38 @@ h2 em {
   margin: 0;
 }
 
+.easy-read-content,
+.accessibility-content { max-width: 720px; }
+
+.easy-read-block,
+.accessibility-copy { margin-bottom: 58px; }
+
+.easy-read-block h2,
+.accessibility-copy h2 {
+  margin-bottom: 18px;
+  font-size: 28px;
+}
+
+.easy-read-block p,
+.easy-read-block li {
+  max-width: 620px;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.easy-read-block ul,
+.accessibility-copy ul { padding-left: 1.25em; }
+
+.easy-read-block li,
+.accessibility-copy li { margin-bottom: 10px; }
+
+.accessibility-copy p,
+.accessibility-copy li {
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
 /* ------------------------------------------------------------
    Footer and restrained motion
    ------------------------------------------------------------ */
@@ -1132,6 +1331,25 @@ a:focus-visible .rainbow-word {
 
   .sidebar-links {
     display: none;
+  }
+
+  .sidebar-utility {
+    position: static;
+    margin: 0 0 0 auto;
+  }
+
+  .accessibility-toggle {
+    margin: 0 16px 0 0;
+    font-size: 12px;
+  }
+
+  .accessibility-panel {
+    position: fixed;
+    top: 70px;
+    right: 12px;
+    bottom: auto;
+    left: auto;
+    width: min(300px, calc(100vw - 24px));
   }
 
   .home-hero {

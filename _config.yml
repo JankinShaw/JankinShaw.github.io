@@ -5,7 +5,7 @@ baseurl: ""
 lang: "en"
 timezone: "Europe/Berlin"
 google_analytics_id: "G-J2MD5NTZFB"
-asset_version: "20260913-11"
+asset_version: "20260914-14"
 
 source: .
 destination: ./_site

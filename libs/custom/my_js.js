@@ -2,7 +2,9 @@
 document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  initializeAccessibilityOptions();
+  const reducedMotion = document.documentElement.classList.contains("user-reduced-motion") ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   initializeNavigation();
   initializeScrollEffects(reducedMotion);
@@ -12,9 +14,98 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeFooterYear();
   initializeTLDRSecret();
   const language = initializeLanguage();
+  initializeLanguageControls(language);
   initializeRainbowText();
   initializeRainbowBloom(language);
 });
+
+/* Offer visible, persistent display preferences without replacing browser controls. */
+function initializeAccessibilityOptions() {
+  const root = document.documentElement;
+  const toggle = document.querySelector("[data-accessibility-toggle]");
+  const panel = document.querySelector("[data-accessibility-panel]");
+  const close = document.querySelector("[data-accessibility-close]");
+  if (!toggle || !panel) return;
+
+  const read = (key, fallback) => {
+    try { return localStorage.getItem(key) || fallback; } catch (_) { return fallback; }
+  };
+  const write = (key, value) => {
+    try { localStorage.setItem(key, value); } catch (_) { /* Preferences remain active for this page. */ }
+  };
+  const applySize = (size) => {
+    root.dataset.textSize = size;
+    panel.querySelectorAll("[data-text-size]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.textSize === size));
+    });
+  };
+  const applySetting = (name, enabled) => {
+    root.classList.toggle(name === "contrast" ? "user-high-contrast" : "user-reduced-motion", enabled);
+    const input = panel.querySelector(`[data-accessibility-setting="${name}"]`);
+    if (input) input.checked = enabled;
+    if (name === "motion") {
+      if (enabled) {
+        document.getAnimations().forEach((animation) => animation.cancel());
+        document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+      }
+      document.dispatchEvent(new CustomEvent("reduced-motion-change", { detail: { enabled } }));
+    }
+  };
+  const closePanel = (restoreFocus = false) => {
+    panel.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+    if (restoreFocus) toggle.focus();
+  };
+
+  applySize(read("accessibility-text-size", "default"));
+  applySetting("contrast", read("accessibility-contrast", "false") === "true");
+  applySetting("motion", read("accessibility-motion", "false") === "true");
+
+  toggle.addEventListener("click", () => {
+    const opening = panel.hidden;
+    panel.hidden = !opening;
+    toggle.setAttribute("aria-expanded", String(opening));
+    if (opening) panel.querySelector("button, input, a")?.focus();
+  });
+  close?.addEventListener("click", () => closePanel(true));
+  panel.querySelectorAll("[data-text-size]").forEach((button) => {
+    button.addEventListener("click", () => {
+      applySize(button.dataset.textSize);
+      write("accessibility-text-size", button.dataset.textSize);
+    });
+  });
+  panel.querySelectorAll("[data-accessibility-setting]").forEach((input) => {
+    input.addEventListener("change", () => {
+      applySetting(input.dataset.accessibilitySetting, input.checked);
+      write(`accessibility-${input.dataset.accessibilitySetting}`, String(input.checked));
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !panel.hidden) closePanel(true);
+  });
+  document.addEventListener("click", (event) => {
+    if (!panel.hidden && !panel.contains(event.target) && !toggle.contains(event.target)) closePanel();
+  });
+}
+
+function initializeLanguageControls(language) {
+  const buttons = document.querySelectorAll("[data-language-select]");
+  if (!buttons.length) return;
+  const update = () => {
+    buttons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.languageSelect === document.documentElement.lang));
+    });
+  };
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      language.cancel();
+      language.apply(button.dataset.languageSelect);
+      update();
+    });
+  });
+  document.addEventListener("language-selected", update);
+  update();
+}
 
 /* Three quick taps on the pronunciation open the hidden language museum. */
 function initializeTLDRSecret() {
@@ -112,7 +203,6 @@ function initializeLanguage() {
   });
   const title = document.title;
   const pageName = title.split(" — ")[0];
-  const shatter = initializeWordShatter();
   let selected = "en";
   let target = "de";
   let waveRecords = [];
@@ -143,7 +233,6 @@ function initializeLanguage() {
     canAuto: () => waveRecords.length === 0,
     finish: () => apply(target),
     begin: (origin) => {
-      if (origin) { shatter(origin); sparkleWord(origin); }
       target = selected === "en" ? "de" : "en";
       waveRecords = records.map((record) => {
         const words = Array.from(record.element.querySelectorAll(".rainbow-word"));
@@ -175,10 +264,8 @@ function initializeLanguage() {
         });
       });
       reached.forEach((slot) => {
-        shatter(slot.element);
         slot.element.textContent = slot.text;
         slot.element.lang = target;
-        sparkleWord(slot.element);
         slot.done = true;
       });
       waveRecords.forEach((entry) => {
@@ -187,7 +274,6 @@ function initializeLanguage() {
         entry.record.element.textContent = entry.destination;
         entry.record.element.lang = target;
         initializeRainbowText([entry.record.element]);
-        sparkleWord(entry.record.element);
       });
     },
     cancel: () => {
@@ -226,10 +312,13 @@ function initializeRainbowBloom(language) {
     language.cancel();
     canvas.classList.remove("is-blooming");
   };
+  document.addEventListener("reduced-motion-change", (event) => {
+    if (event.detail.enabled) stop();
+  });
 
   const bloom = () => {
     delay = null;
-    if (!word || !allowed.matches || !language.canAuto()) return;
+    if (!word || !allowed.matches || document.documentElement.classList.contains("user-reduced-motion") || !language.canAuto()) return;
     const rect = word.getBoundingClientRect();
     running = true;
     language.begin(word);
@@ -289,7 +378,7 @@ function initializeRainbowBloom(language) {
   };
 
   const trackWord = (event) => {
-    if (running || !language.canAuto() || !allowed.matches || event.pointerType === "touch") return;
+    if (running || !language.canAuto() || !allowed.matches || document.documentElement.classList.contains("user-reduced-motion") || event.pointerType === "touch") return;
     const next = event.target.closest(".rainbow-word");
     if (next === word) return;
     stop();
@@ -558,11 +647,13 @@ function initializeFilters() {
     const items = group.querySelectorAll("[data-filter-item]");
 
     buttons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.classList.contains("is-active")));
       button.addEventListener("click", () => {
         const selected = button.dataset.filter;
 
         buttons.forEach((candidate) => {
           candidate.classList.toggle("is-active", candidate === button);
+          candidate.setAttribute("aria-pressed", String(candidate === button));
         });
 
         items.forEach((item) => {
