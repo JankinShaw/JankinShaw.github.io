@@ -1290,11 +1290,14 @@ a:focus-visible .rainbow-word {
   }
 
   .site-name {
+    order: 1;
     margin: 0;
   }
 
   .nav-toggle {
+    order: 3;
     display: block;
+    margin-left: 18px;
     padding: 0;
     background: transparent;
     border: 0;
@@ -1334,6 +1337,7 @@ a:focus-visible .rainbow-word {
   }
 
   .sidebar-utility {
+    order: 2;
     position: static;
     margin: 0 0 0 auto;
   }
@@ -1382,6 +1386,23 @@ a:focus-visible .rainbow-word {
 }
 
 @media (max-width: 560px) {
+  .accessibility-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .accessibility-toggle {
+    margin-right: 0;
+    font-size: 16px;
+  }
+
   .home-intro h1 {
     font-size: 31px;
   }
