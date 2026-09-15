@@ -92,7 +92,7 @@ const germanTranslations = {
   "About me and": "Über mich und",
   "this website.": "diese Website.",
   "This page uses short sentences and explains the main information on this website.": "Diese Seite verwendet kurze Sätze und erklärt die wichtigsten Informationen dieser Website.",
-  "Even simpler language": "Noch einfachere Sprache",
+  "Other options": "Weitere Optionen",
   "My name is Yingjie Xiao.": "Mein Name ist Yingjie Xiao.",
   "I study Computational Linguistics at the University of Tübingen in Germany.": "Ich studiere Computerlinguistik an der Universität Tübingen.",
   "Computational Linguistics is about language and computers.": "In der Computerlinguistik geht es um Sprache und Computer.",
