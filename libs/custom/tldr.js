@@ -24,6 +24,11 @@ const languages = [
     "我研究人类和语言模型如何感知因果关系、进行推理，并将所学推广到未见过的情境。",
     "我希望把我们对智能的理解转化为服务科研、医疗和更好决策的实用系统。"
   ]},
+  { id: "lzh", name: "Classical Chinese", native: "文言文", dir: "ltr", lines: [
+    "余 Yingjie Xiao 也，治計算語言學，好探語言幽微之理。",
+    "余研人與語言模型何以察因果、作推理，且能觸類旁通，達於未見。",
+    "願以吾人所知之智能，成有用之器，以裨研究、醫藥與決策之善。"
+  ]},
   { id: "es", name: "Spanish", native: "Español", dir: "ltr", lines: [
     "Soy Yingjie Xiao, estudiante de lingüística computacional, fascinado por las estructuras ocultas del lenguaje.",
     "Estudio cómo los seres humanos y los modelos de lenguaje perciben la causalidad, razonan y generalizan más allá de lo que han visto.",
