@@ -203,6 +203,7 @@ function initializeLanguage() {
   });
   const title = document.title;
   const pageName = title.split(" — ")[0];
+  const shatter = initializeWordShatter();
   let selected = "en";
   let target = "de";
   let waveRecords = [];
@@ -233,6 +234,12 @@ function initializeLanguage() {
     canAuto: () => waveRecords.length === 0,
     finish: () => apply(target),
     begin: (origin) => {
+      const motionAllowed = !document.documentElement.classList.contains("user-reduced-motion") &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (origin && motionAllowed) {
+        shatter(origin);
+        sparkleWord(origin);
+      }
       target = selected === "en" ? "de" : "en";
       waveRecords = records.map((record) => {
         const words = Array.from(record.element.querySelectorAll(".rainbow-word"));
@@ -264,8 +271,10 @@ function initializeLanguage() {
         });
       });
       reached.forEach((slot) => {
+        if (!document.documentElement.classList.contains("user-reduced-motion")) shatter(slot.element);
         slot.element.textContent = slot.text;
         slot.element.lang = target;
+        sparkleWord(slot.element);
         slot.done = true;
       });
       waveRecords.forEach((entry) => {
@@ -274,6 +283,7 @@ function initializeLanguage() {
         entry.record.element.textContent = entry.destination;
         entry.record.element.lang = target;
         initializeRainbowText([entry.record.element]);
+        sparkleWord(entry.record.element);
       });
     },
     cancel: () => {
