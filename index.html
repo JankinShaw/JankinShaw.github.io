@@ -52,7 +52,7 @@ nav: home
     <p>{{ paper.year }}</p>
     <div>
       <h2>{{ paper.title }}</h2>
-      <p>{{ paper.authors }}</p>
+      <p>{{ paper.authors | replace: 'Yingjie Xiao', '<strong>Yingjie Xiao</strong>' | replace: 'Xiao, Y.', '<strong>Xiao, Y.</strong>' }}</p>
       <p>{{ paper.venue }}</p>
     </div>
     {% if paper.paper_pdf %}<a href="{{ paper.paper_pdf }}" target="_blank" rel="noopener">PDF ↗</a>{% endif %}
