@@ -1116,6 +1116,13 @@ html.user-reduced-motion .word-shards { display: none; }
 .easy-read-content,
 .accessibility-content { max-width: 720px; }
 
+.easy-read-language-link {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 13px;
+  text-underline-offset: 4px;
+}
+
 .easy-read-block,
 .accessibility-copy { margin-bottom: 58px; }
 
