@@ -18,7 +18,7 @@ const germanTranslations = {
   "Beyond Explicit and Implicit: Critically Thinking Your Way to Feedback on Academic Writing Drafts of PhD Candidates": "Jenseits von explizit und implizit: Durch kritisches Denken zu Feedback auf wissenschaftliche Textentwürfe von Promovierenden",
   "Yingjie Xiao, Bo Gao, and Runan Jin": "Yingjie Xiao, Bo Gao und Runan Jin", ", Bo Gao, and Runan Jin": ", Bo Gao und Runan Jin",
   "Orally presented at": "Vorgetragen auf der",
-  "the Hong Kong Polytechnic University Conference of Applied Linguistics and Language Studies (PolyU CALLS 2024)": "Konferenz für Angewandte Linguistik und Sprachstudien der Hong Kong Polytechnic University (PolyU CALLS 2024)",
+  "the Hong Kong Polytechnic University Undergraduate Conference of Applied Linguistics and Language Studies (PolyU CALLS 2024)": "Undergraduate-Konferenz für Angewandte Linguistik und Sprachstudien der Hong Kong Polytechnic University (PolyU CALLS 2024)",
   "All research →": "Gesamte Forschung →", "Recent experience": "Aktuelle Stationen",
   "University of Tübingen": "Universität Tübingen",
   "International Studies in Computational Linguistics (ISCL) Program": "Studiengang International Studies in Computational Linguistics (ISCL)",
