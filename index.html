@@ -11,9 +11,6 @@ nav: home
   {% for paragraph in site.data.main_info.bio %}
   <p>{{ paragraph }}</p>
   {% endfor %}
-  <p class="contact-line">{{ site.data.main_info.email }}</p>
-  <p class="profile-links"><a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub</a> · <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> · <button class="pronunciation" type="button" data-tldr-door data-tldr-href="{{ '/tldr/' | relative_url }}" aria-label="Pronunciation. A hidden door may be nearby.">[{{ site.data.main_info.pronunciation }}]</button></p>
-
   <section aria-labelledby="research-interests">
     <h2 id="research-interests">Research Interests</h2>
     <ul>
@@ -33,7 +30,6 @@ nav: home
       </li>
       {% endfor %}
     </ul>
-    <p><a href="{{ '/research/' | relative_url }}">All research →</a></p>
   </section>
 
   <section aria-labelledby="teaching">
@@ -48,15 +44,9 @@ nav: home
     </ul>
   </section>
 
-  <section aria-labelledby="experience">
-    <h2 id="experience">Education</h2>
-    <ul>
-      {% for exp in site.data.experience.experiences %}
-      <li>{{ exp.time }}
-        <ul><li>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }}</a>{% else %}{{ exp.place }}{% endif %} — {{ exp.title }}</li></ul>
-      </li>
-      {% endfor %}
-    </ul>
-    <p><a href="{{ '/experience/' | relative_url }}">All education →</a></p>
+  <section aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <p class="contact-line">{{ site.data.main_info.email }}</p>
+    <p class="profile-links"><a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub</a> · <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> · <button class="pronunciation" type="button" data-tldr-door data-tldr-href="{{ '/tldr/' | relative_url }}" aria-label="Pronunciation. A hidden door may be nearby.">[{{ site.data.main_info.pronunciation }}]</button></p>
   </section>
 </article>
