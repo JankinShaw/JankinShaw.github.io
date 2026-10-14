@@ -5,19 +5,6 @@ experiences:
   subtitle: ""
   category: "school"
 
-- place: "GreenDynamics Pty Ltd."
-  link: "https://greendynamics.ai/"
-  time: "08.2023 - 06.2025"
-  title: "Data Science Intern"
-  subtitle: ""
-  category: "work"
-
-- place: "UC San Diego"
-  time: "07.2023 - 12.2023"
-  title: "Division of Extended Studies"
-  subtitle: "Four courses taken: Python(A+), Calculus I(A), Linear Algebra(B), Statistics(B)"
-  category: "school"
-
 - place: "Beijing Institute of Technology"
   time: "2020 - 2024"
   title: "B.A. in English Language and Literature"

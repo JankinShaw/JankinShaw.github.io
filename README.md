@@ -1,12 +1,12 @@
 # Yingjie Xiao — Personal Academic Site
 
-A quiet, editorial portfolio for computational linguistics research. The site is built with Jekyll and deployed as a fully static GitHub Pages site. It has no database, paid CMS, JavaScript framework, or runtime service.
+A Tufte-inspired academic website with an ivory background, locally hosted ET Book typography, red text navigation, and a continuous reading column. The site is built with Jekyll and deployed as a fully static GitHub Pages site. It has no database, paid CMS, JavaScript framework, or runtime service.
 
 ## Site structure
 
 | File or folder | What it controls |
 | --- | --- |
-| `index.html` | Home page and selected-content previews |
+| `index.html` | Biography, research interests, publications, teaching, and experience |
 | `about.html` | Biography, research interests, and contact block |
 | `research.html` | Publications and presentations |
 | `experience.html` | Education, work, and teaching timeline |
@@ -18,8 +18,8 @@ A quiet, editorial portfolio for computational linguistics research. The site is
 | `tldr.html` | Hidden interactive language museum at `/tldr/` |
 | `_layouts/` | Shared page shells for pages and projects |
 | `libs/custom/my_css.css` | Complete visual design system and responsive layout |
-| `libs/custom/my_js.js` | Mobile navigation, filters, and restrained reveal effects |
-| `assets/` | Profile image, PDFs, the TW-Kai subset, and other static files |
+| `libs/custom/my_js.js` | Display preferences, English/German language selection, research filters, and hidden-page entry |
+| `assets/` | ET Book fonts, pronunciation font, profile images, PDFs, and other static files |
 
 ## Preview locally
 
@@ -50,9 +50,7 @@ interests:
   - "Second research interest"
 ```
 
-The homepage portrait uses two aligned images. `profile_depth_photo` is the person-free background plate, and `profile_depth_foreground` is a full-size PNG with a transparent background containing only the person. Keep both files at the same aspect ratio and pixel dimensions so the layers stay aligned. Put replacements in `assets/profile-pics/`, then update both paths in `_data/main_info.yaml`.
-
-`profile_pic` and `profile_turntable` keep the earlier static portrait and eight-view sprite available. They are not shown on the homepage while the depth portrait is active, so you can switch back later without restoring deleted assets.
+The homepage uses a text-only biography. Earlier portrait assets and their data fields are retained for future use.
 
 ## Add a publication
 
@@ -121,22 +119,19 @@ The main visual settings are CSS custom properties at the top of `libs/custom/my
 
 ```css
 :root {
-  --white: #ffffff;
-  --ink: #111111;
-  --secondary: #656565;
-  --faint: #f4f4f2;
-  --accent: #74817c;
-  --sidebar: 190px;
+  --paper: #fffff8;
+  --ink: #111;
+  --secondary: #555;
+  --accent: #a00000;
+  --line: #d9d9cf;
 }
 ```
 
-Changing these variables updates the whole site consistently. `--white` controls the page background, `--ink` controls primary text, `--secondary` controls supporting text, `--faint` controls the quiet card background, and `--sidebar` controls the desktop navigation width.
+`--paper` controls the background, `--ink` the main text, `--secondary` supporting text, `--accent` navigation and links, and `--line` subtle borders. The desktop reading column is 55% of the available width and expands on mobile.
 
-## Chinese display labels
+## Typography
 
-The small Traditional Chinese labels use a web subset of Taiwan's official TW-Kai typeface. English remains in Helvetica, except for the pronunciation in an OFL Libertinus Serif subset. Each subset contains only the glyphs required by the page.
-
-The font is distributed under the SIL Open Font License 1.1. Its attribution notice and complete license are stored in `assets/fonts/FONT-NOTICE.txt` and `assets/fonts/OFL.txt`. If a future page label introduces a new Traditional Chinese character, regenerate the subset or ask a developer to extend it.
+ET Book roman, italic, and bold are served locally from `assets/fonts/et-book/`. The MIT license and attribution are included in that directory. Pronunciation uses the existing Libertinus subset. Earlier font assets and their licenses are retained.
 
 ## JavaScript and accessibility
 

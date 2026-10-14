@@ -1,29 +1,26 @@
 ---
 layout: default
-title: Experience
+title: Education
 nav: experience
 permalink: /experience/
-description: "Education, work, and teaching experience of Yingjie Xiao."
+description: "Education and teaching experience of Yingjie Xiao."
 ---
 
 <header class="page-hero shell reveal">
-  <p class="eyebrow">Experience / <span class="zh-kai" lang="zh-Hant">經歷</span></p>
-  <h1>A path through<br>language &amp; <em>data.</em></h1>
-  <p class="page-deck">Education across linguistics, computation, and artificial intelligence, alongside applied data-science work.</p>
+  <h1>Education</h1>
+  <p class="page-deck">Education across linguistics, computation, and artificial intelligence.</p>
 </header>
 
 <section class="section shell experience-layout">
   <div class="experience-aside reveal">
-    <p class="section-index">01 / Timeline</p>
-    <p>Education and work,<br>in reverse chronology.</p>
+    <h2>Education</h2>
+    <p>Education in reverse chronology.</p>
   </div>
   <div class="timeline-list">
     {% for exp in site.data.experience.experiences %}
     <article class="timeline-item reveal">
-      <div class="timeline-marker" aria-hidden="true"></div>
       <div class="timeline-meta">
         <time>{{ exp.time }}</time>
-        <span>{{ exp.category }}</span>
       </div>
       <div class="timeline-content">
         <h2>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }} <span class="external-arrow" aria-hidden="true">↗</span></a>{% else %}{{ exp.place }}{% endif %}</h2>
@@ -38,8 +35,7 @@ description: "Education, work, and teaching experience of Yingjie Xiao."
 <section class="section section-tint">
   <div class="shell teaching-layout">
     <div class="reveal">
-      <p class="section-index">02 / Teaching</p>
-      <h2>Human language<br>in practice.</h2>
+      <h2>Teaching</h2>
     </div>
     <div>
       {% for class in site.data.classes.classes %}

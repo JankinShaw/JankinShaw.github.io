@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#fffff8">
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.data.main_info.name }}</title>
 
-  <!-- The website uses a local, system-font design with no visual framework. -->
+  <!-- ET Book is served locally for the Tufte-inspired reading layout. -->
   <link rel="icon" href="{{ '/libs/icon.png' | relative_url }}" type="image/png">
   <link rel="stylesheet" href="{{ '/libs/custom/my_css.css' | relative_url }}?v={{ site.asset_version }}">
   <script src="{{ '/libs/custom/translations.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
@@ -16,51 +16,11 @@
 <body class="page-{{ page.nav | default: 'default' }}">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Desktop navigation follows the quiet, left-rail structure of the visual reference. -->
+  <!-- A compact text navigation keeps the focus on the biography. -->
   <header class="site-header" data-site-header>
-    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.data.main_info.name }}</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
-      <span class="sr-only">Toggle navigation</span>
-      <span>Menu</span>
-    </button>
     <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
       <a{% if page.nav == 'home' %} class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
-      <a{% if page.nav == 'about' %} class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
-      <a{% if page.nav == 'research' %} class="is-active" aria-current="page"{% endif %} href="{{ '/research/' | relative_url }}">Research</a>
-      <a{% if page.nav == 'experience' %} class="is-active" aria-current="page"{% endif %} href="{{ '/experience/' | relative_url }}">Experience</a>
     </nav>
-    <div class="sidebar-utility">
-      <button class="accessibility-toggle" type="button" aria-expanded="false" aria-controls="accessibility-panel" data-accessibility-toggle>
-        <span aria-hidden="true">◐</span><span class="accessibility-toggle-label">Accessibility</span>
-      </button>
-      <div class="accessibility-panel" id="accessibility-panel" data-accessibility-panel hidden>
-        <div class="accessibility-panel-heading">
-          <strong>Display options</strong>
-          <button type="button" class="accessibility-close" data-accessibility-close aria-label="Close accessibility options">×</button>
-        </div>
-        <fieldset class="accessibility-size-control">
-          <legend>Text size</legend>
-          <button type="button" data-text-size="small" aria-label="Use smaller text">A−</button>
-          <button type="button" data-text-size="default" aria-label="Use default text size">A</button>
-          <button type="button" data-text-size="large" aria-label="Use larger text">A+</button>
-        </fieldset>
-        <fieldset class="accessibility-language-control">
-          <legend>Language</legend>
-          <button type="button" data-language-select="en" lang="en">EN</button>
-          <button type="button" data-language-select="de" lang="de">DE</button>
-        </fieldset>
-        <label class="accessibility-option"><input type="checkbox" data-accessibility-setting="contrast"><span>High contrast</span></label>
-        <label class="accessibility-option"><input type="checkbox" data-accessibility-setting="motion"><span>Reduce motion</span></label>
-        <div class="accessibility-pages">
-          <a href="{{ '/easy-read/' | relative_url }}">Easy Read</a>
-          <a href="{{ '/accessibility/' | relative_url }}">Accessibility information</a>
-        </div>
-      </div>
-      <div class="sidebar-links">
-        <a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub</a>
-        <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
   </header>
 
   <main id="main-content">
@@ -71,7 +31,6 @@
     <div class="shell footer-inner">
       <p>© <span data-current-year>2026</span> {{ site.data.main_info.name }}</p>
       <p>Built with Jekyll · Hosted on GitHub Pages</p>
-      <p class="font-credit"><a href="{{ '/accessibility/' | relative_url }}">Accessibility</a> · <a href="{{ '/easy-read/' | relative_url }}">Easy Read</a></p>
     </div>
   </footer>
 
