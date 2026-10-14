@@ -20,8 +20,8 @@ nav: home
     </ul>
   </section>
 
-  <section aria-labelledby="academics">
-    <h2 id="academics">Academics</h2>
+  <section aria-labelledby="research">
+    <h2 id="research">Research</h2>
     <ul class="bibliography">
       {% assign papers = site.data.publications.papers | sort: 'year' | reverse %}
       {% for paper in papers %}
@@ -35,6 +35,17 @@ nav: home
     </ul>
   </section>
 
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+    <ul>
+      {% for exp in site.data.industry.experiences %}
+      <li>{{ exp.time }}
+        <ul><li>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }}</a>{% else %}{{ exp.place }}{% endif %} — {{ exp.title }}{% if exp.institution %}<br>{{ exp.institution }}{% endif %}</li></ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
   <section aria-labelledby="teaching">
     <h2 id="teaching">Teaching</h2>
     <h3>Courses</h3>
@@ -42,17 +53,6 @@ nav: home
       {% for class in site.data.classes.classes %}
       <li>{{ class.time }}
         <ul><li>{{ class.name }} — {{ class.title }}{% if class.institution %}<br>{{ class.institution }}{% endif %}</li></ul>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section aria-labelledby="experience">
-    <h2 id="experience">Experience</h2>
-    <ul>
-      {% for exp in site.data.industry.experiences %}
-      <li>{{ exp.time }}
-        <ul><li>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }}</a>{% else %}{{ exp.place }}{% endif %} — {{ exp.title }}{% if exp.institution %}<br>{{ exp.institution }}{% endif %}</li></ul>
       </li>
       {% endfor %}
     </ul>
