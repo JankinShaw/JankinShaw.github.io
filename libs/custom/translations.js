@@ -1,13 +1,14 @@
 /* German copy for the published pages. Proper names and source links are retained. */
 const germanTranslations = {
+  "Data Science Intern": "Praktikant im Bereich Data Science",
   "Research Interests": "Forschungsinteressen", "Academics": "Akademische Tätigkeiten", "Teaching": "Lehre",
   "Courses": "Lehrveranstaltungen", "Education": "Ausbildung", "Biography": "Biografie",
-  "Home": "Startseite", "Photography": "Fotografie", "About": "Über mich", "Research": "Forschung", "Experience": "Werdegang",
+  "Home": "Startseite", "Photography": "Fotografie", "About": "Über mich", "Research": "Forschung", "Experience": "Berufserfahrung",
   "Skip to content": "Zum Inhalt springen", "Toggle navigation": "Navigation umschalten", "Menu": "Menü",
   "Primary navigation": "Hauptnavigation", "Filter publications": "Publikationen filtern",
   "Computational Linguistics Undergraduate": "Bachelorstudent der Computerlinguistik",
   "Human Language Understanding | Safer Language Models": "Menschliches Sprachverstehen | Sicherere Sprachmodelle",
-  "I am an undergraduate in Computational Linguistics at Eberhard Karls Universität Tübingen in Germany. Before that, I obtained a B.A. in English Language and Literature from Beijing Institute of Technology.": "Ich studiere Computerlinguistik im Bachelor an der Eberhard Karls Universität Tübingen. Zuvor habe ich am Beijing Institute of Technology einen Bachelorabschluss in englischer Sprache und Literatur erworben.",
+  "I am an undergraduate in Computational Linguistics at Eberhard Karls Universität Tübingen in Germany. Before that, I obtained a B.A. in English (Language, Linguistics and Literature) from Beijing Institute of Technology.": "Ich studiere Computerlinguistik im Bachelor an der Eberhard Karls Universität Tübingen. Zuvor habe ich am Beijing Institute of Technology einen Bachelorabschluss in Englisch (Sprache, Linguistik und Literatur) erworben.",
   "I am particularly interested in whether large language models can predict how people perceive and infer causal relationships from language.": "Mich interessiert besonders, ob große Sprachmodelle vorhersagen können, wie Menschen kausale Zusammenhänge in Sprache wahrnehmen und erschließen.",
   "Human language understanding": "Menschliches Sprachverstehen",
   "How people understand and interpret language across contexts, modalities, and communities.": "Wie Menschen Sprache in unterschiedlichen Kontexten, Modalitäten und Gemeinschaften verstehen und interpretieren.",

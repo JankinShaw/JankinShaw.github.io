@@ -7,6 +7,7 @@ A Tufte-inspired academic website with an ivory background, locally hosted ET Bo
 | File or folder | What it controls |
 | --- | --- |
 | `index.html` | Biography, research interests, publications, teaching, and experience |
+| `beyond-academia.html` | Public speaking, debating, and university theatre |
 | `about.html` | Biography, research interests, and contact block |
 | `research.html` | Publications and presentations |
 | `experience.html` | Education, work, and teaching timeline |

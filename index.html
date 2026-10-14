@@ -29,6 +29,9 @@ nav: home
         {% if paper.contribution %}<p class="publication-contribution">{{ paper.contribution }}</p>{% endif %}
       </li>
       {% endfor %}
+      {% for thesis in site.data.publications.theses %}
+      <li><strong>{{ thesis.authors }}</strong>. “{{ thesis.title }}” (shortened title). {{ thesis.description }}</li>
+      {% endfor %}
     </ul>
   </section>
 
@@ -39,6 +42,17 @@ nav: home
       {% for class in site.data.classes.classes %}
       <li>{{ class.time }}
         <ul><li>{{ class.name }} — {{ class.title }}{% if class.institution %}<br>{{ class.institution }}{% endif %}</li></ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+    <ul>
+      {% for exp in site.data.industry.experiences %}
+      <li>{{ exp.time }}
+        <ul><li>{% if exp.link %}<a href="{{ exp.link }}" target="_blank" rel="noopener">{{ exp.place }}</a>{% else %}{{ exp.place }}{% endif %} — {{ exp.title }}{% if exp.institution %}<br>{{ exp.institution }}{% endif %}</li></ul>
       </li>
       {% endfor %}
     </ul>
