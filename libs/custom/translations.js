@@ -49,7 +49,7 @@ const germanTranslations = {
   "GPA: 3.9/4.0 (4.0 is the highest grade)": "Notendurchschnitt: 3,9/4,0 (4,0 ist die Bestnote)",
   "02 / Teaching": "02 / Lehre", "Human language": "Menschliche Sprache", "in practice.": "in der Praxis.",
   "Winter 2021 - Summer 2024": "Winter 2021 – Sommer 2024",
-  "Academic Writing and Critical Thinking in English — Doctoral Seminar": "Wissenschaftliches Schreiben und kritisches Denken auf Englisch — Doktorandenseminar",
+  "Critical Thinking and Academic English Writing": "Kritisches Denken und wissenschaftliches Schreiben auf Englisch",
   "Graduate School, Beijing Institute of Technology": "Graduiertenschule des Beijing Institute of Technology",
   "Teaching Assistant": "Tutor",
   "Page not found": "Seite nicht gefunden", "404 / Not found": "404 / Nicht gefunden",
