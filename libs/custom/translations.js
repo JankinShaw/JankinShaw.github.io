@@ -29,7 +29,7 @@ const germanTranslations = {
   "I am interested in the human variation, social context, and hidden structure behind every linguistic signal.": "Mich interessieren die menschliche Vielfalt, der soziale Kontext und die verborgenen Strukturen hinter jedem sprachlichen Signal.",
   "01 / Biography": "01 / Biografie", "02 / Research Interests": "02 / Forschungsinteressen",
   "Understanding intelligence,": "Intelligenz verstehen,", "making it useful.": "sie nutzbar machen.",
-  "Language models and human behavior": "Sprachmodelle und menschliches Verhalten",
+  "Language models and linguistic behavior": "Sprachmodelle und Sprachverhalten",
   "Surprisal and language processing": "Surprisal und Sprachverarbeitung",
   "Contact": "Kontakt", "Questions, ideas,": "Fragen, Ideen", "or shared interests?": "oder gemeinsame Interessen?",
   "Connect on LinkedIn": "Auf LinkedIn vernetzen",
