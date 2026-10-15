@@ -9,7 +9,7 @@ const germanTranslations = {
   "Computational Linguistics Undergraduate": "Bachelorstudent der Computerlinguistik",
   "Human Language Understanding | Safer Language Models": "Menschliches Sprachverstehen | Sicherere Sprachmodelle",
   "I am an undergraduate in Computational Linguistics at Eberhard Karls Universität Tübingen in Germany. Before that, I obtained a B.A. in English (Language, Linguistics and Literature) from Beijing Institute of Technology.": "Ich studiere Computerlinguistik im Bachelor an der Eberhard Karls Universität Tübingen. Zuvor habe ich am Beijing Institute of Technology einen Bachelorabschluss in Englisch (Sprache, Linguistik und Literatur) erworben.",
-  "I am particularly interested in whether large language models can predict how people perceive and infer causal relationships from language.": "Mich interessiert besonders, ob große Sprachmodelle vorhersagen können, wie Menschen kausale Zusammenhänge in Sprache wahrnehmen und erschließen.",
+  "I am particularly interested in how language models can predict human language perception and causal inference.": "Mich interessiert besonders, wie Sprachmodelle menschliche Sprachwahrnehmung und kausales Schlussfolgern vorhersagen können.",
   "Human language understanding": "Menschliches Sprachverstehen",
   "How people understand and interpret language across contexts, modalities, and communities.": "Wie Menschen Sprache in unterschiedlichen Kontexten, Modalitäten und Gemeinschaften verstehen und interpretieren.",
   "View research →": "Zur Forschung →", "Safer language models": "Sicherere Sprachmodelle",
