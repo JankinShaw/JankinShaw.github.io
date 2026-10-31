@@ -8,7 +8,7 @@
   const words = [
     "Computational Linguistics",
     "Language Models",
-    "Surprisal",
+    "Surprisal-based Language Prediction",
     "Language Prediction",
     "Language Comprehension",
     "Human Sentence Processing",
@@ -28,6 +28,9 @@
     "Human–Model Alignment"
   ];
   const fonts = ['geist', 'terminal', 'book'];
+  const randomBetween = (min, max) => min + Math.random() * (max - min);
+  let typingPace = randomBetween(55, 115);
+  let deletingPace = randomBetween(22, 48);
   let fontIndex = 0;
   const line = text.closest('.identity-line');
   line.dataset.font = fonts[fontIndex];
@@ -44,11 +47,18 @@
       index = (index + 1) % words.length;
       fontIndex = (fontIndex + 1) % fonts.length;
       line.dataset.font = fonts[fontIndex];
-      schedule(400);
+      typingPace = randomBetween(55, 115);
+      deletingPace = randomBetween(22, 48);
+      schedule(randomBetween(300, 750));
     } else if (position === words[index].length) {
       deleting = true;
-      schedule(2100);
-    } else schedule(deleting ? 40 : 85);
+      schedule(randomBetween(1600, 2800));
+    } else {
+      const previousCharacter = words[index][position - 1];
+      const thinkingPause = !deleting && (previousCharacter === ' ' || Math.random() < 0.07)
+        ? randomBetween(120, 320) : 0;
+      schedule((deleting ? deletingPace : typingPace) * randomBetween(0.55, 1.5) + thinkingPause);
+    }
   };
   const update = () => {
     clearTimeout(timer);

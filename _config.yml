@@ -5,7 +5,7 @@ baseurl: ""
 lang: "en"
 timezone: "Europe/Berlin"
 google_analytics_id: "G-J2MD5NTZFB"
-asset_version: "20261031-rotating-typefaces"
+asset_version: "20261031-surprisal-prediction"
 
 source: .
 destination: ./_site
