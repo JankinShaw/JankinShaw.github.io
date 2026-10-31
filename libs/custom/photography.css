@@ -1,0 +1,63 @@
+@font-face { font-family: "Geist"; src: url("../../assets/fonts/geist/Geist-Variable.ttf") format("truetype"); font-style: normal; font-weight: 100 900; font-display: swap; }
+* { box-sizing: border-box; }
+html { background: #fafaf9; color: #161616; }
+body { margin: 0; font-family: "Geist", Helvetica, Arial, sans-serif; }
+.photography-header { height: 64px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
+.photography-header a { display: inline-block; padding: 12px 0 12px 12px; color: #161616; font-size: 15px; font-weight: 300; line-height: 20px; letter-spacing: normal; text-decoration: none; }
+.photography-header a:hover { font-style: italic; }
+a:focus-visible, main:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+/* A centered square matrix with equal image cells and a narrow white gutter. */
+.photo-gallery { min-height: calc(100vh - 64px); min-height: calc(100svh - 64px); display: grid; place-items: center; padding: 32px 24px; }
+.photo-grid { width: min(76vh, 76svh, 76vw, 840px); aspect-ratio: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.photo-grid figure { margin: 0; overflow: hidden; min-width: 0; min-height: 0; }
+.photo-grid img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 600px) { .photo-gallery { padding: 24px 20px; } .photo-grid { width: min(100%, 76svh); gap: 8px; } }
+.skip-link { position: fixed; top: 8px; left: 8px; padding: 8px 12px; background: #fafaf9; color: #161616; transform: translateY(-200%); z-index: 2; }
+.skip-link:focus { transform: none; }
+@media (max-width: 600px) {
+  .photography-header { padding: 0 16px; }
+}
+@media print {
+  .photography-header, .skip-link { display: none; }
+  .photo-gallery { min-height: 0; }
+}
+
+html { scrollbar-gutter: stable; }
+
+.photography-header a:hover { color: #161616; font-style: italic; text-decoration: none; text-shadow: none; box-shadow: none; filter: none; opacity: 1; background: transparent; }
+
+.photography-name { font-size: 15px; font-weight: 300; line-height: 20px; letter-spacing: normal; }
+
+/* Photographs and a small, quiet introduction share the available space. */
+.home-composition { min-height: calc(100svh - 64px); display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); align-items: center; gap: 7vw; padding: 40px 7vw; max-width: 1600px; margin: 0 auto; }
+.home-composition .photo-gallery { min-height: 0; padding: 0; display: block; }
+.home-composition .photo-grid { width: min(100%, 72svh, 640px); }
+.identity-animation { position: relative; min-width: 0; padding: 24px 0; }
+.identity-line { font-family: "Geist", Helvetica, Arial, sans-serif; min-height: 3.2em; font-size: clamp(18px, 1.8vw, 27px); font-weight: 300; line-height: 1.5; letter-spacing: -.025em; overflow-wrap: break-word; }
+.typing-cursor { display: inline-block; width: 1px; height: 1em; margin-left: 4px; background: currentColor; vertical-align: -.12em; animation: cursor-blink 1s step-end infinite; }
+.identity-pause { display: block; position: absolute; bottom: -8px; left: 0; border: 0; background: transparent; color: #777; padding: 8px; margin-left: -8px; font-family: inherit; font-size: 12px; line-height: 1; cursor: pointer; }
+.identity-pause[hidden] { display: none; }
+.identity-pause:hover { color: #161616; }
+.identity-accessible { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.identity-animation.is-paused .typing-cursor { animation: none; }
+@keyframes cursor-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (max-width: 700px) {
+  .home-composition { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px 48px; align-content: center; }
+  .home-composition .photo-grid { width: min(100%, 52svh); margin: 0 auto; }
+  .identity-animation { width: min(100%, 52svh); margin: 0 auto; padding: 8px 0; }
+  .identity-line { font-size: 19px; min-height: 3em; }
+  .identity-pause { bottom: -20px; }
+}
+@media (prefers-reduced-motion: reduce) { .typing-cursor { animation: none; } .identity-pause { display: none; } }
+
+.photography-header nav { display: flex; gap: 24px; align-items: baseline; white-space: normal; font-size: 15px; font-weight: 300; line-height: 20px; }
+.photography-header nav a { padding-inline: 0; }
+
+/* Discourage casual dragging and touch-saving of the cropped images. */
+.photo-grid img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+
+@font-face { font-family: "ET Book"; src: url("../../assets/fonts/et-book/roman.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+.identity-line[data-font="geist"] { font-family: "Geist", Helvetica, Arial, sans-serif; font-weight: 300; }
+.identity-line[data-font="terminal"] { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-weight: 400; }
+.identity-line[data-font="book"] { font-family: "ET Book", Palatino, Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.2vw, 32px); letter-spacing: 0; }
+@media (max-width: 700px) { .identity-line[data-font="book"] { font-size: 24px; } }

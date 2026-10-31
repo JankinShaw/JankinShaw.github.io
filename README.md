@@ -6,7 +6,8 @@ A Tufte-inspired academic website with an ivory background, locally hosted ET Bo
 
 | File or folder | What it controls |
 | --- | --- |
-| `index.html` | Biography, research interests, publications, teaching, and experience |
+| `index.html` | Photograph-only landing page with an Academics link |
+| `academics.html` | Original academic homepage, preserved at `/academics/` |
 | `beyond-academia.html` | Public speaking, debating, and university theatre |
 | `about.html` | Biography, research interests, and contact block |
 | `research.html` | Publications and presentations |
@@ -51,7 +52,7 @@ interests:
   - "Second research interest"
 ```
 
-The homepage uses a text-only biography. Earlier portrait assets and their data fields are retained for future use.
+The landing page displays `assets/photography/lakeside-tree.jpg` in its original proportions without cropping, with whitespace around the photograph. Its separate layout and `libs/custom/photography.css` use locally hosted Geist (SIL OFL 1.1; license in `assets/fonts/geist/`). The original text-only academic homepage is preserved at `/academics/` with matching sans-serif typography in `libs/custom/academics.css`. Earlier portrait assets and their data fields are retained.
 
 ## Add a publication
 
@@ -141,3 +142,9 @@ All effects are progressive enhancements: content remains available when JavaScr
 ## Deployment and cost
 
 The repository is designed for GitHub Pages. Hosting, the `github.io` address, and HTTPS are free for a public repository. No Cargo, Webflow, server, database, or paid deployment service is required. A separately purchased custom domain is optional.
+
+Academics uses four compact columns on desktop, two on medium screens, and one on mobile. All academic content is retained.
+
+The landing page now displays a centered 2×2 square image grid: autumn leaf, code study, dictionary, and language models. The website stores only physically cropped square derivatives. Full-frame copies are excluded from both source assets and the generated site.
+
+`/archive/` preserves the previous academic homepage design with its own layout (`_layouts/archive.html`) and stylesheet (`libs/custom/archive.css`), so future visual changes do not affect it. The archive has no public navigation entry and remains accessible by its direct URL.
