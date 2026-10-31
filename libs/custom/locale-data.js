@@ -810,5 +810,13 @@ window.siteLocaleData = {
   "Info": [
     "Info",
     "Info"
+  ],
+  "A close-up of colorful syntax-highlighted code on a dark screen.": [
+    "Nahaufnahme von farbig hervorgehobenem Code auf einem dunklen Bildschirm.",
+    "Gros plan de code coloré sur un écran sombre."
+  ],
+  "A tree beside green fields overlooking a blue lake and distant mountains.": [
+    "Ein Baum an grünen Feldern mit Blick auf einen blauen See und ferne Berge.",
+    "Un arbre au bord de champs verdoyants surplombant un lac bleu et des montagnes lointaines."
   ]
 };

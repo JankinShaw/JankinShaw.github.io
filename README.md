@@ -157,3 +157,7 @@ The landing page now displays a centered 2×2 square image grid: autumn leaf, co
 The homepage displays only the centered 2×2 photo grid. No typing animation, code snippets, syntax highlighter, or output previews are loaded. Image drag/context-menu restrictions are handled by `libs/custom/photography.js`.
 
 The profile page is `/info/` with the navigation label Info in all languages. `/academics/` redirects to `/info/` for old links.
+
+The homepage now uses a centered four-image horizontal strip on desktop and a 2×2 grid on small screens. Order: dictionary, colorful code, language-model image, autumn leaf. Only square crops are stored.
+
+The homepage layout is restored to a centered 2×2 grid, retaining the newer colorful code photograph.
