@@ -62,12 +62,68 @@ html { scrollbar-gutter: stable; }
 .identity-line[data-font="book"] { font-family: "ET Book", Palatino, Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.2vw, 32px); letter-spacing: 0; }
 @media (max-width: 700px) { .identity-line[data-font="book"] { font-size: 24px; } }
 
-.identity-line[data-formula="true"] { font-family: "ET Book", Palatino, Georgia, serif; font-weight: 400; font-size: clamp(20px, 1.9vw, 28px); letter-spacing: 0; }
 
-/* Native mathematical typesetting gives fractions, roots, and indices real structure. */
-.identity-line.formula-rendered { visibility: hidden; }
-.attention-math { position: absolute; top: 12px; left: 0; width: 100%; font-size: clamp(19px, 1.85vw, 27px); }
-.attention-math[hidden] { display: none; }
-.attention-math math { text-align: left; }
-@media (max-width: 700px) { .attention-math { top: 0; font-size: 22px; } }
-@media (max-width: 700px) { .attention-math { font-size: clamp(15px, 4.5vw, 20px); } }
+
+/* Reserve a stable area so code typing does not move the photographs. */
+.identity-animation { min-height: 330px; display: flex; flex-direction: column; justify-content: center; }
+.identity-line { min-height: 0; }
+.identity-caption { position: absolute; top: 0; margin: 0; font-weight: 300; line-height: 1.5; }
+.identity-caption[hidden] { display: none; }
+.identity-code-topic { display: block; font-size: 14px; color: #202020; margin-bottom: 5px; }
+.identity-code-label { display: block; font-size: 11px; color: #666; }
+.identity-line[data-kind="code"] { white-space: pre-wrap; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: clamp(10px, 1.05vw, 15px); font-weight: 400; line-height: 1.8; letter-spacing: 0; overflow-wrap: anywhere; tab-size: 4; }
+/* Restrained editor colors, without a terminal window or heavy backdrop. */
+.identity-line .hljs-keyword, .identity-line .hljs-literal { color: #8b3b79; }
+.identity-line .hljs-string { color: #32674f; }
+.identity-line .hljs-number { color: #9b572a; }
+.identity-line .hljs-title, .identity-line .hljs-built_in { color: #285d89; }
+.identity-line .hljs-comment { color: #737573; font-style: italic; }
+.identity-line .hljs-subst, .identity-line .hljs-params { color: #242424; }
+@media (max-width: 700px) { .identity-animation { min-height: 320px; } .identity-line[data-kind="code"] { font-size: clamp(10px, 3vw, 13px); } }
+
+/* A compact result sits beside completed code, on the same quiet canvas. */
+@media (min-width: 1100px) {
+  .home-composition { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 5vw; padding-inline: 5vw; }
+  .identity-animation.has-example .identity-line { width: calc(100% - 152px); }
+  .identity-animation.has-example .identity-line[data-kind="code"] { font-size: clamp(10px, .88vw, 13px); }
+  .identity-result { position: absolute; right: 0; top: 50%; width: 136px; transform: translateY(-50%); }
+}
+.identity-result { color: #283c40; font-family: "Geist", Helvetica, Arial, sans-serif; }
+.identity-result[hidden] { display: none; }
+.result-kicker { font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: #777; margin: 0 0 10px; }
+.result-title { font-size: 11px; font-weight: 400; line-height: 1.5; margin: 0 0 10px; }
+.result-note { font-size: 9px; color: #687071; line-height: 1.5; margin: 8px 0 5px; }
+.attention-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+.attention-cell { display: grid; place-items: center; aspect-ratio: 1; background: var(--cell-color); font: 8px/1 "SFMono-Regular", Consolas, monospace; animation: result-appear .35s both; animation-delay: var(--cell-delay); }
+.attention-cell.is-masked { background: #ededeb; color: #aaa !important; }
+.trial-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.trial-token { padding: 6px 0; text-align: center; font-size: 9px; animation: result-appear .35s both; animation-delay: var(--cell-delay); }
+.condition-a { background: #dfe9e9; color: #305961; }
+.condition-b { background: #eae4ed; color: #76597e; }
+.result-input { font-size: 10px; line-height: 1.6; color: #777; margin: 0 0 10px; }
+.console-preview { white-space: pre-wrap; font: 10px/1.9 "SFMono-Regular", Consolas, monospace; margin: 0; }
+.result-value { font-size: 17px; font-weight: 300; margin: 5px 0 0; }
+.identity-result svg { display: block; width: 100%; overflow: visible; }
+.result-bar { transform-origin: center 76px; animation: bar-grow .5s both; animation-delay: var(--cell-delay); }
+.identity-animation.is-paused .identity-result * { animation-play-state: paused; }
+@keyframes result-appear { from { opacity: 0; translate: 0 4px; } to { opacity: 1; translate: 0 0; } }
+@keyframes bar-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (max-width: 1099px) {
+  .identity-animation.has-example { padding-top: 55px; padding-bottom: 32px; }
+  .identity-result { width: 150px; align-self: flex-end; margin-top: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .identity-result * { animation: none !important; } }
+
+.validation-preview { border-collapse: collapse; width: 100%; font-size: 9px; line-height: 1.8; }
+.validation-preview td { padding: 5px 3px; border-bottom: 1px solid #dededb; }
+
+/* Keep headings, code, and outputs in normal flow, even for taller snippets. */
+.identity-caption { position: static; margin: 0; }
+.identity-animation.has-example { display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; gap: 18px 20px; padding-top: 24px; }
+.identity-animation.has-example .identity-caption { grid-column: 1; grid-row: 1; }
+.identity-animation.has-example .identity-line { grid-column: 1; grid-row: 2; width: 100%; }
+.identity-animation.has-example .identity-result { position: static; transform: none; grid-column: 1; grid-row: 3; width: 150px; justify-self: end; align-self: center; margin: 6px 0 0; }
+@media (min-width: 1100px) {
+  .identity-animation.has-example { grid-template-columns: minmax(0, 1fr) 136px; }
+  .identity-animation.has-example .identity-result { grid-column: 2; grid-row: 1 / span 2; width: 100%; margin: 0; }
+}

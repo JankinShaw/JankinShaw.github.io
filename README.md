@@ -150,3 +150,9 @@ The landing page now displays a centered 2×2 square image grid: autumn leaf, co
 `/archive/` preserves the previous academic homepage design with its own layout (`_layouts/archive.html`) and stylesheet (`libs/custom/archive.css`), so future visual changes do not affect it. The archive has no public navigation entry and remains accessible by its direct URL.
 
 Language controls (DE / EN / FR) appear at the bottom right of current pages. `locale-data.js` contains German and French translations; `language.js` preserves the selected locale across pages. Identity-animation phrases are translated too. Archive keeps the historical design.
+
+Homepage animation: `libs/custom/identity-content.js` pairs topics with illustrative Python/PyTorch/JavaScript snippets. `identity.js` types code in faster bursts and uses locally bundled Highlight.js 11.12.0 for language detection and syntax highlighting. Its BSD license is in `libs/external/highlight/LICENSE`. Source snippets are displayed only, never executed in the visitor’s browser.
+
+Completed snippets reveal compact output previews via `identity-results.js`: causal attention weights, randomized trial order, tokenized console output, and reading-time statistics. Preview values are computed in JavaScript from the same example inputs (Python/PyTorch are not executed). Desktop shows the result beside the code; smaller screens stack it below.
+
+Current identity topics focus on language-model surprisal, self-paced reading, implicit causality, pragmatic inference, Python data validation, dataset cleaning/curation, reading-time analysis, and corpus analysis. Illustrative previews match those tasks; the generic LLM attention demo is no longer in rotation.

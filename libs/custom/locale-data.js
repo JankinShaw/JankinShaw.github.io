@@ -602,5 +602,169 @@ window.siteLocaleData = {
   "Experimental Design": [
     "Versuchsplanung",
     "Conception d’expériences"
+  ],
+  "PyTorch · Causal attention": [
+    "PyTorch · Kausale Attention",
+    "PyTorch · Attention causale"
+  ],
+  "Python · From input to words": [
+    "Python · Von der Eingabe zu Wörtern",
+    "Python · Du texte aux mots"
+  ],
+  "Illustrative Python and PyTorch code examples.": [
+    "Illustrative Codebeispiele in Python und PyTorch.",
+    "Exemples de code illustratifs en Python et PyTorch."
+  ],
+  "PyTorch · Minimal causal self-attention": [
+    "PyTorch · Minimale kausale Self-Attention",
+    "PyTorch · Auto-attention causale minimale"
+  ],
+  "JavaScript · Randomizing trial order": [
+    "JavaScript · Randomisierte Versuchsdurchgänge",
+    "JavaScript · Randomisation des essais"
+  ],
+  "Python · Summarizing reading times": [
+    "Python · Lesezeiten zusammenfassen",
+    "Python · Résumé des temps de lecture"
+  ],
+  "Illustrative Python, PyTorch and JavaScript code examples.": [
+    "Illustrative Codebeispiele in Python, PyTorch und JavaScript.",
+    "Exemples de code illustratifs en Python, PyTorch et JavaScript."
+  ],
+  "PyTorch · Causal attention weights": [
+    "PyTorch · Kausale Attention-Gewichte",
+    "PyTorch · Poids d’attention causale"
+  ],
+  "Example output": [
+    "Beispielausgabe",
+    "Résultat illustratif"
+  ],
+  "Causal attention": [
+    "Kausale Attention",
+    "Attention causale"
+  ],
+  "Each row sums to 1. Future positions have weight 0.": [
+    "Jede Zeile summiert sich zu 1. Zukünftige Positionen haben Gewicht 0.",
+    "Chaque ligne totalise 1. Les positions futures ont un poids nul."
+  ],
+  "Future tokens masked": [
+    "Zukünftige Tokens maskiert",
+    "Tokens futurs masqués"
+  ],
+  "Trial order": [
+    "Reihenfolge der Durchgänge",
+    "Ordre des essais"
+  ],
+  "Before": [
+    "Vorher",
+    "Avant"
+  ],
+  "After": [
+    "Nachher",
+    "Après"
+  ],
+  "2 cause · 2 control": [
+    "2 kausal · 2 Kontrolle",
+    "2 cause · 2 contrôle"
+  ],
+  "Console": [
+    "Konsole",
+    "Console"
+  ],
+  "Reading times": [
+    "Lesezeiten",
+    "Temps de lecture"
+  ],
+  "Mean RT": [
+    "Mittlere Lesezeit",
+    "Temps moyen"
+  ],
+  "Language-model Surprisal": [
+    "Surprisal aus Sprachmodellen",
+    "Surprisal des modèles de langue"
+  ],
+  "Self-paced Reading Experiments": [
+    "Experimente zum selbstgesteuerten Lesen",
+    "Expériences de lecture à rythme libre"
+  ],
+  "Implicit Causality & Sentence Processing": [
+    "Implizite Kausalität und Satzverarbeitung",
+    "Causalité implicite et traitement des phrases"
+  ],
+  "Pragmatic Inference in Context": [
+    "Pragmatische Inferenz im Kontext",
+    "Inférence pragmatique en contexte"
+  ],
+  "Python-based Data Validation": [
+    "Datenvalidierung mit Python",
+    "Validation de données avec Python"
+  ],
+  "Dataset Cleaning & Curation": [
+    "Datenbereinigung und -kuratierung",
+    "Nettoyage et curation de jeux de données"
+  ],
+  "Reading-time Analysis with Python": [
+    "Analyse von Lesezeiten mit Python",
+    "Analyse des temps de lecture avec Python"
+  ],
+  "Corpus-based Language Analysis": [
+    "Korpusbasierte Sprachanalyse",
+    "Analyse linguistique sur corpus"
+  ],
+  "Python · From token probabilities to surprisal": [
+    "Python · Von Token-Wahrscheinlichkeiten zu Surprisal",
+    "Python · Des probabilités à la surprisal"
+  ],
+  "Python · Checking missing and invalid values": [
+    "Python · Fehlende und ungültige Werte prüfen",
+    "Python · Vérifier les valeurs manquantes et invalides"
+  ],
+  "Python · Cleaning and deduplicating text": [
+    "Python · Text bereinigen und deduplizieren",
+    "Python · Nettoyer et dédupliquer du texte"
+  ],
+  "Illustrative Python and JavaScript examples for language research and data quality.": [
+    "Illustrative Python- und JavaScript-Beispiele für Sprachforschung und Datenqualität.",
+    "Exemples illustratifs en Python et JavaScript pour la recherche sur le langage et la qualité des données."
+  ],
+  "Token surprisal": [
+    "Token-Surprisal",
+    "Surprisal par token"
+  ],
+  "Bits per token · Example probabilities": [
+    "Bits pro Token · Beispielwahrscheinlichkeiten",
+    "Bits par token · Probabilités illustratives"
+  ],
+  "Data quality check": [
+    "Datenqualitätsprüfung",
+    "Contrôle qualité des données"
+  ],
+  "Valid": [
+    "Gültig",
+    "Valide"
+  ],
+  "Flagged": [
+    "Markiert",
+    "Signalé"
+  ],
+  "Valid records": [
+    "Gültige Datensätze",
+    "Enregistrements valides"
+  ],
+  "Clean dataset": [
+    "Bereinigter Datensatz",
+    "Jeu de données nettoyé"
+  ],
+  "Trim · Remove blanks · Deduplicate": [
+    "Trimmen · Leerwerte entfernen · Deduplizieren",
+    "Nettoyer · Retirer les vides · Dédupliquer"
+  ],
+  "Rows before → after": [
+    "Zeilen vorher → nachher",
+    "Lignes avant → après"
+  ],
+  "Research & practical skills": [
+    "Forschung und praktische Kompetenzen",
+    "Recherche et compétences pratiques"
   ]
 };
