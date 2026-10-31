@@ -806,5 +806,9 @@ window.siteLocaleData = {
   "Usable records · Blanks removed": [
     "Nutzbare Datensätze · Leerwerte entfernt",
     "Enregistrements exploitables · Valeurs vides retirées"
+  ],
+  "Info": [
+    "Info",
+    "Info"
   ]
 };

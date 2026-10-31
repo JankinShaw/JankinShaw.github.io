@@ -1,0 +1,41 @@
+@font-face { font-family: "Geist"; src: url("../../assets/fonts/geist/Geist-Variable.ttf") format("truetype"); font-style: normal; font-weight: 100 900; font-display: swap; }
+html { font-size: calc(16px * var(--text-scale, 1)); scrollbar-gutter: stable; }
+body.page-info { --paper: #fafaf9; --ink: #202020; --secondary: #626262; --accent: #202020; --sans: "Geist", Helvetica, Arial, sans-serif; max-width: none; padding: 0 28px; font-family: var(--sans); }
+.page-info .site-header { width: 100%; height: 64px; min-height: 64px; padding: 0; align-items: center; justify-content: flex-end; }
+.page-info .site-nav { align-items: center; gap: 24px; }
+.page-info .site-nav a { display: inline-block; padding: 12px 0 12px 12px; font-size: 15px; font-weight: 300; line-height: 20px; letter-spacing: normal; text-transform: none; color: var(--ink); text-decoration: none; }
+.page-info .site-nav a:hover { color: var(--ink); font-style: italic; text-decoration: none; text-shadow: none; box-shadow: none; filter: none; opacity: 1; background: transparent; }
+.page-info main { padding-top: 32px; }
+.page-info .biography-page { width: 100%; margin: 0; display: grid; grid-template-columns: 1fr 1.4fr 1fr .9fr; gap: 36px; align-items: start; }
+.page-info .academic-column { min-width: 0; }
+.page-info h1, .page-info h2 { font-size: 22px; line-height: 1.2; font-weight: 550; font-style: normal; letter-spacing: -.035em; margin: 0 0 24px; }
+.page-info h3 { font-size: 13px; font-style: normal; font-weight: 500; line-height: 1.5; margin: 0 0 12px; }
+.page-info p, .page-info ul { font-size: 13px; line-height: 1.6; margin: 0 0 16px; }
+.page-info ul { list-style: none; padding: 0; }
+.page-info li { margin: 0 0 14px; }
+.page-info li > ul { margin: 4px 0 0; }
+.page-info section { margin: 0 0 32px; }
+.page-info .academic-bio { margin-bottom: 32px; }
+.page-info .profile-column section h2 { font-size: 15px; letter-spacing: -.015em; margin-bottom: 14px; }
+.page-info .academic-paper-authors { font-size: 11px; color: var(--secondary); line-height: 1.5; margin-bottom: 5px; }
+.page-info .academic-paper-title { font-size: 14px; font-weight: 500; letter-spacing: -.015em; line-height: 1.45; margin: 0 0 7px; }
+.page-info .academic-paper-venue, .page-info .publication-contribution { font-size: 11px; line-height: 1.55; color: var(--secondary); }
+.page-info .publication-contribution { margin: 7px 0 0; }
+.page-info .bibliography > li { margin-bottom: 24px; }
+.page-info strong { font-weight: 550; }
+.page-info a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.page-info a:hover { color: inherit; font-style: italic; }
+.page-info .contact-line { font-size: 12px; overflow-wrap: anywhere; }
+.page-info .profile-links { font-size: 12px; }
+.page-info .pronunciation { font-size: 13px; }
+.page-info .site-footer { width: 100%; margin-top: 40px; padding: 16px 0 24px; border-top: 0; }
+.page-info .footer-inner { width: 100%; display: flex; justify-content: space-between; gap: 16px; }
+.page-info .footer-inner p { font-size: 10px; color: var(--secondary); margin: 0; }
+@media (min-width: 1500px) { .page-info .biography-page { gap: 48px; } .page-info p, .page-info ul { font-size: 14px; } .page-info .academic-paper-title { font-size: 16px; } .page-info .academic-paper-venue, .page-info .publication-contribution, .page-info .academic-paper-authors { font-size: 12px; } }
+@media (max-width: 1050px) { .page-info .biography-page { grid-template-columns: 1fr 1.25fr; gap: 32px; } }
+@media (max-width: 600px) { body.page-info { padding: 0 16px; } .page-info .biography-page { grid-template-columns: 1fr; gap: 8px; } .page-info main { padding-top: 24px; } .page-info p, .page-info ul { font-size: 14px; } .page-info .academic-paper-title { font-size: 16px; } .page-info .academic-paper-venue, .page-info .publication-contribution, .page-info .academic-paper-authors { font-size: 12px; } .page-info .footer-inner { display: block; } }
+@media print { .page-info .site-header, .page-info .site-footer { display: none; } .page-info main { padding: 0; } }
+
+.page-info .site-nav { gap: 24px; white-space: normal; font-size: 15px; font-weight: 300; line-height: 20px; }
+.page-info .site-nav a { padding-inline: 0; }
+.page-info .nav-comma { align-self: center; }

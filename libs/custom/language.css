@@ -3,6 +3,6 @@
 .language-switcher button[aria-pressed="true"] { text-decoration: underline; text-underline-offset: 4px; }
 .language-switcher button:hover { opacity: .65; }
 .language-switcher button:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
-.page-academics .site-footer { padding-bottom: 70px; }
-@media (max-width: 600px) { .language-switcher { right: 16px; bottom: 12px; } .home-composition { padding-bottom: 75px; } }
+.page-info .site-footer { padding-bottom: 70px; }
+@media (max-width: 600px) { .language-switcher { right: 16px; bottom: 12px; } }
 @media print { .language-switcher { display: none; } }
