@@ -6,26 +6,12 @@
   const container = text.closest('.identity-animation');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const words = [
-    "Computational Linguistics",
     "Language Models",
-    "Surprisal-based Language Prediction",
-    "Language Prediction",
-    "Language Comprehension",
-    "Human Sentence Processing",
-    "Psycholinguistics",
-    "Predictive Processing",
-    "Expectation and Prediction",
-    "Next-Word Prediction",
-    "Contextual Representations",
-    "Semantic Processing",
+    "Computational Psycholinguistics",
     "Pragmatic Inference",
-    "Implicit Causality",
-    "Causal Inference",
-    "Incremental Processing",
-    "Lexical Access",
-    "Reading Times",
-    "Information Theory",
-    "Human–Model Alignment"
+    "Surprisal-based Language Prediction",
+    "Sentence Comprehension",
+    "Implicit Causality"
   ];
   const fonts = ['geist', 'terminal', 'book'];
   const randomBetween = (min, max) => min + Math.random() * (max - min);
@@ -33,13 +19,21 @@
   let deletingPace = randomBetween(22, 48);
   let fontIndex = 0;
   const line = text.closest('.identity-line');
+  const equation = document.querySelector('[data-attention-math]');
+  const showEquation = (show) => {
+    if (!equation) return;
+    equation.hidden = !show;
+    line.classList.toggle('formula-rendered', show);
+  };
   line.dataset.font = fonts[fontIndex];
+  line.dataset.formula = 'false';
   let index = 0, position = words[0].length, deleting = true, paused = false, timer;
   const schedule = (delay) => {
     clearTimeout(timer);
     if (!paused && !motion.matches && !document.hidden) timer = setTimeout(tick, delay);
   };
   const tick = () => {
+    showEquation(false);
     position += deleting ? -1 : 1;
     text.textContent = words[index].slice(0, position);
     if (position === 0) {
@@ -47,12 +41,15 @@
       index = (index + 1) % words.length;
       fontIndex = (fontIndex + 1) % fonts.length;
       line.dataset.font = fonts[fontIndex];
+      line.dataset.formula = String(words[index].startsWith('Attention('));
       typingPace = randomBetween(55, 115);
       deletingPace = randomBetween(22, 48);
       schedule(randomBetween(300, 750));
     } else if (position === words[index].length) {
       deleting = true;
-      schedule(randomBetween(1600, 2800));
+      const isFormula = words[index].startsWith('Attention(');
+      showEquation(isFormula);
+      schedule(isFormula ? 5500 : randomBetween(1600, 2800));
     } else {
       const previousCharacter = words[index][position - 1];
       const thinkingPause = !deleting && (previousCharacter === ' ' || Math.random() < 0.07)
@@ -66,7 +63,8 @@
     container.classList.toggle('is-paused', paused || motion.matches);
     if (motion.matches) {
       index = 0; position = words[0].length; deleting = true;
-      fontIndex = 0; line.dataset.font = fonts[0];
+      fontIndex = 0; line.dataset.font = fonts[0]; line.dataset.formula = 'false';
+      showEquation(false);
       text.textContent = words[0];
     } else schedule(1800);
   };
