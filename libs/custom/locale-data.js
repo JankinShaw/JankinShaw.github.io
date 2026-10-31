@@ -766,5 +766,45 @@ window.siteLocaleData = {
   "Research & practical skills": [
     "Forschung und praktische Kompetenzen",
     "Recherche et compétences pratiques"
+  ],
+  "Next-token Prediction · PyTorch": [
+    "Vorhersage des nächsten Tokens · PyTorch",
+    "Prédiction du prochain token · PyTorch"
+  ],
+  "Self-paced Reading · JavaScript": [
+    "Selbstgesteuertes Lesen · JavaScript",
+    "Lecture à rythme libre · JavaScript"
+  ],
+  "Data Validation & Cleaning · Python": [
+    "Datenvalidierung und -bereinigung · Python",
+    "Validation et nettoyage des données · Python"
+  ],
+  "Language models · From scores to a prediction": [
+    "Sprachmodelle · Von Scores zur Vorhersage",
+    "Modèles de langue · Des scores à la prédiction"
+  ],
+  "Experiment design · Randomizing trial order": [
+    "Versuchsplanung · Reihenfolge randomisieren",
+    "Plan expérimental · Randomiser les essais"
+  ],
+  "Data quality · Preparing usable records": [
+    "Datenqualität · Nutzbare Datensätze vorbereiten",
+    "Qualité des données · Préparer des enregistrements exploitables"
+  ],
+  "Next-token probabilities": [
+    "Wahrscheinlichkeiten des nächsten Tokens",
+    "Probabilités du prochain token"
+  ],
+  "Predicted token": [
+    "Vorhergesagtes Token",
+    "Token prédit"
+  ],
+  "Validated & cleaned": [
+    "Validiert und bereinigt",
+    "Validé et nettoyé"
+  ],
+  "Usable records · Blanks removed": [
+    "Nutzbare Datensätze · Leerwerte entfernt",
+    "Enregistrements exploitables · Valeurs vides retirées"
   ]
 };

@@ -1,21 +1,23 @@
-/* Specific research interests and practical tasks. Snippets use illustrative data. */
+/* Three concise examples: language models, experiments, and practical data work. */
 window.identityTopics = [
   {
-    title: 'Language-model Surprisal',
+    title: 'Next-token Prediction · PyTorch',
     snippet: {
-      language: 'python', label: 'Python · From token probabilities to surprisal', output: 'surprisal',
-      code: `from math import log2
+      language: 'python', label: 'Language models · From scores to a prediction', output: 'next-token',
+      code: `import torch
 
-# Example conditional probabilities
-probabilities = [0.5, 0.125, 0.25, 0.0625]
-surprisal = [-log2(p) for p in probabilities]
-print(surprisal)  # bits per token`
+tokens = ["language", "meaning", "data"]
+# Example scores from a language model
+logits = torch.tensor([2.1, 0.7, -0.2])
+probs = torch.softmax(logits, dim=-1)
+next_token = tokens[probs.argmax().item()]
+print(next_token)`
     }
   },
   {
-    title: 'Self-paced Reading Experiments',
+    title: 'Self-paced Reading · JavaScript',
     snippet: {
-      language: 'javascript', label: 'JavaScript · Randomizing trial order', output: 'randomization',
+      language: 'javascript', label: 'Experiment design · Randomizing trial order', output: 'randomization',
       code: `// A: cause; B: control
 const original = ["A1", "B1", "A2", "B2"];
 let trials;
@@ -32,45 +34,22 @@ do {
 ));`
     }
   },
-  { title: 'Implicit Causality & Sentence Processing' },
-  { title: 'Pragmatic Inference in Context' },
   {
-    title: 'Python-based Data Validation',
+    title: 'Data Validation & Cleaning · Python',
     snippet: {
-      language: 'python', label: 'Python · Checking missing and invalid values', output: 'validation',
+      language: 'python', label: 'Data quality · Preparing usable records', output: 'data-quality',
       code: `rows = [
-    {"id": 1, "rt": 410},
-    {"id": 2, "rt": None},
-    {"id": 3, "rt": -5},
+    {"id": 1, "text": " language "},
+    {"id": 2, "text": ""},
+    {"id": 3, "text": None},
 ]
-valid = [r for r in rows
-    if isinstance(r["rt"], (int, float))
-    and r["rt"] > 0]
-print(f"{len(valid)} / {len(rows)} valid")`
+clean = [
+    {"id": r["id"], "text": r["text"].strip()}
+    for r in rows
+    if isinstance(r["text"], str)
+    and r["text"].strip()
+]
+print(f"{len(clean)} / {len(rows)} ready")`
     }
-  },
-  {
-    title: 'Dataset Cleaning & Curation',
-    snippet: {
-      language: 'python', label: 'Python · Cleaning and deduplicating text', output: 'curation',
-      code: `raw = [" language ", "", "language", "meaning"]
-clean = list(dict.fromkeys(
-    value.strip() for value in raw
-    if value.strip()
-))
-print(clean)`
-    }
-  },
-  {
-    title: 'Reading-time Analysis with Python',
-    snippet: {
-      language: 'python', label: 'Python · Summarizing reading times', output: 'reading-times',
-      code: `from statistics import mean
-
-reading_times = [410, 395, 432, 408]
-mean_rt = mean(reading_times)
-print(f"Mean RT: {mean_rt:.2f} ms")`
-    }
-  },
-  { title: 'Corpus-based Language Analysis' }
+  }
 ];

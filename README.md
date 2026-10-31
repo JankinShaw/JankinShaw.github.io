@@ -156,3 +156,5 @@ Homepage animation: `libs/custom/identity-content.js` pairs topics with illustra
 Completed snippets reveal compact output previews via `identity-results.js`: causal attention weights, randomized trial order, tokenized console output, and reading-time statistics. Preview values are computed in JavaScript from the same example inputs (Python/PyTorch are not executed). Desktop shows the result beside the code; smaller screens stack it below.
 
 Current identity topics focus on language-model surprisal, self-paced reading, implicit causality, pragmatic inference, Python data validation, dataset cleaning/curation, reading-time analysis, and corpus analysis. Illustrative previews match those tasks; the generic LLM attention demo is no longer in rotation.
+
+The current homepage rotation is intentionally limited to three paired examples: PyTorch next-token prediction, JavaScript self-paced-reading trial randomization, and Python data validation/cleaning.

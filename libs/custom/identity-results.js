@@ -2,6 +2,19 @@
    Python snippets are not executed in the browser. No fabricated training metrics. */
 (() => {
   const compute = (kind, rng = Math.random) => {
+    if (kind === 'next-token') {
+      const tokens = ['language', 'meaning', 'data'];
+      const logits = [2.1, .7, -.2];
+      const exp = logits.map(value => Math.exp(value - Math.max(...logits)));
+      const total = exp.reduce((sum, value) => sum + value, 0);
+      const probabilities = exp.map(value => value / total);
+      return {kind, tokens, probabilities, prediction: tokens[probabilities.indexOf(Math.max(...probabilities))]};
+    }
+    if (kind === 'data-quality') {
+      const rows = [{id: 1, text: ' language '}, {id: 2, text: ''}, {id: 3, text: null}];
+      const clean = rows.filter(row => typeof row.text === 'string' && row.text.trim()).map(row => ({id: row.id, text: row.text.trim()}));
+      return {kind, rows, clean};
+    }
     if (kind === 'surprisal') {
       const probabilities = [.5, .125, .25, .0625];
       return {kind, values: probabilities.map(p => -Math.log2(p))};
@@ -52,7 +65,22 @@
     host.setAttribute('role', 'group');
     host.setAttribute('aria-label', t('Example output'));
     host.append(element('p', 'result-kicker', t('Example output')));
-    if (kind === 'surprisal') {
+    if (kind === 'next-token') {
+      host.append(element('p', 'result-title', t('Next-token probabilities')));
+      data.tokens.forEach((token, index) => {
+        const row = element('div', 'token-score');
+        const label = element('div', 'token-score-label');
+        label.append(element('span', '', token), element('span', '', `${(data.probabilities[index] * 100).toFixed(1)}%`));
+        const track = element('div', 'token-score-track');
+        const fill = element('span', 'token-score-fill'); fill.style.width = `${data.probabilities[index] * 100}%`;
+        track.append(fill); row.append(label, track); host.append(row);
+      });
+      host.append(element('p', 'result-note', t('Predicted token')), element('p', 'result-value', data.prediction));
+    } else if (kind === 'data-quality') {
+      host.append(element('p', 'result-title', t('Validated & cleaned')));
+      const output = element('pre', 'console-preview', JSON.stringify(data.clean[0], null, 2));
+      host.append(output, element('p', 'result-value', `${data.clean.length} / ${data.rows.length}`), element('p', 'result-note', t('Usable records · Blanks removed')));
+    } else if (kind === 'surprisal') {
       host.append(element('p', 'result-title', t('Token surprisal')));
       const chart = svgNode('svg', {viewBox: '0 0 144 94', role: 'img', 'aria-label': '1, 3, 2, 4 bits'});
       data.values.forEach((value, i) => {
