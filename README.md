@@ -148,3 +148,5 @@ Academics uses four compact columns on desktop, two on medium screens, and one o
 The landing page now displays a centered 2×2 square image grid: autumn leaf, code study, dictionary, and language models. The website stores only physically cropped square derivatives. Full-frame copies are excluded from both source assets and the generated site.
 
 `/archive/` preserves the previous academic homepage design with its own layout (`_layouts/archive.html`) and stylesheet (`libs/custom/archive.css`), so future visual changes do not affect it. The archive has no public navigation entry and remains accessible by its direct URL.
+
+Language controls (DE / EN / FR) appear at the bottom right of current pages. `locale-data.js` contains German and French translations; `language.js` preserves the selected locale across pages. Identity-animation phrases are translated too. Archive keeps the historical design.

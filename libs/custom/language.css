@@ -1,0 +1,8 @@
+.language-switcher { position: fixed; z-index: 20; right: 28px; bottom: 18px; display: flex; align-items: baseline; gap: 5px; padding: 4px 0 4px 10px; color: #292929; background: #fafaf9; font: 300 12px/1.5 "Geist", Helvetica, Arial, sans-serif; }
+.language-switcher button { border: 0; border-radius: 0; background: none; color: inherit; padding: 3px 0; font: inherit; cursor: pointer; }
+.language-switcher button[aria-pressed="true"] { text-decoration: underline; text-underline-offset: 4px; }
+.language-switcher button:hover { opacity: .65; }
+.language-switcher button:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
+.page-academics .site-footer { padding-bottom: 70px; }
+@media (max-width: 600px) { .language-switcher { right: 16px; bottom: 12px; } .home-composition { padding-bottom: 75px; } }
+@media print { .language-switcher { display: none; } }

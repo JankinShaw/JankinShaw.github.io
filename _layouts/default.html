@@ -11,7 +11,10 @@
   <link rel="icon" href="{{ '/libs/favicon.svg' | relative_url }}?v=20261015-atom" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/libs/custom/my_css.css' | relative_url }}?v={{ site.asset_version }}">
   {% if page.nav == 'academics' %}<link rel="stylesheet" href="{{ '/libs/custom/academics.css' | relative_url }}?v={{ site.asset_version }}">{% endif %}
+  <link rel="stylesheet" href="{{ '/libs/custom/language.css' | relative_url }}?v={{ site.asset_version }}">
   <script src="{{ '/libs/custom/translations.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
+  <script src="{{ '/libs/custom/locale-data.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
+  <script src="{{ '/libs/custom/language.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
   <script src="{{ '/libs/custom/my_js.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
 </head>
 <body class="page-{{ page.nav | default: 'default' }}">
@@ -21,7 +24,7 @@
   <header class="site-header" data-site-header>
     <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
       <a href="{{ '/' | relative_url }}">Home</a>
-      {% if page.nav == 'academics' %}<a class="is-active" aria-current="page" href="{{ '/academics/' | relative_url }}">Academics</a>{% else %}<a href="{{ '/academics/' | relative_url }}">Academics</a>{% endif %}
+      {% if page.nav == 'academics' %}<a class="is-active" aria-current="page" href="{{ '/academics/' | relative_url }}">About</a>{% else %}<a href="{{ '/academics/' | relative_url }}">About</a>{% endif %}
     </nav>
   </header>
 
@@ -36,6 +39,7 @@
     </div>
   </footer>
 
+  {% include languages.html %}
   {% include google_analytics.html %}
 </body>
 </html>

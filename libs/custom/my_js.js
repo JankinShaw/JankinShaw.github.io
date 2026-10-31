@@ -1,8 +1,10 @@
 /* Content and navigation work without JavaScript. */
 document.addEventListener("DOMContentLoaded", () => {
   initializeAccessibilityOptions();
-  const language = initializeLanguage();
-  initializeLanguageControls(language);
+  if (!window.siteI18n) {
+    const language = initializeLanguage();
+    initializeLanguageControls(language);
+  }
   initializeTLDRSecret();
   initializeFilters();
   initializeFooterYear();

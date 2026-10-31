@@ -8,15 +8,19 @@
   <title>{{ site.data.main_info.name }}</title>
   <link rel="icon" href="{{ '/libs/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/libs/custom/photography.css' | relative_url }}?v={{ site.asset_version }}">
+  <link rel="stylesheet" href="{{ '/libs/custom/language.css' | relative_url }}?v={{ site.asset_version }}">
+  <script src="{{ '/libs/custom/locale-data.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
+  <script src="{{ '/libs/custom/language.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
   <script src="{{ '/libs/custom/identity.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to photograph</a>
   <header class="photography-header">
     <span class="photography-name">{{ site.data.main_info.name }}</span>
-    <nav aria-label="Primary navigation"><a href="{{ '/academics/' | relative_url }}">Academics</a></nav>
+    <nav aria-label="Primary navigation"><a href="{{ '/academics/' | relative_url }}">About</a></nav>
   </header>
   <main id="main-content">{{ content }}</main>
+  {% include languages.html %}
   {% include google_analytics.html %}
 </body>
 </html>

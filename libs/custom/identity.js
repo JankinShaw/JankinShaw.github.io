@@ -5,14 +5,19 @@
   if (!text || !button) return;
   const container = text.closest('.identity-animation');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const words = [
-    "Language Models",
+  const englishWords = [
+    "Large Language Models",
     "Computational Psycholinguistics",
     "Pragmatic Inference",
+    "Data Science",
+    "Python Programming",
+    "Data Analysis",
+    "Experimental Design",
     "Surprisal-based Language Prediction",
     "Sentence Comprehension",
     "Implicit Causality"
   ];
+  let words = englishWords.map(word => window.siteI18n?.t(word) || word);
   const fonts = ['geist', 'terminal', 'book'];
   const randomBetween = (min, max) => min + Math.random() * (max - min);
   let typingPace = randomBetween(55, 115);
@@ -59,6 +64,7 @@
   };
   const update = () => {
     clearTimeout(timer);
+    button.setAttribute('aria-label', window.siteI18n?.t(paused ? 'Resume text animation' : 'Pause text animation') || (paused ? 'Resume text animation' : 'Pause text animation'));
     button.hidden = motion.matches;
     container.classList.toggle('is-paused', paused || motion.matches);
     if (motion.matches) {
@@ -71,10 +77,21 @@
   button.addEventListener('click', () => {
     paused = !paused;
     button.setAttribute('aria-pressed', String(paused));
-    button.setAttribute('aria-label', paused ? 'Resume text animation' : 'Pause text animation');
+    button.setAttribute('aria-label', window.siteI18n?.t(paused ? 'Resume text animation' : 'Pause text animation') || (paused ? 'Resume text animation' : 'Pause text animation'));
     button.textContent = paused ? '▷' : 'Ⅱ';
     update();
   });
+  const changeLanguage = () => {
+    words = englishWords.map(word => window.siteI18n?.t(word) || word);
+    index = 0; position = words[0].length; deleting = true;
+    text.textContent = words[0];
+    const accessible = container.querySelector('.identity-accessible');
+    if (accessible) accessible.textContent = words.join(' · ');
+    container.setAttribute('aria-label', window.siteI18n?.t('Research interests') || 'Research interests');
+    update();
+  };
+  document.addEventListener('site-language-change', changeLanguage);
+  changeLanguage();
   motion.addEventListener('change', update);
   document.addEventListener('visibilitychange', update);
   update();
