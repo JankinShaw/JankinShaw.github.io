@@ -1,0 +1,10 @@
+{
+  "id": "v2-writing",
+  "title": "第二版：Writing 重新设计",
+  "commit": "2113d05c84536569c68969f75f657b41d3463165",
+  "commit_date": "2026-09-07T20:08:28+02:00",
+  "sha256": "fbb658ef9e663aca0dad0f21a76ef5b22dab109a229e2dbc41421f471254bb8e",
+  "entry": "/blog/",
+  "compatibility": "historical-blog",
+  "description": "完整 Git 源码快照；原始内容未改写。预览时只在临时副本添加兼容配置。"
+}

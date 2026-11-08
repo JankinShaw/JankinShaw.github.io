@@ -1,0 +1,9 @@
+{
+  "id": "v3-local-journal",
+  "title": "第三版：本地 Journal 样稿",
+  "saved_at": "2026-11-08T16:24:54.574982+00:00",
+  "sha256": "2f623a66c188d4be1d6beef5f53427c2e50ebe012dd6c258b584f7ea5cb18be8",
+  "entry": "/",
+  "compatibility": "none",
+  "description": "本地 Jekyll 源码完整快照；含文章、布局、样式和静态资源。"
+}

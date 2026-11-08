@@ -1,0 +1,128 @@
+.gitignore
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/resume.iml
+.idea/vcs.xml
+404.html
+Gemfile
+README.md
+_config.yml
+_data/classes.yaml
+_data/experience.yaml
+_data/main_info.yaml
+_data/projects.yaml
+_data/publications.yaml
+_data/students.yaml
+_data/talks.yaml
+_includes/google_analytics.html
+_includes/image_with_caption.html
+_layouts/default.html
+_layouts/post.html
+_layouts/project.html
+_posts/2025-02-24-german-learning.md
+_posts/2025-02-24-my-first-post.md
+_projects/2009_connect-four.md
+_projects/2010_fingerprint-verification.md
+_projects/2010_wordnet-contruction.md
+_projects/2011_twitter-sentiment-analysis.md
+_projects/2013_iterative-hybrid-algorithm.md
+_projects/2014_item-cold-start.md
+_projects/2015_jun.md
+_projects/2016-embed.md
+_projects/2016_human-atlas.md
+_projects/2016_network-ab-testing.md
+_projects/2018-dro.md
+_projects/2018-nlg.md
+about.html
+assets/profile-pics/yingjie_xiao.jpg
+assets/projects/2016-embed.png
+assets/projects/2016_reps/thumbnail.png
+assets/projects/2018-dro.png
+assets/projects/2018-nlg.png
+assets/projects/2018_dro/thumbnail.png
+assets/projects/2018_nlg/main.png
+assets/projects/2018_nlg/thumbnail.jpg
+assets/projects/2021_vod/vod_image.png
+assets/publications/condrisk.pdf
+assets/publications/nlg-paper.pdf
+assets/ta-evals/COSC_572_TA_Spring_2023.html
+assets/ta-evals/COSC_572_TA_Spring_2023_files/css.css
+assets/ta-evals/COSC_572_TA_Spring_2023_files/css_002.css
+assets/ta-evals/COSC_572_TA_Spring_2023_files/googlelogo_dark_clr_74x24px.svg
+assets/ta-evals/COSC_572_TA_Spring_2023_files/m=analytics_base
+assets/ta-evals/COSC_572_TA_Spring_2023_files/rs=AMjVe6gOlrkwiKYHjRpCWpN_t_AlhoUEmw.css
+assets/ta-evals/COSC_572_TA_Spring_2024.mhtml
+assets/ta-evals/LING_101_TA_Fall_2021.htm
+assets/ta-evals/LING_101_TA_Spring_2022.htm
+assets/ta-evals/LING_101_TA_Spring_2022.html
+assets/ta-evals/LING_101_TA_Spring_2022_files/css.css
+assets/ta-evals/LING_101_TA_Spring_2022_files/css_002.css
+assets/ta-evals/LING_101_TA_Spring_2022_files/googlelogo_dark_clr_74x24px.svg
+assets/ta-evals/LING_101_TA_Spring_2022_files/m=analytics_base
+assets/ta-evals/LING_101_TA_Spring_2022_files/rs=AMjVe6gOlrkwiKYHjRpCWpN_t_AlhoUEmw.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Fall 2021- Tatsuya Aoyama_files/css.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Fall 2021- Tatsuya Aoyama_files/css_002.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Fall 2021- Tatsuya Aoyama_files/googlelogo_dark_clr_74x24px.svg
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Fall 2021- Tatsuya Aoyama_files/m=analytics_base
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Fall 2021- Tatsuya Aoyama_files/rs=AMjVe6gOlrkwiKYHjRpCWpN_t_AlhoUEmw.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Fall 2021- Tatsuya Aoyama_files/rs=AMjVe6gYe9e_bltPtbbDQnWOQq7y793qWQ.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama.htm
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/css(1)
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/css.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/css_002.css
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/googlelogo_dark_clr_74x24px.svg
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/m=analytics_base
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/rs=AMjVe6iGDaexeoWTNUV0KU-zODowqGmskQ
+assets/ta-evals/Linguistics Teaching Assistant Evaluation Spring 2024, Tatsuya Aoyama_files/rs=AMjVe6jdEmvWL0VnsExuwtpNo1UlBji8bQ.css
+blog.html
+experience.html
+feed.xml
+index.html
+libs/custom/my_css.css
+libs/custom/my_js.js
+libs/external/font-awesome-4.7.0/css/font-awesome.css
+libs/external/font-awesome-4.7.0/css/font-awesome.min.css
+libs/external/font-awesome-4.7.0/fonts/FontAwesome.otf
+libs/external/font-awesome-4.7.0/fonts/fontawesome-webfont.eot
+libs/external/font-awesome-4.7.0/fonts/fontawesome-webfont.svg
+libs/external/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf
+libs/external/font-awesome-4.7.0/fonts/fontawesome-webfont.woff
+libs/external/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2
+libs/external/font-awesome-4.7.0/less/animated.less
+libs/external/font-awesome-4.7.0/less/bordered-pulled.less
+libs/external/font-awesome-4.7.0/less/core.less
+libs/external/font-awesome-4.7.0/less/fixed-width.less
+libs/external/font-awesome-4.7.0/less/font-awesome.less
+libs/external/font-awesome-4.7.0/less/icons.less
+libs/external/font-awesome-4.7.0/less/larger.less
+libs/external/font-awesome-4.7.0/less/list.less
+libs/external/font-awesome-4.7.0/less/mixins.less
+libs/external/font-awesome-4.7.0/less/path.less
+libs/external/font-awesome-4.7.0/less/rotated-flipped.less
+libs/external/font-awesome-4.7.0/less/screen-reader.less
+libs/external/font-awesome-4.7.0/less/stacked.less
+libs/external/font-awesome-4.7.0/less/variables.less
+libs/external/font-awesome-4.7.0/scss/_animated.scss
+libs/external/font-awesome-4.7.0/scss/_bordered-pulled.scss
+libs/external/font-awesome-4.7.0/scss/_core.scss
+libs/external/font-awesome-4.7.0/scss/_fixed-width.scss
+libs/external/font-awesome-4.7.0/scss/_icons.scss
+libs/external/font-awesome-4.7.0/scss/_larger.scss
+libs/external/font-awesome-4.7.0/scss/_list.scss
+libs/external/font-awesome-4.7.0/scss/_mixins.scss
+libs/external/font-awesome-4.7.0/scss/_path.scss
+libs/external/font-awesome-4.7.0/scss/_rotated-flipped.scss
+libs/external/font-awesome-4.7.0/scss/_screen-reader.scss
+libs/external/font-awesome-4.7.0/scss/_stacked.scss
+libs/external/font-awesome-4.7.0/scss/_variables.scss
+libs/external/font-awesome-4.7.0/scss/font-awesome.scss
+libs/external/jquery-3.1.1.min.js
+libs/external/skeleton/normalize.css
+libs/external/skeleton/skeleton.css
+libs/external/skeleton_tabs/skeleton-tabs.css
+libs/external/skeleton_tabs/skeleton-tabs.js
+libs/external/timeline.css
+libs/icon.png
+research.html

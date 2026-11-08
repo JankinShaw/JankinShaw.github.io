@@ -25,6 +25,18 @@ A Tufte-inspired academic website with an ivory background, locally hosted ET Bo
 
 ## Preview locally
 
+### Archived blog designs
+
+Complete snapshots of both earlier blog architectures, plus the current local journal prototype, are preserved under [`_archive/blog/`](./_archive/blog/README.md). This directory is excluded from normal Jekyll publication. To preview an old version from the repository root:
+
+```bash
+python3 _archive/blog/archive.py preview v1-skeleton
+```
+
+Open `http://127.0.0.1:4002/blog/`. Use `v2-writing` for the second design. The archive guide includes source restoration and a `save` command for preserving future versions and content.
+
+### Current personal website
+
 Ruby and Bundler are required only for local previews. They are not needed by visitors.
 
 ```bash

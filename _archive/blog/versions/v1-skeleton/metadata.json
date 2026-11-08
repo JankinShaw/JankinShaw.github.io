@@ -1,0 +1,10 @@
+{
+  "id": "v1-skeleton",
+  "title": "第一版：Skeleton 博客与标签筛选",
+  "commit": "3103eaa0bb2fbd1d96a84376135445e6916f4f0e",
+  "commit_date": "2026-08-31T13:58:52+02:00",
+  "sha256": "87de6a4e9970dfb8e8c60e9264fdefaefa3e539c1031b076b3377c00c42425ef",
+  "entry": "/blog/",
+  "compatibility": "historical-blog",
+  "description": "完整 Git 源码快照；原始内容未改写。预览时只在临时副本添加兼容配置。"
+}
