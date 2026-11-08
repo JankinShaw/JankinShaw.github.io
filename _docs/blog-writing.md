@@ -24,7 +24,19 @@ lang: en
 - `lang`: article language, such as `en` or `de`.
 - The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/reading-notes/` in the local blog.
 
-## Markdown basics
+## Math
+
+Post pages automatically render LaTeX math with MathJax. Write inline math as `$F$` or `$x^2 + y^2$`. For a display equation, leave blank lines around the block:
+
+```text
+$$
+P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}
+$$
+```
+
+Do not put equations inside backticks or a code fence when you want them rendered. Use `\$` for a literal dollar sign. MathJax is loaded from a pinned CDN URL, so the first load requires internet access. Set `math: false` in front matter to disable it on an individual post. Historical design snapshots remain unchanged.
+
+## Markdown syntax
 
 
 ````markdown

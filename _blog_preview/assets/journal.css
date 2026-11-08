@@ -100,3 +100,4 @@ h3{font-size:22px;margin:35px 0 14px}
 .tag-filters a[aria-current]{text-decoration:underline;text-underline-offset:6px}
 .tag-filters .count{margin-left:4px;font-size:11px}
 .tag-empty{color:var(--muted);font-size:16px}
+.prose mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:6px 0}
