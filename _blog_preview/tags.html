@@ -1,0 +1,11 @@
+---
+layout: base
+title: Tags
+section: tags
+permalink: /tags/
+---
+<header class="page-header"><h1>Tags</h1></header>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+<section class="tag-section" id="tag-{{ tag[0] | slugify: 'latin' }}"><h2>{{ tag[0] }} <span class="count">{{ tag[1] | size }}</span></h2>{% assign tagged_posts = tag[1] %}{% include post-list.html posts=tagged_posts %}</section>
+{% endfor %}

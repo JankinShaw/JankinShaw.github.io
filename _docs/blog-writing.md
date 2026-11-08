@@ -6,7 +6,7 @@ Use **Markdown** for the article body and **YAML front matter** for its metadata
 
 1. Copy `_blog_preview/_templates/post.md` into `_blog_preview/_posts/`.
 2. Name it `YYYY-MM-DD-short-title.md`, for example `2026-11-08-reading-notes.md`. Use the publication date; future-dated posts stay hidden until that date by default.
-3. Change the title and topic, then write below the closing `---`.
+3. Change the title and tags, then write below the closing `---`.
 4. Run `bash _blog_preview/serve.sh` from the repository root and open http://127.0.0.1:4001/. Refresh after saving.
 
 ## Metadata
@@ -14,19 +14,19 @@ Use **Markdown** for the article body and **YAML front matter** for its metadata
 ```yaml
 ---
 title: "Reading notes"
-topic: Reading
-topic_id: reading
+tags: [Reading, Notes]
 lang: en
 ---
 ```
 
 - `title`: article title. Keep quotation marks, especially if the title includes a colon.
-- `topic`: visible category name, such as `Essays`, `Language`, or `Reading`.
-- `topic_id`: matching URL anchor, such as `essays`, `language`, or `reading`. Use lowercase letters and hyphens, consistently for the same category.
+- `tags`: a list of keywords, for example `[German, Writing]`. A post can have several tags and appears under each one on `/tags/`. Reuse the same spelling and capitalization. Link anchors are generated automatically; no `topic_id` is needed.
 - `lang`: article language, such as `en` or `de`.
 - The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/reading-notes/` in the local blog.
 
 ## Markdown basics
+
+New posts and archived articles automatically display the official “Written by Human, Not By AI” badge below the article. It is an author declaration under the [Not By AI 90% Rule](https://notbyai.fyi/), not independent certification. For an article that does not qualify, add `not_by_ai: false` to its YAML front matter. Archive defaults are configured separately without modifying original article files or historical source snapshots. The badge SVG is served locally; no script is required.
 
 ````markdown
 A paragraph is ordinary text. Leave a blank line between paragraphs.

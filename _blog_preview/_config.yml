@@ -17,3 +17,9 @@ defaults:
       type: posts
     values:
       layout: post
+      not_by_ai: true
+  - scope:
+      path: ""
+      type: archive
+    values:
+      not_by_ai: true

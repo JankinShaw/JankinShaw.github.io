@@ -1,7 +1,6 @@
 ---
 title: "Your title"
-topic: Essays
-topic_id: essays
+tags: [Essays]
 lang: en
 ---
 

@@ -6,13 +6,22 @@ layout: base
     {% if page.collection == 'archive' %}
     <a class="eyebrow" href="{{ '/archive/' | relative_url }}">Archive</a>
     {% else %}
-    <a class="eyebrow" href="{{ '/topics/' | relative_url }}#{{ page.topic_id }}">{{ page.topic }}</a>
+    <div class="post-tags" aria-label="Tags">
+      {% for tag in page.tags %}<a class="eyebrow" href="{{ '/tags/' | relative_url }}#tag-{{ tag | slugify: 'latin' }}">{{ tag }}</a>{% endfor %}
+    </div>
     {% endif %}
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
     <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time><span aria-hidden="true"> · </span>{% if page.collection == 'archive' %}{{ page.tags | join: ' · ' }}{% endif %}</p>
   </header>
   <div class="prose">{{ content }}</div>
+  {% if page.not_by_ai %}
+  <div class="author-badge">
+    <a href="https://notbyai.fyi/" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/assets/images/not-by-ai.svg' | relative_url }}" alt="Written by Human, Not By AI" height="42" loading="lazy">
+    </a>
+  </div>
+  {% endif %}
   {% unless page.collection == 'archive' %}<nav class="post-pagination" aria-label="Post navigation">
     <div>{% if page.previous %}<span>Previous</span><a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}</div>
     <div>{% if page.next %}<span>Next</span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}</div>

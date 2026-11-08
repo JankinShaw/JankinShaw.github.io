@@ -18,7 +18,7 @@ Open http://127.0.0.1:4001. Stop with Ctrl-C. The script generates the site in a
 - `_layouts/post.html`: article template.
 - `assets/journal.css`: independent colors, typography, and responsive styles.
 - `_posts/YYYY-MM-DD-slug.md`: Markdown articles; filename determines date and URL.
-- `index.html`, `writing.html`, `topics.html`, `about.md`: homepage, archive, topics, about.
+- `index.html`, `writing.html`, `tags.html`, `about.md`: homepage, archive, tags, about.
 
 Sample posts have been removed. Copy `_templates/post.md` to `_posts/YYYY-MM-DD-slug.md` to start writing; see [the writing guide](../_docs/blog-writing.md). Templates and instructions are not published as blog articles. Original articles in `_archive/` retain their real content and dates. The blog has no analytics, external font requests, framework, or new Ruby dependency. ET Book fonts and their license are copied from the existing site's font assets. Chinese uses available system serif fonts. A light/dark toggle uses local browser storage, with an OS preference fallback.
 
