@@ -4,10 +4,10 @@ Use **Markdown** for the article body and **YAML front matter** for its metadata
 
 ## Start a post
 
-1. Copy `_blog_preview/_templates/post.md` into `_blog_preview/_posts/`.
+1. Copy `_templates/blog-post.md` into `_posts/`.
 2. Name it `YYYY-MM-DD-short-title.md`, for example `2026-11-08-reading-notes.md`. Use the publication date; future-dated posts stay hidden until that date by default.
 3. Change the title and tags, then write below the closing `---`.
-4. Run `bash _blog_preview/serve.sh` from the repository root and open http://127.0.0.1:4001/. Refresh after saving.
+4. Run `bundle exec jekyll serve` from the repository root and open http://127.0.0.1:4000/blog/. Refresh after saving.
 
 ## Metadata
 
@@ -22,9 +22,9 @@ lang: en
 ```
 
 - `title`: article title. Keep quotation marks, especially if the title includes a colon.
-- `tags`: a list of keywords, for example `[German, Writing]`. A post can have several tags and appears under each one on `/tags/`. Reuse the same spelling and capitalization. Link anchors are generated automatically; no `topic_id` is needed.
+- `tags`: a list of keywords, for example `[German, Writing]`. A post can have several tags and appears under each one on `/blog/tags/`. Reuse the same spelling and capitalization. Link anchors are generated automatically; no `topic_id` is needed.
 - `lang`: article language, such as `en` or `de`.
-- The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/reading-notes/` in the local blog.
+- The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/blog/reading-notes/`.
 
 ## Images
 
@@ -81,6 +81,6 @@ print("Hello")
 | Item | Value |
 ````
 
-The post title is already rendered as the main heading; start body headings at `##`. A single line break usually continues the same paragraph. Image paths refer to actual files inside `_blog_preview/assets/`, not your main site's separate assets directory.
+The post title is already rendered as the main heading; start body headings at `##`. A single line break usually continues the same paragraph. Image paths refer to actual files inside `assets/blog/`; use `/assets/blog/…` for their URLs.
 
-Templates remain under `_templates/`, outside the published post collection. Historical posts remain in `_archive/`; complete earlier designs remain in the repository's `_archive/blog/`.
+Templates remain under `_templates/`, outside the published post collection. Historical articles are in `_blog_archive/` and appear at `/blog/archive/`. Complete earlier designs remain in `_archive/blog/`. The former `_blog_preview/` is retained as a pre-publication copy; edit `_posts/` for the live blog.

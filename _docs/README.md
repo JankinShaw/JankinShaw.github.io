@@ -185,3 +185,8 @@ The profile page is `/info/` with the navigation label Info in all languages. `/
 The homepage now uses a centered four-image horizontal strip on desktop and a 2×2 grid on small screens. Order: dictionary, colorful code, language-model image, autumn leaf. Only square crops are stored.
 
 The homepage layout is restored to a centered 2×2 grid, retaining the newer colorful code photograph.
+
+
+## Live blog
+
+The current blog is served at `/blog/`. Edit `_posts/` for new articles and `blog/` for index, tags, archive and about pages. Shared blog layouts are `_layouts/journal.html` and `_layouts/journal_post.html`; assets are in `assets/blog/`. Read [the writing guide](blog-writing.md). The former `_blog_preview/` and all `_archive/blog/` snapshots are preserved. The academic homepage and its `/archive/` page remain separate. GoatCounter is inherited from the production-only shared analytics include.

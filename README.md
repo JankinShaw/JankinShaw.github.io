@@ -10,7 +10,8 @@ Jekyll · GitHub Pages · HTML / CSS / JavaScript · Markdown / YAML
 - `libs/custom/` — styles, scripts, and language support.
 - `assets/` — images, fonts, PDFs, and other static files.
 - `_config.yml` — site settings and build configuration.
-- `_blog_preview/` — separate local blog prototype.
+- `blog/` — blog pages; `_posts/` — articles; `_blog_archive/` — historical articles.
+- `_blog_preview/` — preserved pre-publication blog prototype.
 - `_archive/blog/` — complete snapshots of earlier blog designs.
 - `_docs/` — detailed personal maintenance notes.
 
@@ -23,7 +24,7 @@ Jekyll · GitHub Pages · HTML / CSS / JavaScript · Markdown / YAML
 - **Page content:** edit the corresponding root HTML file.
 - **Layout / navigation:** edit `_layouts/default.html`.
 - **Appearance / behavior:** edit files in `libs/custom/`.
-- **Blog entry:** add `_blog_preview/_posts/YYYY-MM-DD-title.md`.
+- **Blog entry:** add `_posts/YYYY-MM-DD-title.md`.
 - **Local preview:** run `bundle exec jekyll serve`.
 
 Full maintenance guide: [`_docs/README.md`](./_docs/README.md).

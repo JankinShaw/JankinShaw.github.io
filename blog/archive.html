@@ -1,0 +1,12 @@
+---
+layout: journal
+title: Archive
+section: archive
+permalink: /blog/archive/
+---
+<header class="page-header"><h1>Archive</h1></header>
+{% assign archived = site.blog_archive | sort: 'date' | reverse %}
+{% assign years = archived | group_by_exp: 'post', "post.date | date: '%Y'" %}
+{% for year in years %}
+<section class="archive-year"><h2>{{ year.name }}</h2>{% include journal-post-list.html posts=year.items %}</section>
+{% endfor %}

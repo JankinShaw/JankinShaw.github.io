@@ -9,6 +9,7 @@
 | `v1-skeleton` | 早期 Skeleton 个人页中的 Blog，标签筛选、RSS、原始文章 | `3103eaa`，第一次整体重构之前 |
 | `v2-writing` | 重新设计的 Writing 列表、专用文章布局、标签筛选与 RSS | `2113d05`，移除博客之前 |
 | `v3-local-journal` | 目前参考 James 博客制作的本地样稿，含中英文示例和旧文 Archive | 本地文件快照 |
+| `v4-english-before-publication` | 正式接入 `/blog/` 前的英文完整版本，含当前文章、目录、公式与样式 | 发布前本地源码快照 |
 | `v3-chinese-journal` | 原始中文完整版：完整介绍文案、四篇示例文章、两篇旧文 Archive | 从修改为英文精简版之前的原始快照完整保存 |
 
 中文完整版独立预览：`python3 _archive/blog/archive.py preview v3-chinese-journal --port 4003`，打开 http://127.0.0.1:4003/。详情见 [`versions/v3-chinese-journal/README.md`](versions/v3-chinese-journal/README.md)。

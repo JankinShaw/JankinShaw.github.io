@@ -1,0 +1,11 @@
+---
+layout: journal
+title: Posts
+section: writing
+permalink: /blog/writing/
+---
+<header class="page-header"><h1>Posts</h1></header>
+{% assign years = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+{% for year in years %}
+<section class="archive-year"><h2>{{ year.name }}</h2>{% include journal-post-list.html posts=year.items %}</section>
+{% endfor %}

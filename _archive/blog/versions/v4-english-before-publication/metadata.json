@@ -1,0 +1,9 @@
+{
+  "id": "v4-english-before-publication",
+  "title": "英文 Journal：接入正式博客前的完整版本",
+  "saved_at": "2026-11-08T21:49:24.425276+00:00",
+  "sha256": "f76ae5f0e454e9063007b5fd8a6764b8fea5304457fc0cb691e816d278bb6f1f",
+  "entry": "/",
+  "compatibility": "none",
+  "description": "本地 Jekyll 源码完整快照；含文章、布局、样式和静态资源。"
+}

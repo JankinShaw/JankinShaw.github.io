@@ -13,8 +13,26 @@ includes_dir: _includes
 layouts_dir: _layouts
 
 markdown: kramdown
+blog_title: "Vicissitude"
+blog_description: "Notes on language, reading, and everyday life."
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: journal_post
+      permalink: /blog/:title/
+  - scope:
+      path: ""
+      type: blog_archive
+    values:
+      layout: journal_post
 
 collections:
+  blog_archive:
+    output: true
+    permalink: /blog/archive/:name/
   projects:
     output: false
 
