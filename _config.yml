@@ -13,7 +13,7 @@ includes_dir: _includes
 layouts_dir: _layouts
 
 markdown: kramdown
-blog_title: "Vicissitude"
+blog_title: "Vicissitude."
 blog_description: "Notes on language, reading, and everyday life."
 
 defaults:
