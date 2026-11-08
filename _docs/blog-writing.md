@@ -32,7 +32,7 @@ Article images automatically show a magnifying-glass cursor and open a larger pr
 
 ## Table of Contents
 
-The article template automatically builds a collapsible Table of Contents from Markdown headings (`##`, `###`, etc.) at the beginning of the article, expanded by default and collapsible on all screens. A Back to top link returns to the article start. Subheadings are nested; links jump to the matching section. No headings means no visible directory. Use `toc: false` in front matter to disable it on one post. The directory is a JavaScript enhancement; the full article remains readable without JavaScript.
+The article template automatically builds a collapsible Table of Contents from Markdown headings (`##`, `###`, etc.) at the beginning of the article, expanded by default and collapsible on all screens. Subheadings are nested; links jump to the matching section. No headings means no visible directory. Use `toc: false` in front matter to disable it on one post. The directory is a JavaScript enhancement; the full article remains readable without JavaScript.
 
 ## Math
 

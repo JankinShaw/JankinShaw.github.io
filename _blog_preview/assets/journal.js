@@ -76,11 +76,6 @@
     list.append(item);
     ancestors.push({level, item});
   });
-  const top = document.createElement('a');
-  top.href = '#main';
-  top.className = 'toc-top';
-  top.textContent = 'Back to top ↑';
-  toc.querySelector('nav').append(top);
   toc.open = true;
   toc.hidden = false;
   const links = [...root.querySelectorAll('a')];
