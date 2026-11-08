@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.description | default: site.blog_description | escape }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.blog_title | escape }}" href="{{ '/blog/feed.xml' | relative_url }}">
   <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.blog_title }}</title>
   <script>try { const theme = localStorage.getItem('journal-theme'); if (theme === 'dark' || theme === 'light') document.documentElement.dataset.theme = theme; } catch (_) {}</script>
   <link rel="stylesheet" href="{{ '/assets/blog/journal.css' | relative_url }}">
