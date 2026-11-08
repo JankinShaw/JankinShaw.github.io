@@ -12,8 +12,14 @@ layout: base
     {% endif %}
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>{% if page.collection == 'archive' and page.tags.size > 0 %}<span aria-hidden="true"> · </span>{{ page.tags | join: ' · ' }}{% endif %}</p>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time><span aria-hidden="true"> · </span><span class="post-author">Author: Yingjie Xiao</span></p>
   </header>
+  {% unless page.toc == false %}
+  <details class="post-toc" open hidden>
+    <summary>Table of Contents</summary>
+    <nav aria-label="Table of Contents"><ul></ul></nav>
+  </details>
+  {% endunless %}
   <div class="prose">{{ content }}</div>
   {% unless page.collection == 'archive' %}<nav class="post-pagination" aria-label="Post navigation">
     <div>{% if page.previous %}<span>Previous</span><a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}</div>

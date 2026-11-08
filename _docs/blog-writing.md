@@ -11,6 +11,8 @@ Use **Markdown** for the article body and **YAML front matter** for its metadata
 
 ## Metadata
 
+Every article automatically displays the author Yingjie Xiao beside its date. Dates use the format `November 8, 2026`. No author field is required.
+
 ```yaml
 ---
 title: "Reading notes"
@@ -23,6 +25,14 @@ lang: en
 - `tags`: a list of keywords, for example `[German, Writing]`. A post can have several tags and appears under each one on `/tags/`. Reuse the same spelling and capitalization. Link anchors are generated automatically; no `topic_id` is needed.
 - `lang`: article language, such as `en` or `de`.
 - The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/reading-notes/` in the local blog.
+
+## Images
+
+Article images automatically show a magnifying-glass cursor and open a larger preview when clicked. Click the image/background or press Esc to close. Keyboard users can focus the image button and press Enter. Images already linked to another page keep their existing link behavior. Use ordinary Markdown image syntax; no extra metadata is required.
+
+## Table of Contents
+
+The article template automatically builds a collapsible Table of Contents from Markdown headings (`##`, `###`, etc.) at the beginning of the article, expanded by default and collapsible on all screens. A Back to top link returns to the article start. Subheadings are nested; links jump to the matching section. No headings means no visible directory. Use `toc: false` in front matter to disable it on one post. The directory is a JavaScript enhancement; the full article remains readable without JavaScript.
 
 ## Math
 
