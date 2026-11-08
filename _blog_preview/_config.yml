@@ -1,8 +1,8 @@
 title: "Yingjie, in words."
-description: "关于语言、阅读与日常的个人博客。本地设计样稿。"
+description: "Notes on language, reading, and everyday life."
 url: "http://127.0.0.1:4001"
 baseurl: ""
-lang: zh-CN
+lang: en
 timezone: Europe/Berlin
 markdown: kramdown
 permalink: /:title/

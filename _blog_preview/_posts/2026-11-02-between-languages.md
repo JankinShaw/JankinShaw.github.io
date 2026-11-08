@@ -1,27 +1,17 @@
 ---
-title: 在两种语言之间，意思如何慢慢变了样
-subtitle: 一个关于“翻译过去”和“重新表达”的小问题。
-topic: 语言
+title: Between languages
+lang: en
+topic: Language
 topic_id: language
 ---
-同一句话换一种语言说出来，为什么常常连语气都变了？字面意思可以很接近，表达时的距离感却未必相同。
+The same sentence can feel different in another language. Its meaning may survive while its tone, distance, or politeness changes.
 
-这个问题很适合从一个普通句子开始，而不急着给出一个完整的理论。
+## Beyond the words
 
-## 词义之外的东西
+“I’ll think about it” might be a promise or a gentle refusal. Translation has to account for the conversation as well as the sentence.
 
-“我再想想”可以是认真考虑，也可能是一种温和的拒绝。对方如何理解，取决于之前说了什么、两个人的关系，以及说话时短暂的停顿。
+A few questions are worth keeping:
 
-翻译时，这些信息不会自动跟着词语走。我们可能需要换一个句式，补上一点解释，或者干脆保留原来的模糊。
-
-> 有时需要传达的，不只是那句话说了什么，还有它为什么在这个时候被说出来。
-
-## 把问题留小一点
-
-与其笼统地问“一种语言如何影响思维”，不如先记录几次具体的犹豫：
-
-1. 哪个词在另一种语言里没有顺手的对应？
-2. 哪句话翻译后显得过于直接？
-3. 哪个意思，绕一点路反而更容易被理解？
-
-这些片段未必马上组成结论，却可以成为下一篇笔记的起点。
+- Which expressions resist a direct translation?
+- When does a sentence become too direct?
+- What does the listener need to infer?

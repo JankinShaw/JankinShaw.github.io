@@ -2,16 +2,12 @@
 layout: base
 home: true
 ---
-<section class="intro" aria-label="欢迎">
-  <p><strong>你好，我是 Yingjie。</strong> 欢迎来到我的文字角落。</p>
-  <p>这里用来收集一些还想多说几句的事情：语言、阅读、技术，以及日常生活里值得停留的片刻。</p>
-  <p>有时是完整的文章，有时只是一个还没想清楚的问题。<a href="{{ '/about/' | relative_url }}">关于这个博客 →</a></p>
-  <p class="start-here">从<a href="{{ '/topics/' | relative_url }}">一个主题</a>开始，或者读读下面的新文章。</p>
+<section class="intro" aria-label="Welcome">
+  <p>Hi, I’m Yingjie. Welcome to my notes!</p>
 </section>
 <section class="recent" aria-labelledby="recent-heading">
-  <div class="section-heading"><h2 id="recent-heading">最近写下的</h2><span>2026</span></div>
+  <div class="section-heading"><h2 id="recent-heading">Recent posts</h2></div>
   {% assign recent = site.posts | slice: 0, 5 %}
   {% include post-list.html posts=recent %}
-  <a class="all-posts" href="{{ '/writing/' | relative_url }}">查看所有文章 →</a>
+  <a class="all-posts" href="{{ '/writing/' | relative_url }}">All posts →</a>
 </section>
-<aside class="margin-note"><span aria-hidden="true">↳</span> 留一点空间，给还没有答案的想法。</aside>

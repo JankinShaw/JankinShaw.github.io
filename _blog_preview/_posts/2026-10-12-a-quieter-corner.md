@@ -2,7 +2,7 @@
 title: A quieter corner of the internet
 subtitle: A small note on reading, attention, and personal websites.
 lang: en
-topic: 随笔
+topic: Essays
 topic_id: essays
 ---
 A personal website can be a remarkably small thing. A name, a few links, and some words that someone decided were worth keeping. It does not need to introduce everything at once.
@@ -15,7 +15,7 @@ Typography gives that quietness a physical form. A line ends before your eyes lo
 
 > A good reading page makes it easy to stay, and equally easy to leave.
 
-The same care matters when languages share a page. 中文与 English 的混排，需要各自合适的字体，也需要自然的间距。A design that feels comfortable in one language still needs to be read and adjusted in another.
+The same care matters when languages share a page. Mixed-language text needs suitable typefaces and natural spacing. A design that feels comfortable in one language still needs to be read and adjusted in another.
 
 ## A place to return to
 
@@ -26,7 +26,7 @@ The technology can stay simple. In this prototype, an article begins as a Markdo
 ```yaml
 ---
 title: A small observation
-topic: 随笔
+topic: Essays
 topic_id: essays
 ---
 ```

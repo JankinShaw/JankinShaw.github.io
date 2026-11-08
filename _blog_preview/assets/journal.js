@@ -6,7 +6,7 @@
   const update = () => {
     const dark = isDark();
     button.setAttribute('aria-pressed', String(dark));
-    button.setAttribute('aria-label', dark ? '切换为浅色' : '切换为深色');
+    button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
   };
   button.hidden = false;
   update();

@@ -1,10 +1,10 @@
 ---
 layout: base
-title: 文章
+title: Posts
 section: writing
 permalink: /writing/
 ---
-<header class="page-header"><p class="eyebrow">THE ARCHIVE</p><h1>写下来的东西</h1><p class="lede">随笔、阅读札记，以及一些慢慢展开的想法。</p></header>
+<header class="page-header"><h1>Posts</h1></header>
 {% assign years = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
 {% for year in years %}
 <section class="archive-year"><h2>{{ year.name }}</h2>{% include post-list.html posts=year.items %}</section>

@@ -1,39 +1,15 @@
 ---
-title: 给还没想清楚的事，留一个地方
-subtitle: 关于一个博客可以从哪里开始。
-topic: 随笔
+title: A place for unfinished thoughts
+lang: en
+topic: Essays
 topic_id: essays
 ---
-一个空白的博客，似乎总在等待一篇足够郑重的开场白。但如果每次落笔之前，都要先解释清楚自己是谁、为什么写、准备写多久，开头反而变成了最难的一部分。
+A blog can begin with a question. It does not need a conclusion, a schedule, or a complete account of what comes next.
 
-也许可以先把这些问题放在一旁。从一个小问题、一段读书时划下的句子，或者某个傍晚突然想起的事情开始。
+## Writing to think
 
-## 写作不必从答案开始
+Some ideas only become clear when we put them into words. A sentence reveals a missing step; a paragraph gives us a reason to return.
 
-有些想法只有写下来之后，才会显露出原来的样子。在脑子里，它们往往完整而流畅；变成句子时，却突然暴露出许多缺口。一个看似理所当然的判断，原来藏着几个没有解释的前提。
+> Writing something down gives it a place to be found again.
 
-这些缺口并不一定需要立刻补齐。它们也可以留下来，成为下次重新回到这个问题的入口。
-
-> 写下一件事，有时只是为了给它一个可以再次找到的地址。
-
-这样想的时候，博客就不必是一排完成的作品。它也可以是一张书桌：有整理好的文章，也有摊开的笔记和暂时放在一边的纸页。
-
-## 留下什么，又省略什么
-
-一个小小的个人博客，可以容纳不同速度的文字：
-
-- **随笔**：围绕一个问题，试着把思路往前推一点。
-- **阅读札记**：记录一段真正停下来想过的文字。
-- **日常观察**：给容易被忘记的细节留下一点位置。
-
-分类只是临时的抽屉，不必一开始就给每种想法安排好房间。写得多了之后，主题之间自然会出现联系。
-
-### 阅读也需要一点空间
-
-页面的设计可以很轻。足够清楚的字，适合阅读的行宽，在段落之间自然停顿的距离。点进一篇文章时，读者知道从哪里开始，也知道读完之后可以去哪里。
-
-如果文字足够长，标题和引用帮助人找到节奏；如果只有几句话，也不必为了填满页面而增加装饰。
-
----
-
-至于第一篇究竟应该写什么，也许答案已经在这里了：先留一个地方，然后慢慢写。
+There is room here for essays, reading notes, and small observations. The categories can grow with the writing.
