@@ -26,5 +26,6 @@ Jekyll · GitHub Pages · HTML / CSS / JavaScript · Markdown / YAML
 - **Appearance / behavior:** edit files in `libs/custom/`.
 - **Blog entry:** add `_posts/YYYY-MM-DD-title.md`.
 - **Local preview:** run `bundle exec jekyll serve`.
+- **One-click preview (macOS):** double-click `Preview.command`.
 
 Full maintenance guide: [`_docs/README.md`](./_docs/README.md).

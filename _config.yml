@@ -37,6 +37,7 @@ collections:
     output: false
 
 exclude:
+  - Preview.command
   - README.md
   - Gemfile
   - Gemfile.lock
