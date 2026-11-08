@@ -26,7 +26,6 @@ lang: en
 
 ## Markdown basics
 
-New posts and archived articles automatically display the official “Written by Human, Not By AI” badge below the article. It is an author declaration under the [Not By AI 90% Rule](https://notbyai.fyi/), not independent certification. For an article that does not qualify, add `not_by_ai: false` to its YAML front matter. Archive defaults are configured separately without modifying original article files or historical source snapshots. The badge SVG is served locally; no script is required.
 
 ````markdown
 A paragraph is ordinary text. Leave a blank line between paragraphs.

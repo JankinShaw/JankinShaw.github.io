@@ -17,3 +17,27 @@
     update();
   });
 })();
+
+(() => {
+  const filters = [...document.querySelectorAll('[data-tag-filter]')];
+  if (!filters.length) return;
+  const posts = [...document.querySelectorAll('[data-post-tags]')].map(element => ({
+    element, tags: JSON.parse(element.dataset.postTags)
+  }));
+  const update = () => {
+    const active = filters.find(link => link.hash === location.hash) || filters[0];
+    const tag = active.dataset.tagFilter;
+    filters.forEach(link => {
+      if (link === active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+    let visible = 0;
+    posts.forEach(({element, tags}) => {
+      element.hidden = !!tag && !tags.includes(tag);
+      if (!element.hidden) visible++;
+    });
+    document.querySelector('.tag-empty').hidden = visible !== 0;
+  };
+  window.addEventListener('hashchange', update);
+  update();
+})();
