@@ -21,6 +21,9 @@ layout: journal
   </details>
   {% endunless %}
   <div class="prose">{{ content }}</div>
+  {% if page.git_last_modified_at %}
+  <p class="post-updated">Last updated on <time datetime="{{ page.git_last_modified_at | date_to_xmlschema }}">{{ page.git_last_modified_at | date: '%B %-d, %Y' }}</time>.</p>
+  {% endif %}
   {% unless page.collection == 'blog_archive' %}<nav class="post-pagination" aria-label="Post navigation">
     <div>{% if page.previous %}<span>Previous</span><a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}</div>
     <div>{% if page.next %}<span>Next</span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}</div>

@@ -71,6 +71,7 @@ h3{font-size:22px;margin:35px 0 14px}
 .post-header{margin-bottom:36px;padding-bottom:26px;border-bottom:1px solid var(--line)}
 .post-header h1{margin-top:16px}
 .post-meta{font:12px/1.8 var(--ui);color:var(--muted);margin:20px 0 0}
+.post-updated{margin:28px 0 0;color:var(--muted);font:12px/1.8 var(--ui)}
 .prose{overflow-wrap:anywhere}
 .post .prose{font-family:Verdana,Geneva,sans-serif}
 .prose p{margin-bottom:1.35em}

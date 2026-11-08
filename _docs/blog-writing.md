@@ -9,6 +9,12 @@ Use **Markdown** for the article body and **YAML front matter** for its metadata
 3. Change the title and tags, then write below the closing `---`.
 4. Run `bundle exec jekyll serve` from the repository root and open http://127.0.0.1:4000/blog/. Refresh after saving.
 
+## Automatic update date
+
+Article pages show “Last updated on …” below the body. `_plugins/git_last_updated.rb` reads the most recent Git commit affecting that file, following renames. No front-matter date needs maintenance. Untracked new files have no update line until committed; uncommitted local edits do not change the date. Formatting and typo commits count as updates; unrelated files and repeat deployments do not.
+
+The production workflow `.github/workflows/pages.yml` fetches full history and builds Jekyll with the plugin enabled. For initial setup, set **Settings → Pages → Build and deployment → Source → GitHub Actions** in the main `JankinShaw.github.io` repository. The branch-based default Pages builder disables custom plugins and cannot provide this automatic date. Afterwards, pushing `master` builds and deploys automatically. Normal local `bundle exec jekyll serve` also computes dates from committed history. Historical standalone snapshots remain unchanged.
+
 ## Metadata
 
 Every article automatically displays the author Yingjie Xiao beside its date. Dates use the format `November 8, 2026`. No author field is required.
