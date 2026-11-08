@@ -1,0 +1,10 @@
+{
+  "id": "v3-chinese-journal",
+  "title": "中文完整版 Journal：原始文案、示例文章与旧文归档",
+  "saved_at": "2026-11-08T16:24:54.574982+00:00",
+  "sha256": "2f623a66c188d4be1d6beef5f53427c2e50ebe012dd6c258b584f7ea5cb18be8",
+  "entry": "/",
+  "compatibility": "none",
+  "description": "原始中文完整设计快照，包含四篇示例文章、两篇历史归档、所有页面、布局、字体和样式。与 v3-local-journal 的原始快照逐字节一致。",
+  "copied_from": "v3-local-journal"
+}
