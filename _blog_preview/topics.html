@@ -1,0 +1,11 @@
+---
+layout: base
+title: 主题
+section: topics
+permalink: /topics/
+---
+<header class="page-header"><p class="eyebrow">FOLLOW A THREAD</p><h1>顺着一个话题</h1><p class="lede">不必按时间读，也可以顺着兴趣走。</p></header>
+{% assign topics = site.posts | group_by: 'topic' %}
+{% for topic in topics %}
+<section class="topic-section" id="{{ topic.items.first.topic_id }}"><h2>{{ topic.name }} <span class="count">{{ topic.items | size }}</span></h2>{% include post-list.html posts=topic.items %}</section>
+{% endfor %}

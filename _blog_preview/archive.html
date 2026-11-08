@@ -1,0 +1,12 @@
+---
+layout: base
+title: 旧文归档
+section: archive
+permalink: /archive/
+---
+<header class="page-header"><p class="eyebrow">THE EARLIER PAGES</p><h1>旧文归档</h1><p class="lede">以前写下的文字，保留在这里。</p></header>
+{% assign archived = site.archive | sort: 'date' | reverse %}
+{% assign years = archived | group_by_exp: 'post', "post.date | date: '%Y'" %}
+{% for year in years %}
+<section class="archive-year"><h2>{{ year.name }}</h2>{% include post-list.html posts=year.items %}</section>
+{% endfor %}
