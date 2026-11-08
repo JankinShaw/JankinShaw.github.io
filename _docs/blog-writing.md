@@ -34,6 +34,8 @@ P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}
 $$
 ```
 
+Keep `$$` on their own lines with blank lines before and after the block. Kramdown may interpret double-dollar formulas mixed into a prose paragraph as inline math before MathJax receives them.
+
 Do not put equations inside backticks or a code fence when you want them rendered. Use `\$` for a literal dollar sign. MathJax is loaded from a pinned CDN URL, so the first load requires internet access. Set `math: false` in front matter to disable it on an individual post. Historical design snapshots remain unchanged.
 
 ## Markdown syntax
