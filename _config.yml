@@ -4,7 +4,7 @@ url: "https://jankinshaw.github.io"
 baseurl: ""
 lang: "en"
 timezone: "Europe/Berlin"
-google_analytics_id: "G-J2MD5NTZFB"
+goatcounter_endpoint: "https://jankinshaw.goatcounter.com/count"
 asset_version: "20261108-restore-academic"
 
 source: .

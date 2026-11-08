@@ -1,0 +1,5 @@
+{% if jekyll.environment == 'production' and site.goatcounter_endpoint %}
+<!-- Shared analytics: production only; local previews send no pageviews. -->
+<script data-goatcounter="{{ site.goatcounter_endpoint | escape }}"
+        async src="https://gc.zgo.at/count.js"></script>
+{% endif %}

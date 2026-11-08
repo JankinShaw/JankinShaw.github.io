@@ -48,6 +48,14 @@ Open `http://127.0.0.1:4000`. The production site is published by GitHub Pages a
 
 If Jekyll is already installed globally, `jekyll serve` also works.
 
+## Website analytics
+
+GoatCounter is configured once via `goatcounter_endpoint` in `_config.yml`. The shared `_includes/analytics.html` snippet is included by the main, photography, and academic archive layouts; the project layout inherits it through the main layout. The standalone TL;DR page also uses the same include. Redirect-only pages do not send duplicate pageviews.
+
+New Research, Teaching, Publications, or other pages using `layout: default` inherit analytics automatically; no per-page tracking code is needed. A new standalone HTML layout must include `analytics.html` once before `</body>`.
+
+The script is emitted only when `JEKYLL_ENV=production`. Normal `bundle exec jekyll serve` and the separate local blog prototype send no analytics. GitHub Pages production builds include the script. View collected traffic at https://jankinshaw.goatcounter.com/ after deployment; collection starts only after the live page loads the new snippet. Google Analytics has been replaced in the active site; historical source snapshots are preserved unchanged.
+
 ## Add or edit personal information
 
 Edit `_data/main_info.yaml`. Keep the indentation exactly as shown because YAML uses spaces to represent structure.
