@@ -30,10 +30,11 @@ $$
 v(P_1)=1,\qquad v(P_2)=1
 $$
 
-which would render $P_1\lor P_2$ a valid clause, but one exception would turn this around: 
-
+which would render $P_1\lor P_2$ true at this given truth condition (valuation), but one exception would be sufficient tell that that this clause is not valid and can never be valid: 
 $$
 v(P_1)=0,\qquad v(P_2)=0
 $$
 
-In order to be less sloppy, validity is inherently **semantically** defined because we're still talking about all the possible assigned worlds to this truth evaluable statement $C = P_1\lor P_2$. Syntactically, we do not have sufficient information to judge the satisfy ability of this clause.
+In order to be less sloppy, validity, safisfiability or tautology are all inherently **semantically** defined because we're still talking about all the possible assigned worlds to this truth evaluable statement $C = P_1\lor P_2$. It is simply that we happened to have *syntactical* hints to judge directly if a clause is valid or satisfiable or unsatisfiable. 
+
+
