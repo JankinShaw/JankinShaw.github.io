@@ -10,11 +10,10 @@
   <!-- ET Book is served locally for the Tufte-inspired reading layout. -->
   <link rel="icon" href="{{ '/libs/favicon.svg' | relative_url }}?v=20261031-y" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/libs/custom/my_css.css' | relative_url }}?v={{ site.asset_version }}">
-  {% if page.nav == 'info' %}<link rel="stylesheet" href="{{ '/libs/custom/info.css' | relative_url }}?v={{ site.asset_version }}">{% endif %}
   <link rel="stylesheet" href="{{ '/libs/custom/language.css' | relative_url }}?v={{ site.asset_version }}">
-  <script src="{{ '/libs/custom/translations.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
   <script src="{{ '/libs/custom/locale-data.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
   <script src="{{ '/libs/custom/language.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
+  <script src="{{ '/libs/custom/translations.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
   <script src="{{ '/libs/custom/my_js.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
 </head>
 <body class="page-{{ page.nav | default: 'default' }}">
@@ -23,8 +22,7 @@
   <!-- A compact text navigation keeps the focus on the biography. -->
   <header class="site-header" data-site-header>
     <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
-      <a href="{{ '/' | relative_url }}">Home</a>
-      {% if page.nav == 'info' %}<a class="is-active" aria-current="page" href="{{ '/info/' | relative_url }}">Info</a>{% else %}<a href="{{ '/info/' | relative_url }}">Info</a>{% endif %}
+      <a{% if page.nav == 'home' %} class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
     </nav>
   </header>
 

@@ -125,5 +125,4 @@ html.user-reduced-motion *, html.user-reduced-motion *::before, html.user-reduce
   h2, h3 { break-after: avoid; }
 }
 
-/* Shared inner-page navigation uses the same quiet hover treatment. */
-.site-nav a:hover { color: var(--accent); font-style: italic; text-decoration: none; text-shadow: none; box-shadow: none; filter: none; opacity: 1; background: transparent; }
+.page-home .language-switcher { background: #fffff8; }
