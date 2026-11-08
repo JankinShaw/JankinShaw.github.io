@@ -14,7 +14,7 @@ permalink: /blog/tags/
 </nav>
 <ul class="post-list" data-tag-posts>
 {% for post in site.posts %}
-  <li data-post-tags="{{ post.tags | jsonify | escape }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  <li data-post-tags="{{ post.tags | jsonify | escape }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d.%m' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
 <p class="tag-empty" hidden>No posts.</p>

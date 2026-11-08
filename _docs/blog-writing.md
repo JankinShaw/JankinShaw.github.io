@@ -17,7 +17,7 @@ The production workflow `.github/workflows/pages.yml` fetches full history and b
 
 ## Metadata
 
-Every article automatically displays the author Yingjie Xiao beside its date. Dates use the format `November 8, 2026`. No author field is required.
+Every article automatically displays the author Yingjie Xiao beside its date. Dates use the format `8 November 2026`. No author field is required.
 
 ```yaml
 ---
