@@ -20,7 +20,7 @@ Open http://127.0.0.1:4001. Stop with Ctrl-C. The script generates the site in a
 - `_posts/YYYY-MM-DD-slug.md`: Markdown articles; filename determines date and URL.
 - `index.html`, `writing.html`, `topics.html`, `about.md`: homepage, archive, topics, about.
 
-The `_posts/` article content and dates are illustrative. Original articles in `_archive/` retain their real content and dates. The page makes this distinction explicit. The blog has no analytics, external font requests, framework, or new Ruby dependency. ET Book fonts and their license are copied from the existing site's font assets. Chinese uses available system serif fonts. A light/dark toggle uses local browser storage, with an OS preference fallback.
+Sample posts have been removed. Copy `_templates/post.md` to `_posts/YYYY-MM-DD-slug.md` to start writing; see [the writing guide](../_docs/blog-writing.md). Templates and instructions are not published as blog articles. Original articles in `_archive/` retain their real content and dates. The blog has no analytics, external font requests, framework, or new Ruby dependency. ET Book fonts and their license are copied from the existing site's font assets. Chinese uses available system serif fonts. A light/dark toggle uses local browser storage, with an OS preference fallback.
 
 Design inspiration: James Zhan's [V4 redesign discussion](https://journal.james-zhan.com/redesign-v4/). This is an original Jekyll implementation, not a copy of his source, content, or branding. The typeface differs from his Rosario font.
 
