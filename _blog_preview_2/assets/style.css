@@ -9,3 +9,6 @@ h1{font-size:2em}h2{font-size:1.5em;margin-top:1.5em}h3{font-size:1.2em}a{color:
 :root{--reading-heading:#222}
 @media(prefers-color-scheme:dark){:root{--reading-heading:#dedad7}}
 main h1,main h2,main h3,main h4,main h5,main h6{color:var(--reading-heading)}
+
+/* Title links stay undecorated, including on hover. */
+.site-title,.site-title:hover,.posts a,.posts a:hover,h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}
