@@ -1,5 +1,5 @@
 /* Independent Bear-inspired experiment; no remote font files. */
-:root{color-scheme:light dark;--bg:#fff;--text:#444;--heading:#222;--link:#3273dc;--muted:#777;--code:#f2f2f2}
+:root{--sky-blue:#3e6e9e;--warm-orange:#e48d25;--bright-yellow:#fef263;--stone-gray:#727169;color-scheme:light dark;--bg:#fff;--text:#444;--heading:#222;--link:#3273dc;--muted:#777;--code:#f2f2f2}
 @media(prefers-color-scheme:dark){:root{--bg:#120d0f;--text:#ccc;--heading:#a7ff9c;--link:#bf9aef;--muted:#aaa;--code:#282328}}
 body{font-family:Verdana,Geneva,sans-serif;font-size:19.2px;line-height:1.5;max-width:720px;margin:auto;padding:20px;background:var(--bg);color:var(--text);overflow-wrap:break-word}
 h1,h2,h3,h4,h5,h6{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--heading);line-height:1.2}
@@ -14,23 +14,30 @@ main h1,main h2,main h3,main h4,main h5,main h6{color:var(--reading-heading)}
 .site-title,.site-title:hover,.posts a,.posts a:hover,h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}
 
 /* Site title color. */
-.site-title h1{color:#3e6e9e}
+.site-title h1{color:var(--sky-blue)}
 
 
 /* Content titles and navigation use orange; site title stays independent. */
-main h1,main h2,main h3,main h4,main h5,main h6,.posts a,header nav a{color:#e48d25}
+main h1,main h2,main h3,main h4,main h5,main h6,.posts a,header nav a{color:var(--warm-orange)}
 
 /* Match tag links to the content accent. */
-.tag-list a,.tags a{color:#e48d25}
+.tag-list a,.tags a{color:var(--warm-orange)}
 
 /* Consistent highlight for links and headings, without underlines. */
 a:hover,a:focus-visible,.site-title:hover h1,.site-title:focus-visible h1,
 main h1:hover,main h2:hover,main h3:hover,main h4:hover,main h5:hover,main h6:hover,
-main h1:hover a,main h2:hover a,main h3:hover a,main h4:hover a,main h5:hover a,main h6:hover a{color:#fef263;text-decoration:none}
+main h1:hover a,main h2:hover a,main h3:hover a,main h4:hover a,main h5:hover a,main h6:hover a{color:var(--bright-yellow);text-decoration:none}
 
 /* Dates in the left column of post lists. */
-.posts time{color:#727169}
+.posts time{color:var(--stone-gray)}
 
 /* Footer links share the date-column gray. */
-footer a{color:#727169}
-footer a:hover,footer a:focus-visible{color:#fef263;text-decoration:none}
+footer a{color:var(--stone-gray)}
+footer a:hover,footer a:focus-visible{color:var(--bright-yellow);text-decoration:none}
+
+/* Return-to-list links use the same warm accent as navigation. */
+.all-posts{color:var(--warm-orange)}
+.all-posts:hover,.all-posts:focus-visible{color:var(--bright-yellow);text-decoration:none}
+
+/* Update metadata matches the footer gray, including its nested date. */
+.post-updated,.post-updated time{color:var(--stone-gray)}
