@@ -1,6 +1,6 @@
 ---
 title: "Foundations in Discrete AI Methods"
-tags: [notes, uni]
+tags: [uni, ai]
 lang: en
 ---
 
