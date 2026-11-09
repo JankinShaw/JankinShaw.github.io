@@ -189,4 +189,6 @@ The homepage layout is restored to a centered 2×2 grid, retaining the newer col
 
 ## Live blog
 
-The current blog is served at `/blog/`. Edit `_posts/` for new articles and `blog/` for index, tags, archive and about pages. Shared blog layouts are `_layouts/journal.html` and `_layouts/journal_post.html`; assets are in `assets/blog/`. Read [the writing guide](blog-writing.md). The former `_blog_preview/` and all `_archive/blog/` snapshots are preserved. The academic homepage and its `/archive/` page remain separate. GoatCounter is inherited from the production-only shared analytics include.
+The current blog is served at `/blog/`. Edit `_posts/` for new articles and `blog/` for index, tags, archive and about pages. Shared blog layouts are `_layouts/journal.html` and `_layouts/journal_post.html`; the active stylesheet is `assets/blog/minimal.css`. Read [the writing guide](blog-writing.md). The former `_previews/preview-1/` and all `_archive/blog/` snapshots are preserved. The academic homepage and its `/archive/` page remain separate. GoatCounter is inherited from the production-only shared analytics include.
+
+The live blog now uses the minimal Preview 2 design. Both standalone prototypes are under `_previews/`; the previous live Journal source is preserved as `_archive/blog/versions/v5-journal-before-minimal/`.

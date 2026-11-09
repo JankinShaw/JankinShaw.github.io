@@ -6,6 +6,7 @@
 
 | 版本 | 内容 | 保存节点 |
 | --- | --- | --- |
+| `v5-journal-before-minimal` | 正式 Journal 博客切换极简设计前的完整主站源码，含当前文章与配置 | 本次替换前保存，构建验证通过 |
 | `v1-skeleton` | 早期 Skeleton 个人页中的 Blog，标签筛选、RSS、原始文章 | `3103eaa`，第一次整体重构之前 |
 | `v2-writing` | 重新设计的 Writing 列表、专用文章布局、标签筛选与 RSS | `2113d05`，移除博客之前 |
 | `v3-local-journal` | 目前参考 James 博客制作的本地样稿，含中英文示例和旧文 Archive | 本地文件快照 |
@@ -14,7 +15,7 @@
 
 中文完整版独立预览：`python3 _archive/blog/archive.py preview v3-chinese-journal --port 4003`，打开 http://127.0.0.1:4003/。详情见 [`versions/v3-chinese-journal/README.md`](versions/v3-chinese-journal/README.md)。
 
-前两版使用整个历史仓库的源码快照，保证模板所依赖的数据、字体、图片等也一起保留。旧文的不同历史修订分别留在各自版本中。`_blog_preview/_archive/` 是最新样稿中的旧文阅读入口，并不替代这里的架构归档。
+前两版使用整个历史仓库的源码快照，保证模板所依赖的数据、字体、图片等也一起保留。旧文的不同历史修订分别留在各自版本中。`_previews/preview-1/_archive/` 是最新样稿中的旧文阅读入口，并不替代这里的架构归档。
 
 ## 启动旧版预览
 
@@ -37,7 +38,7 @@ python3 _archive/blog/archive.py preview v2-writing
 python3 _archive/blog/archive.py preview v3-local-journal
 ```
 
-端口可改为 `--port 4003`。现有样稿仍通过 `bash _blog_preview/serve.sh` 在 4001 预览。归档预览解压到临时目录，退出时清理，不覆盖主站或快照。
+端口可改为 `--port 4003`。现有样稿仍通过 `bash _previews/preview-1/serve.sh` 在 4001 预览。归档预览解压到临时目录，退出时清理，不覆盖主站或快照。
 
 ### 兼容处理
 
@@ -59,7 +60,7 @@ python3 _archive/blog/archive.py restore v1-skeleton /tmp/yingjie-blog-v1
 python3 _archive/blog/archive.py save journal-2026-11-09 --title "当时的博客版本"
 ```
 
-默认完整保存 `_blog_preview` 下的源文件和文章。保存其他 Jekyll 源目录可指定 `--source /绝对路径 --entry /`。不覆盖已有版本，不移动或删除源目录。构建产物、Git 数据、归档目录本身、环境文件和常见缓存会排除；**这是手动快照，不是自动备份**。以后新增的内容需要再次执行 save 才会进入新归档。
+默认完整保存 `_previews/preview-1` 下的源文件和文章。保存其他 Jekyll 源目录可指定 `--source /绝对路径 --entry /`。不覆盖已有版本，不移动或删除源目录。构建产物、Git 数据、归档目录本身、环境文件和常见缓存会排除；**这是手动快照，不是自动备份**。以后新增的内容需要再次执行 save 才会进入新归档。
 
 ## 检查归档仍可构建
 

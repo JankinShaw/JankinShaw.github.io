@@ -1,6 +1,6 @@
 # Minimal blog preview
 
-Independent local experiment inspired by https://lordtoots.bearblog.dev/ . This is Jekyll, not Bear hosting. No changes to the published blog.
+Independent local experiment inspired by https://lordtoots.bearblog.dev/ . This is Jekyll, not Bear hosting. This design has now been integrated into the live blog; this folder remains an independent snapshot.
 
 Double-click `Preview.command` in this folder. It uses ports 18523–18543; keep Terminal open while previewing. Uses the root Gemfile dependencies.
 

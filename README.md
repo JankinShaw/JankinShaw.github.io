@@ -11,7 +11,7 @@ Jekyll · GitHub Pages · HTML / CSS / JavaScript · Markdown / YAML
 - `assets/` — images, fonts, PDFs, and other static files.
 - `_config.yml` — site settings and build configuration.
 - `blog/` — blog pages; `_posts/` — articles; `_blog_archive/` — historical articles.
-- `_blog_preview/` — preserved pre-publication blog prototype.
+- `_previews/` — independent local prototypes: `preview-1/` (Journal), `preview-2/` (minimal).
 - `_archive/blog/` — complete snapshots of earlier blog designs.
 - `_docs/` — detailed personal maintenance notes.
 

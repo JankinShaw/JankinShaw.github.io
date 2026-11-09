@@ -1,35 +1,8 @@
 ---
 layout: journal
 ---
-<article class="post">
-  <header class="post-header">
-    {% if page.collection == 'blog_archive' %}
-    <a class="eyebrow" href="{{ '/blog/archive/' | relative_url }}">Archive</a>
-    {% else %}
-    <div class="post-tags" aria-label="Tags">
-      {% for tag in page.tags %}<a class="eyebrow" href="{{ '/blog/tags/' | relative_url }}#tag-{{ tag | slugify: 'latin' }}">{{ tag }}</a>{% endfor %}
-    </div>
-    {% endif %}
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time><span aria-hidden="true"> · </span><span class="post-author">Author: Yingjie Xiao</span></p>
-  </header>
-  {% unless page.toc == false %}
-  <details class="post-toc" open hidden>
-    <summary>Table of Contents</summary>
-    <nav aria-label="Table of Contents"><ul></ul></nav>
-  </details>
-  {% endunless %}
-  <div class="prose">{{ content }}</div>
-  {% if page.git_last_modified_at %}
-  <p class="post-updated">Last updated on <time datetime="{{ page.git_last_modified_at | date_to_xmlschema }}">{{ page.git_last_modified_at | date: '%-d %B %Y' }}</time>.</p>
-  {% endif %}
-  {% unless page.collection == 'blog_archive' %}<nav class="post-pagination" aria-label="Post navigation">
-    <div>{% if page.previous %}<span>Previous</span><a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}</div>
-    <div>{% if page.next %}<span>Next</span><a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}</div>
-  </nav>
-  <a class="back-link" href="{{ '/blog/writing/' | relative_url }}">All posts →</a>
-  {% else %}
-  <a class="back-link" href="{{ '/blog/archive/' | relative_url }}">← Archive</a>
-  {% endunless %}
-</article>
+<article><h1>{{ page.title }}</h1><p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time> · Author: Yingjie Xiao</p>
+<div class="prose">{{ content }}</div>
+{% if page.tags.size > 0 %}<p class="meta tags">{% for tag in page.tags %}<a href="{{ '/blog/writing/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a> {% endfor %}</p>{% endif %}
+{% if page.git_last_modified_at %}<p class="meta">Last updated on <time datetime="{{ page.git_last_modified_at | date_to_xmlschema }}">{{ page.git_last_modified_at | date: '%-d %B %Y' }}</time>.</p>{% endif %}
+</article><p><a href="{{ '/blog/writing/' | relative_url }}">← All posts</a></p>

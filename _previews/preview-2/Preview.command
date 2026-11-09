@@ -2,7 +2,7 @@
 
 # Double-click in Finder to preview the current website and blog.
 set -eu
-cd -- "${0:A:h}/.."
+cd -- "${0:A:h}/../.."
 
 # Finder/Terminal may inherit Apple's Ruby or Conda's PATH. Use the same
 # Homebrew Ruby as the working Jekyll environment, without sourcing profiles.
@@ -58,8 +58,8 @@ preview_opener=$!
 trap 'kill "$preview_opener" 2>/dev/null || true' EXIT
 
 JEKYLL_ENV=development bundle exec jekyll serve \
-  --source _blog_preview_2 \
-  --config _blog_preview_2/_config.yml \
+  --source _previews/preview-2 \
+  --config _previews/preview-2/_config.yml \
   --host 127.0.0.1 \
   --port "$preview_port" \
   --destination "$preview_destination" \

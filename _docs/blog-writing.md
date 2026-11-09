@@ -28,17 +28,13 @@ lang: en
 ```
 
 - `title`: article title. Keep quotation marks, especially if the title includes a colon.
-- `tags`: a list of keywords, for example `[German, Writing]`. A post can have several tags and appears under each one on `/blog/tags/`. Reuse the same spelling and capitalization. Link anchors are generated automatically; no `topic_id` is needed.
+- `tags`: a list of keywords, for example `[German, Writing]`. A post can have several tags and can be filtered by each tag on `/blog/writing/` or `/blog/tags/`. Reuse the same spelling and capitalization. Link anchors are generated automatically; no `topic_id` is needed.
 - `lang`: article language, such as `en` or `de`.
 - The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/blog/reading-notes/`.
 
-## Images
+## Images and headings
 
-Article images automatically show a magnifying-glass cursor and open a larger preview when clicked. Click the image/background or press Esc to close. Keyboard users can focus the image button and press Enter. Images already linked to another page keep their existing link behavior. Use ordinary Markdown image syntax; no extra metadata is required.
-
-## Table of Contents
-
-The article template automatically builds a collapsible Table of Contents from Markdown headings (`##`, `###`, etc.) at the beginning of the article, expanded by default and collapsible on all screens. Subheadings are nested; links jump to the matching section. No headings means no visible directory. Use `toc: false` in front matter to disable it on one post. The directory is a JavaScript enhancement; the full article remains readable without JavaScript.
+Use ordinary Markdown images and `##` / `###` headings. The current minimal design displays images inline and headings directly; it does not add automatic image zoom or a Table of Contents. The previous Journal design with those features is fully preserved as `v5-journal-before-minimal` in `_archive/blog/versions/`.
 
 ## Math
 
@@ -89,4 +85,6 @@ print("Hello")
 
 The post title is already rendered as the main heading; start body headings at `##`. A single line break usually continues the same paragraph. Image paths refer to actual files inside `assets/blog/`; use `/assets/blog/…` for their URLs.
 
-Templates remain under `_templates/`, outside the published post collection. Historical articles are in `_blog_archive/` and appear at `/blog/archive/`. Complete earlier designs remain in `_archive/blog/`. The former `_blog_preview/` is retained as a pre-publication copy; edit `_posts/` for the live blog.
+Templates remain under `_templates/`, outside the published post collection. Historical articles are in `_blog_archive/` and appear at `/blog/archive/`. Complete earlier designs remain in `_archive/blog/`. The former `_previews/preview-1/` is retained as a pre-publication copy; edit `_posts/` for the live blog.
+
+Live blog styles: `assets/blog/minimal.css`. Shared shell: `_layouts/journal.html`. Preserved experiments: `_previews/preview-1/` and `_previews/preview-2/`.

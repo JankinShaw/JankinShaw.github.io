@@ -1,0 +1,36 @@
+/* Independent Bear-inspired experiment; no remote font files. */
+:root{color-scheme:light dark;--bg:#fff;--text:#444;--heading:#222;--link:#3273dc;--muted:#777;--code:#f2f2f2}
+@media(prefers-color-scheme:dark){:root{--bg:#120d0f;--text:#ccc;--heading:#a7ff9c;--link:#bf9aef;--muted:#aaa;--code:#282328}}
+body{font-family:Verdana,Geneva,sans-serif;font-size:19.2px;line-height:1.5;max-width:720px;margin:auto;padding:20px;background:var(--bg);color:var(--text);overflow-wrap:break-word}
+h1,h2,h3,h4,h5,h6{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--heading);line-height:1.2}
+h1{font-size:2em}h2{font-size:1.5em;margin-top:1.5em}h3{font-size:1.2em}a{color:var(--link);text-decoration:none}.site-title{text-decoration:none}.site-title h1{margin:0.67em 0}nav a{margin-right:8px;text-decoration:none}main{padding-top:25px}p{margin:1em 0}footer{padding:35px 0 20px;text-align:center;font-size:.85em}footer p{color:var(--muted);font-size:.85em}.meta,time{color:var(--muted);font-size:.85em}.posts{list-style:none;padding:0}.posts li{display:flex;gap:20px;margin:14px 0}.posts li[hidden]{display:none}.posts time{flex:0 0 110px}.tag-list{font-size:.85em}img{max-width:100%;height:auto}pre{overflow-x:auto;padding:15px;background:var(--code)}code{font-family:ui-monospace,monospace;font-size:.85em;background:var(--code)}blockquote{border-left:2px solid var(--muted);margin-left:0;padding-left:20px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid var(--muted);padding:6px 10px}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:5px 0}@media(max-width:480px){body{padding:18px;font-size:17px}.posts li{gap:12px}.posts time{flex-basis:95px}}
+
+/* Keep the accent on the site name; reading headings use neutral ink. */
+:root{--reading-heading:#222}
+@media(prefers-color-scheme:dark){:root{--reading-heading:#dedad7}}
+main h1,main h2,main h3,main h4,main h5,main h6{color:var(--reading-heading)}
+
+/* Title links stay undecorated, including on hover. */
+.site-title,.site-title:hover,.posts a,.posts a:hover,h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}
+
+/* Site title color. */
+.site-title h1{color:#3e6e9e}
+
+
+/* Content titles and navigation use orange; site title stays independent. */
+main h1,main h2,main h3,main h4,main h5,main h6,.posts a,header nav a{color:#e48d25}
+
+/* Match tag links to the content accent. */
+.tag-list a,.tags a{color:#e48d25}
+
+/* Consistent highlight for links and headings, without underlines. */
+a:hover,a:focus-visible,.site-title:hover h1,.site-title:focus-visible h1,
+main h1:hover,main h2:hover,main h3:hover,main h4:hover,main h5:hover,main h6:hover,
+main h1:hover a,main h2:hover a,main h3:hover a,main h4:hover a,main h5:hover a,main h6:hover a{color:#fef263;text-decoration:none}
+
+/* Dates in the left column of post lists. */
+.posts time{color:#727169}
+
+/* Footer links share the date-column gray. */
+footer a{color:#727169}
+footer a:hover,footer a:focus-visible{color:#fef263;text-decoration:none}

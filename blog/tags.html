@@ -1,20 +1,8 @@
 ---
 layout: journal
 title: Tags
-section: tags
 permalink: /blog/tags/
 ---
-<header class="page-header"><h1>Tags</h1></header>
-{% assign tags = site.tags | sort %}
-<nav class="tag-filters" aria-label="Filter by tag">
-  <a href="#all" data-tag-filter="" aria-current="true">All</a>
-{% for tag in tags %}
-  <a id="tag-{{ tag[0] | slugify: 'latin' }}" href="#tag-{{ tag[0] | slugify: 'latin' }}" data-tag-filter="{{ tag[0] | escape }}">{{ tag[0] }} <span class="count">{{ tag[1] | size }}</span></a>
-{% endfor %}
-</nav>
-<ul class="post-list" data-tag-posts>
-{% for post in site.posts %}
-  <li data-post-tags="{{ post.tags | jsonify | escape }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d.%m' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
-<p class="tag-empty" hidden>No posts.</p>
+<nav class="tag-list" aria-label="Tags"><a href="{{ '/blog/writing/' | relative_url }}">All</a> {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}{% for tag in tags %}<a href="#{{ tag | slugify }}">#{{ tag }}</a> {% endfor %}</nav>
+<ul class="posts">{% for post in site.posts %}<li data-tags="{{ post.tags | join: ',' | escape }}"><time>{{ post.date | date: '%d %b %Y' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
+<script>function filterPosts(){let tag=decodeURIComponent(location.hash.slice(1)).replace(/^tag-/, "");if(tag==="all")tag="";document.querySelectorAll('.posts li').forEach(row=>row.hidden=!!tag&&!row.dataset.tags.split(',').some(t=>t.toLowerCase().replace(/[^a-z0-9]+/g,'-')===tag));}addEventListener('hashchange',filterPosts);filterPosts();</script>

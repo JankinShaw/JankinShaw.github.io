@@ -1,13 +1,13 @@
 # Local journal prototype
 
-This is a standalone Jekyll source directory inside the existing Jekyll checkout. The main site's layouts, styles, pages, navigation, and production configuration are unchanged. Jekyll ignores `_blog_preview` during a normal root build because the directory starts with an underscore. Do not add it to the production `include` list.
+This is a standalone Jekyll source directory inside the existing Jekyll checkout. The main site's layouts, styles, pages, navigation, and production configuration are unchanged. Jekyll ignores `_previews/preview-1` during a normal root build because the directory starts with an underscore. Do not add it to the production `include` list.
 
 ## Preview
 
 From the repository root:
 
 ```sh
-bash _blog_preview/serve.sh
+bash _previews/preview-1/serve.sh
 ```
 
 Open http://127.0.0.1:4001. Stop with Ctrl-C. The script generates the site in a temporary directory, binds only to loopback, and disables disk caching. No publication is performed.

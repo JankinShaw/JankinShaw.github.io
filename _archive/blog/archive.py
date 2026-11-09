@@ -105,7 +105,7 @@ def main():
             command.add_argument('destination', help='必须是尚不存在的新目录')
     command = commands.add_parser('save')
     command.add_argument('version')
-    command.add_argument('--source', default=str(REPO / '_blog_preview'))
+    command.add_argument('--source', default=str(REPO / '_previews' / 'preview-1'))
     command.add_argument('--title')
     command.add_argument('--entry', default='/')
     args = parser.parse_args()
