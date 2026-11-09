@@ -1,0 +1,28 @@
+title: "Vicissitude."
+url: "http://127.0.0.1:18523"
+baseurl: ""
+lang: en
+timezone: Europe/Berlin
+markdown: kramdown
+future: true
+permalink: /:title/
+collections:
+  blog_archive:
+    output: true
+    permalink: /archive/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: journal_post
+  - scope:
+      path: ""
+      type: blog_archive
+    values:
+      layout: journal_post
+exclude: [README.md, Preview.command]

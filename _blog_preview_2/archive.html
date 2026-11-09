@@ -1,0 +1,5 @@
+---
+title: Archive
+permalink: /archive/
+---
+<ul class="posts">{% assign archived = site.blog_archive | sort: 'date' | reverse %}{% for post in archived %}<li><time>{{ post.date | date: '%d %b %Y' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>

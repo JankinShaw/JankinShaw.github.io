@@ -1,0 +1,7 @@
+---
+title: Blog
+permalink: /writing/
+---
+<nav class="tag-list" aria-label="Tags"><a href="{{ '/writing/' | relative_url }}">All</a> {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}{% for tag in tags %}<a href="#{{ tag | slugify }}">#{{ tag }}</a> {% endfor %}</nav>
+<ul class="posts">{% for post in site.posts %}<li data-tags="{{ post.tags | join: ',' | escape }}"><time>{{ post.date | date: '%d %b %Y' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
+<script>function filterPosts(){let tag=decodeURIComponent(location.hash.slice(1));document.querySelectorAll('.posts li').forEach(row=>row.hidden=!!tag&&!row.dataset.tags.split(',').some(t=>t.toLowerCase().replace(/[^a-z0-9]+/g,'-')===tag));}addEventListener('hashchange',filterPosts);filterPosts();</script>
