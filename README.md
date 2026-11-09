@@ -29,3 +29,7 @@ Jekyll · GitHub Pages · HTML / CSS / JavaScript · Markdown / YAML
 - **One-click preview (macOS):** double-click `Preview.command`.
 
 Full maintenance guide: [`_docs/README.md`](./_docs/README.md).
+
+## Blog colors
+
+Sky Blue `#3e6e9e` (site title) · Warm Orange `#e48d25` (headings, navigation, tags) · Bright Yellow `#fef263` (hover, All posts) · Stone Gray `#727169` (list dates, footer links); defined in `assets/blog/minimal.css`.
