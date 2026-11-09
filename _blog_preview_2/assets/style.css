@@ -12,3 +12,15 @@ main h1,main h2,main h3,main h4,main h5,main h6{color:var(--reading-heading)}
 
 /* Title links stay undecorated, including on hover. */
 .site-title,.site-title:hover,.posts a,.posts a:hover,h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}
+
+/* Site title color. */
+.site-title h1{color:#3e6e9e}
+
+/* Site title hover color. */
+.site-title:hover h1{color:#f1e3a4}
+
+/* Content titles and navigation use orange; site title stays independent. */
+main h1,main h2,main h3,main h4,main h5,main h6,.posts a,header nav a{color:#e48d25}
+
+/* Match tag links to the content accent. */
+.tag-list a,.tags a{color:#e48d25}
