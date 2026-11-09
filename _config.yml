@@ -5,7 +5,7 @@ baseurl: ""
 lang: "en"
 timezone: "Europe/Berlin"
 goatcounter_endpoint: "https://jankinshaw.goatcounter.com/count"
-asset_version: "20261108-restore-academic"
+asset_version: "20261109-language-font"
 
 source: .
 destination: ./_site
