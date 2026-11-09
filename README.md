@@ -32,4 +32,4 @@ Full maintenance guide: [`_docs/README.md`](./_docs/README.md).
 
 ## Blog colors
 
-Sky Blue `#3e6e9e` (site title) · Warm Orange `#e48d25` (headings, navigation, tags) · Bright Yellow `#fef263` (hover, All posts) · Stone Gray `#727169` (list dates, footer links); defined in `assets/blog/minimal.css`.
+Sky Blue `#3e6e9e` (site title) · Warm Orange `#e48d25` (headings, navigation, tags, All posts) · Bright Yellow `#fef263` (hover) · Stone Gray `#727169` (list dates, footer links) · Soft White `#cccccc` (dark-mode body text); defined in `assets/blog/minimal.css`.
