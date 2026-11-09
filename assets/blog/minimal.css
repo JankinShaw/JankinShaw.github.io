@@ -41,3 +41,6 @@ footer a:hover,footer a:focus-visible{color:var(--bright-yellow);text-decoration
 
 /* Update metadata matches the footer gray, including its nested date. */
 .post-updated,.post-updated time{color:var(--stone-gray)}
+
+/* Metadata dates inherit the line size instead of shrinking twice. */
+.meta time{font-size:inherit}
