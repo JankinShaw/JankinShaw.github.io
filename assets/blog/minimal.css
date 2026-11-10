@@ -52,3 +52,8 @@ footer a:hover,footer a:focus-visible{color:var(--bright-yellow);text-decoration
 .theme-toggle[hidden]{display:none}
 .theme-toggle:hover,.theme-toggle:focus-visible{color:var(--bright-yellow)}
 .theme-toggle:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:3px}
+
+/* Show the destination theme: sun for light, moon for dark. */
+.theme-sun{display:none}
+.theme-toggle[aria-pressed="true"] .theme-sun{display:inline}
+.theme-toggle[aria-pressed="true"] .theme-moon{display:none}
