@@ -63,3 +63,5 @@ This is presupposition because this is what's needed for even making sense of th
 (9) David recognized Sally got a new haircut.
 
 'Sally got a new haircut alone' as a clause is still what's presupposed here. Now, this is interesting because we don't even need to ask Sally or ask someone who knows Sally well or ask Sally's mother to identify if Sally really got a new haircut. The very sentence (1) per se was put in a utopia where purely by syntactically dissecting the structure, which includes but not limited to, recognizing the verb 'recognize' being a factive predicate, recognizing David is the third person, recognizing there's a clause called 'Sally got a new haircut', etc., would be sufficient to dictate that there is something presupposed here, and that is (8) Sally got a new haircut.
+
+Recognize is an interesting verb. We couldn't even get rid of it in interpreting how 'recognize' itself work.
