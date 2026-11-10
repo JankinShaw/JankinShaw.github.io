@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang }}">
+<html{% unless site.blog_theme_toggle %} data-theme="dark"{% endunless %} lang="{{ page.lang | default: site.lang }}">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.blog_title | escape }}</title>
-<script src="{{ '/assets/blog/theme.js' | relative_url }}"></script>
+{% if site.blog_theme_toggle %}<script src="{{ '/assets/blog/theme.js' | relative_url }}"></script>{% endif %}
 <link rel="stylesheet" href="{{ '/assets/blog/minimal.css' | relative_url }}"><link rel="alternate" type="application/rss+xml" title="{{ site.blog_title | escape }}" href="{{ '/blog/feed.xml' | relative_url }}">
 {% include journal-math.html %}</head>
 <body><header><a class="site-title" href="{{ '/blog/' | relative_url }}"><h1>{{ site.blog_title }}</h1></a>
