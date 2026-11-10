@@ -1,5 +1,5 @@
 ---
-title: "First person aspect and presupposition "
+title: "Factive predicate and presupposition"
 tags: [uni, pragmatics]
 lang: en
 ---
