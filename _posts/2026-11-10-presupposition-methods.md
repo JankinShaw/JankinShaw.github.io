@@ -32,11 +32,11 @@ $$\text{recognize}\,[\mathrm{DP}] \quad\text{or}\quad \text{recognize}\,[\text{t
 
 Now, note that so far we're talking about *third* person perspective. What if, what about we change the subject to a *first* person perspective? Say 
 
-(5)* I didn't recognize he was smoking. And the fact is, he didn't smoke at all, and he wasn't smoking, 
+(5) I didn't recognize he was smoking. And the fact is, he didn't smoke at all, and he wasn't smoking, 
 
 which would sound much more natural than say 
 
-(6) David didn't recognize he was smoking. But he was not smoking at all.
+(6)* David didn't recognize he was smoking. But he was not smoking at all.
 
 It seems that when 'recognize' was used as the verb in a sentence that starts with a subject with *first* person, we're unable to presuppose the same thing as we could do when the subject was a *third* person. First person introduces a sense of susceptibility to whether the presupposed thing still stand.
 
