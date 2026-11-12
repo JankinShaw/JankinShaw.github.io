@@ -24,3 +24,4 @@ This might not be what he has originally meant. He probably has meant that such 
 
 But anyways, Searle then unfolds his reasoning, which basically could be summarized as one sentence: Computer programs, or together with the hardwares on which it is implemented, i.e., viewed in totality, have no 'semantics', and are purely syntactically constructed. And for 'thinking' to happen, we need 'semantics'. Anything that empowers mind (e.g.  brain),  would need, therefore, to have that 'semantic' traits, the minimal equivalent to that of the brain’s.
 
+If we take another look back on the 'stronger AI' claim on the mind-brain relationship, wasn't the that simply trying to sell a more accommodating or narrower definition of mind - brain relationship by circling out the most fundamental part thereof is no more than what happens between a software to the hardware, instead of de facto weeded out the biology-ness in the former pair of relationship?
