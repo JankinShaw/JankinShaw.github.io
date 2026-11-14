@@ -32,8 +32,11 @@ lang: en
 - `lang`: article language, such as `en` or `de`.
 - The filename supplies the date and URL slug; `2026-11-08-reading-notes.md` becomes `/blog/reading-notes/`.
 
-## Images and headings
+## Japanese readings
 
+For posts with `lang: ja` (or the existing `lang: jp`), write readings as `母語（ぼご）`, `書（か）きたい`, or `漢字(カンジ)`. The article automatically displays the kana above the immediately preceding continuous group of kanji. Both hiragana and katakana are supported, including long-vowel marks and spaces within a reading. Ordinary explanations containing kanji or Latin letters stay in parentheses. Kana-only parentheses after kanji are always treated as readings; this is a writing convention, not a semantic guess. Code blocks, inline code, and existing ruby annotations are skipped. With JavaScript disabled, the original parenthesized text remains readable.
+
+## Images and headings
 Use ordinary Markdown images and `##` / `###` headings. The current minimal design displays images inline and headings directly; it does not add automatic image zoom or a Table of Contents. The previous Journal design with those features is fully preserved as `v5-journal-before-minimal` in `_archive/blog/versions/`.
 
 ## Math

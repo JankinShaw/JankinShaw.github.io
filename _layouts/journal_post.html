@@ -3,6 +3,7 @@ layout: journal
 ---
 <article><h1>{{ page.title }}</h1><p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time> · Author: Yingjie Xiao</p>
 <div class="prose">{{ content }}</div>
+{% if page.lang == 'jp' or page.lang == 'ja' or page.lang contains 'ja-' or page.lang contains 'jp-' %}<script src="{{ '/assets/blog/furigana.js' | relative_url }}" defer></script>{% endif %}
 {% if page.tags.size > 0 %}<p class="meta tags">{% for tag in page.tags %}<a href="{{ '/blog/writing/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a> {% endfor %}</p>{% endif %}
 {% if page.git_last_modified_at %}<p class="meta post-updated">Last updated on <time datetime="{{ page.git_last_modified_at | date_to_xmlschema }}">{{ page.git_last_modified_at | date: '%-d %B %Y' }}</time>.</p>{% endif %}
 </article><p><a class="all-posts" href="{{ '/blog/writing/' | relative_url }}">← All posts</a></p>

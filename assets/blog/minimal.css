@@ -57,3 +57,8 @@ footer a:hover,footer a:focus-visible{color:var(--bright-yellow);text-decoration
 .theme-sun{display:none}
 .theme-toggle[aria-pressed="true"] .theme-sun{display:inline}
 .theme-toggle[aria-pressed="true"] .theme-moon{display:none}
+
+/* Reserve breathing room for Japanese readings above the text. */
+html:lang(ja) .prose,html:lang(jp) .prose{line-height:2}
+.prose ruby{ruby-position:over}
+.prose rt{font-size:.55em;font-weight:normal}
