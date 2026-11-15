@@ -4,6 +4,7 @@
 <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.blog_title | escape }}</title>
 {% if site.blog_theme_toggle %}<script src="{{ '/assets/blog/theme.js' | relative_url }}"></script>{% endif %}
 <link rel="stylesheet" href="{{ '/assets/blog/minimal.css' | relative_url }}"><link rel="alternate" type="application/rss+xml" title="{{ site.blog_title | escape }}" href="{{ '/blog/feed.xml' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/blog/syntax.css' | relative_url }}">
 {% include journal-math.html %}</head>
 <body><header><a class="site-title" href="{{ '/blog/' | relative_url }}"><h1>{{ site.blog_title }}</h1></a>
 <nav aria-label="Main navigation"><a href="{{ '/blog/' | relative_url }}">Home</a> <a href="{{ '/blog/writing/' | relative_url }}">Blog</a> <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false" title="Toggle color theme" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><g class="theme-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></g><path class="theme-moon" d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button></nav></header>

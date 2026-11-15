@@ -1,0 +1,17 @@
+/* Rouge tokens are generated at build time; no browser library required. */
+:root{--syntax-comment:#626d78;--syntax-keyword:#a62678;--syntax-string:#32733b;--syntax-number:#945b17;--syntax-function:#225eaa;--syntax-type:#805a16;--syntax-error:#b42318}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--syntax-comment:#a3a3ad;--syntax-keyword:#d6a0ed;--syntax-string:#a8d89a;--syntax-number:#efb77a;--syntax-function:#8cc7ef;--syntax-type:#e6d18a;--syntax-error:#ff9999}}
+:root[data-theme="dark"]{--syntax-comment:#a3a3ad;--syntax-keyword:#d6a0ed;--syntax-string:#a8d89a;--syntax-number:#efb77a;--syntax-function:#8cc7ef;--syntax-type:#e6d18a;--syntax-error:#ff9999}
+.highlight{color:var(--text);background:var(--code);border-radius:6px}
+.highlight pre{margin:0;border-radius:inherit;line-height:1.6;tab-size:4}
+pre code{background:transparent;white-space:pre;overflow-wrap:normal;word-break:normal}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cp, .highlight .cpf, .highlight .cs{color:var(--syntax-comment)}
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv, .highlight .o, .highlight .ow, .highlight .nt{color:var(--syntax-keyword)}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sr, .highlight .ss, .highlight .sx{color:var(--syntax-string)}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx, .highlight .no{color:var(--syntax-number)}
+.highlight .nf, .highlight .fm, .highlight .na, .highlight .nb, .highlight .bp{color:var(--syntax-function)}
+.highlight .kt, .highlight .nc, .highlight .nn, .highlight .ne, .highlight .nd{color:var(--syntax-type)}
+.highlight .err, .highlight .gr, .highlight .gt, .highlight .gd{color:var(--syntax-error)}
+.highlight .gi{color:var(--syntax-string)}
+.highlight .c,.highlight .c1,.highlight .cm,.highlight .ge{font-style:italic}
+.highlight .gs,.highlight .gh,.highlight .gu{font-weight:bold}

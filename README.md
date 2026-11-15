@@ -33,3 +33,18 @@ Full maintenance guide: [`_docs/README.md`](./_docs/README.md).
 ## Blog colors
 
 Sky Blue `#3e6e9e` (site title) · Warm Orange `#e48d25` (headings, navigation, tags, All posts) · Bright Yellow `#fef263` (hover) · Stone Gray `#727169` (list dates, footer links) · Soft White `#cccccc` (dark-mode body text); defined in `assets/blog/minimal.css`.
+
+## Code highlighting
+
+Blog posts use Jekyll's built-in Rouge highlighter with light and dark colors in
+`assets/blog/syntax.css`. Specify a language after the opening code fence:
+
+````markdown
+```python
+def greet(name):
+    return f"Hello, {name}!"
+```
+````
+
+Use language names such as `python`, `javascript`, `r`, `bash`, `json`, or `html`.
+Code blocks without a language remain plain text, and long lines scroll horizontally.

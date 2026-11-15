@@ -13,6 +13,10 @@ includes_dir: _includes
 layouts_dir: _layouts
 
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 blog_title: "Vicissitude."
 blog_theme_toggle: false # Set true to show the light/dark switch.
 blog_description: "Notes on language, reading, and everyday life."
