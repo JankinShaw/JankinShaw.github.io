@@ -8,17 +8,6 @@ papers:
     al: y
     sla: y
     selected: n
-  - title: "Implicit causality revision is costly but delayed: Evidence from self-paced reading"
-    year: "2026"
-    authors: "Achimova, A., Dietrich, S., Altshuler, D., Xiao, Y., Rolke, B., & M.V. Butz."
-    venue: "Poster presented at AMLaP 2026. September 2, 2026."
-    contribution: "Contributions: research design, experimental implementation, data collection, and analysis."
-    paper_pdf:
-    code:
-    al: n
-    sla: n
-    cognition: y
-    selected: y
 
 theses:
   - title: "Caused-Motion Constructions in SCI Papers (2011–2020): English L1 and Chinese Scholars"

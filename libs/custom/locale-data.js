@@ -47,21 +47,9 @@ window.siteLocaleData = {
     "Surprisal und Sprachverarbeitung",
     "Surprisal et traitement du langage"
   ],
-  "Implicit causality revision is costly but delayed: Evidence from self-paced reading": [
-    "Die Revision impliziter Kausalität ist aufwendig, erfolgt aber verzögert: Evidenz aus dem Lesen im selbstbestimmten Tempo",
-    "La révision de la causalité implicite a un coût, mais son effet est différé : données issues de la lecture à rythme libre"
-  ],
   "Beyond Explicit and Implicit: Critically Thinking Your Way to Feedback on Academic Writing Drafts of PhD Candidates": [
     "Jenseits von explizit und implizit: Durch kritisches Denken zu Feedback auf wissenschaftliche Textentwürfe von Promovierenden",
     "Au-delà de l’explicite et de l’implicite : mobiliser la pensée critique pour commenter les ébauches de textes universitaires de doctorants"
-  ],
-  "Poster presented at AMLaP 2026. September 2, 2026.": [
-    "Posterpräsentation auf der AMLaP 2026 am 2. September 2026.",
-    "Poster présenté à AMLaP 2026, le 2 septembre 2026."
-  ],
-  "Contributions: research design, experimental implementation, data collection, and analysis.": [
-    "Beiträge: Forschungsdesign, Umsetzung des Experiments, Datenerhebung und Analyse.",
-    "Contributions : conception de l’étude, mise en œuvre de l’expérience, collecte et analyse des données."
   ],
   "Orally presented at": [
     "Vorgetragen auf der",
